@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://46cu76bw28hk"]
+
+[ext_resource type="Script" uid="uid://bic0faid8s0l4" path="res://scenes/interactable/interactable.gd" id="1_4b5tc"]
+[ext_resource type="Texture2D" uid="uid://wgeavidivlav" path="res://icon.svg" id="1_g88tj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yl2oe"]
+
+[node name="Interactable" type="Node2D"]
+script = ExtResource("1_4b5tc")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+self_modulate = Color(1, 0.23921569, 1, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_g88tj")
+
+[node name="InteractableSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, -31.999998)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_g88tj")
+
+[node name="InteractableArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+shape = SubResource("CircleShape2D_yl2oe")

@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://pdevqwcxwtka"]
+[gd_scene load_steps=3 format=3 uid="uid://pdevqwcxwtka"]
 
 [ext_resource type="PackedScene" uid="uid://dk2jjqclymris" path="res://scenes/player/player.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://46cu76bw28hk" path="res://scenes/interactable/interactable.tscn" id="2_0wfyh"]
 
 [node name="Main" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
+
+[node name="Interactable" parent="." instance=ExtResource("2_0wfyh")]
+position = Vector2(39, 40)
