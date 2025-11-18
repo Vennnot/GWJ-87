@@ -48,13 +48,12 @@ func _physics_process(delta: float) -> void:
 	var input_vector := Input.get_vector("left", "right", "up", "down")
 	
 	if input_vector != Vector2.ZERO:
-		#FIXME
 		if not animated_sprite.is_playing():
 			animated_sprite.play("walk")
 		velocity = input_vector * speed
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, friction*delta)
-		if not animated_sprite.is_playing():
+		if not animated_sprite.animation == &"idle":
 			animated_sprite.play("idle")
 	
 	move_and_slide()

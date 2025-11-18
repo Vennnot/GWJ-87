@@ -22,5 +22,6 @@ func _on_interacted()->void:
 
 
 func instantiate_player()->void:
-	#TODO
-	pass
+	var player := Global.PLAYER_SCENE.instantiate()
+	add_child(player)
+	player.global_position = player_start_position.global_position

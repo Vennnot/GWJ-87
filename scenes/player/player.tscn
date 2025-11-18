@@ -53,13 +53,11 @@ y_sort_enabled = true
 collision_mask = 7
 script = ExtResource("1_8afob")
 
-[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="." groups=["player"]]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_p47bc")
 animation = &"walk"
 autoplay = "idle"
-frame = 3
-frame_progress = 1.0
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 visible = false
