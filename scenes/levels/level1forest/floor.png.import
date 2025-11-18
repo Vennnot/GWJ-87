@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkwneo7jche8o"
-path="res://.godot/imported/bg.png-415e61c57341105d713e9286bae5535d.ctex"
+uid="uid://buvs7h5giw6sr"
+path="res://.godot/imported/floor.png-236888887b7215aee2c566f5ad48b732.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/tests/sina/bg.png"
-dest_files=["res://.godot/imported/bg.png-415e61c57341105d713e9286bae5535d.ctex"]
+source_file="res://scenes/levels/level1forest/floor.png"
+dest_files=["res://.godot/imported/floor.png-236888887b7215aee2c566f5ad48b732.ctex"]
 
 [params]
 
