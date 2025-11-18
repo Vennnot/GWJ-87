@@ -52,6 +52,7 @@ radius = 20.615528
 y_sort_enabled = true
 collision_mask = 7
 script = ExtResource("1_8afob")
+speed = 50.0
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="." groups=["player"]]
 unique_name_in_owner = true
@@ -60,11 +61,10 @@ animation = &"walk"
 autoplay = "idle"
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-visible = false
+position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_dovo2")
 
 [node name="InteractionFinder" type="Area2D" parent="."]
-visible = false
 collision_mask = 2
 
 [node name="CollisionShape" type="CollisionShape2D" parent="InteractionFinder"]
