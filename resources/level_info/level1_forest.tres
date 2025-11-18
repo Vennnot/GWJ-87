@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelInfo" load_steps=2 format=3 uid="uid://bwedtka5n30t2"]
+
+[ext_resource type="Script" uid="uid://dcfcj7q8mos1b" path="res://resources/level_info/level_info.gd" id="1_4530k"]
+
+[resource]
+script = ExtResource("1_4530k")
+next_scene_file = "res://scenes/levels/Level2Grove.tscn"
+end_scene_text = "Some time later..."
+metadata/_custom_type_script = "uid://dcfcj7q8mos1b"

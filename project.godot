@@ -21,7 +21,7 @@ Events="*res://scenes/autoloads/events.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Global="*res://scenes/autoloads/global.gd"
 AudioManager="*res://scenes/autoloads/audio_manager/audio_manager.tscn"
-SceneChange="*res://scenes/autoloads/scene_changer/scene_changer.tscn"
+SceneChanger="*res://scenes/autoloads/scene_changer/scene_changer.tscn"
 
 [debug]
 
@@ -50,7 +50,7 @@ window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/script-ide/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [file_customization]
 
@@ -64,6 +64,7 @@ folder_colors={
 [gui]
 
 theme/custom="uid://si1ih8poa8fd"
+theme/custom_font="uid://ctvbqa7htxybj"
 
 [input]
 

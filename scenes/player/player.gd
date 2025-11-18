@@ -30,6 +30,7 @@ func _on_dialogue_ended(dialogue:DialogueResource)->void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed(&"interact"):
+		Events.player_interacted.emit()
 		_interact()
 		return
 

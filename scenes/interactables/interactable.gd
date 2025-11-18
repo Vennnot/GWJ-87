@@ -1,6 +1,8 @@
 class_name Interactable
 extends Node2D
 
+signal interacted
+
 @onready var sprite: Sprite2D = %Sprite
 @onready var interactable_area: Area2D = %InteractableArea
 @onready var interactable_sprite: Sprite2D = %InteractableSprite
@@ -17,6 +19,7 @@ func _ready() -> void:
 
 
 func interact()->void:
+	
 	DialogueManager.show_dialogue_balloon(dialogue_resource,dialogue_start)
 
 
