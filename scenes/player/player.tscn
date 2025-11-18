@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dk2jjqclymris"]
 
 [ext_resource type="Script" uid="uid://dxetir3wcay4g" path="res://scenes/player/player.gd" id="1_8afob"]
-[ext_resource type="Texture2D" uid="uid://wgeavidivlav" path="res://icon.svg" id="2_dovo2"]
+[ext_resource type="Texture2D" uid="uid://48np83qhqbdg" path="res://scenes/player/main_character.png" id="2_dovo2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
 
@@ -13,7 +13,6 @@ collision_mask = 7
 script = ExtResource("1_8afob")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_dovo2")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
