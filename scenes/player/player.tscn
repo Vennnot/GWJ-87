@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dk2jjqclymris"]
+[gd_scene load_steps=9 format=3 uid="uid://dk2jjqclymris"]
 
 [ext_resource type="Script" uid="uid://dxetir3wcay4g" path="res://scenes/player/player.gd" id="1_8afob"]
 [ext_resource type="Texture2D" uid="uid://48np83qhqbdg" path="res://scenes/player/main_character.png" id="2_dovo2"]
@@ -8,12 +8,49 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_dovo2"]
 radius = 20.615528
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dovo2"]
+atlas = ExtResource("2_dovo2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmlin"]
+atlas = ExtResource("2_dovo2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvxji"]
+atlas = ExtResource("2_dovo2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p47bc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dovo2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dovo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmlin")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dovo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvxji")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 7
 script = ExtResource("1_8afob")
-
-[node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_dovo2")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dovo2")
@@ -24,3 +61,8 @@ collision_mask = 2
 [node name="CollisionShape" type="CollisionShape2D" parent="InteractionFinder"]
 shape = SubResource("CircleShape2D_dovo2")
 debug_color = Color(0.21594244, 0.62630504, 0.38065058, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_p47bc")
+animation = &"walk"
+autoplay = "idle"
