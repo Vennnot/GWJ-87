@@ -1,20 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://pdevqwcxwtka"]
+[gd_scene load_steps=4 format=3 uid="uid://pdevqwcxwtka"]
 
 [ext_resource type="PackedScene" uid="uid://dk2jjqclymris" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://46cu76bw28hk" path="res://scenes/interactable/interactable.tscn" id="2_0wfyh"]
 [ext_resource type="Resource" uid="uid://dfpgvurleeirb" path="res://resources/test.dialogue" id="3_sugp2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
-size = Vector2(480, 180)
-
 [node name="Main" type="Node"]
-
-[node name="Blocker" type="StaticBody2D" parent="."]
-position = Vector2(240, 90)
-collision_layer = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocker"]
-shape = SubResource("RectangleShape2D_sugp2")
 
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
 position = Vector2(163, 243)

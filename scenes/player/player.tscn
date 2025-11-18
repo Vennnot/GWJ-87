@@ -16,12 +16,12 @@ script = ExtResource("1_8afob")
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_dovo2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dovo2")
 
 [node name="InteractionFinder" type="Area2D" parent="."]
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionFinder"]
+[node name="CollisionShape" type="CollisionShape2D" parent="InteractionFinder"]
 shape = SubResource("CircleShape2D_dovo2")
 debug_color = Color(0.21594244, 0.62630504, 0.38065058, 0.41960785)
