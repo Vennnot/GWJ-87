@@ -17,7 +17,7 @@ func _ready() -> void:
 
 
 func interact()->void:
-	DialogueManager.show_example_dialogue_balloon(dialogue_resource,dialogue_start)
+	DialogueManager.show_dialogue_balloon(dialogue_resource,dialogue_start)
 
 
 func _on_area_entered(other_area:Area2D)->void:

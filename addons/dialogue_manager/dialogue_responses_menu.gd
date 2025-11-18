@@ -104,6 +104,7 @@ func configure_focus() -> void:
 #region Internal
 
 
+
 # Set up the visual side of things.
 func _apply_responses() -> void:
 	# Remove any current items

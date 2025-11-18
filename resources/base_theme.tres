@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://si1ih8poa8fd"]
+
+[ext_resource type="FontFile" uid="uid://ctvbqa7htxybj" path="res://assets/visuals/fonts/mago3.ttf" id="1_x504n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x504n"]
+bg_color = Color(0.12333425, 0.118044816, 0.10875163, 1)
+
+[resource]
+default_font = ExtResource("1_x504n")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_x504n")

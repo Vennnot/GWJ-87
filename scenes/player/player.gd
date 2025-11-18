@@ -11,7 +11,6 @@ func _set_interacting(value:bool)->void:
 	interacting = value
 	if interacting:
 		set_physics_process(false)
-		print("disabled!")
 	else:
 		set_physics_process(true)
 
