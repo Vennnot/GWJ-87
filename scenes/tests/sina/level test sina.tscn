@@ -1,13 +1,36 @@
-[gd_scene load_steps=7 format=3 uid="uid://0m4e2jw1lto8"]
+[gd_scene load_steps=11 format=3 uid="uid://0m4e2jw1lto8"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_1pnjn"]
 [ext_resource type="PackedScene" uid="uid://c8e82w4lhfeo8" path="res://scenes/interactables/level_transition_interactable/level_transition_interactable.tscn" id="2_571mi"]
 [ext_resource type="PackedScene" uid="uid://dk2jjqclymris" path="res://scenes/player/player.tscn" id="2_ge1mu"]
 [ext_resource type="Texture2D" uid="uid://bkwneo7jche8o" path="res://scenes/tests/sina/bg.png" id="3_aseco"]
 [ext_resource type="Texture2D" uid="uid://buvs7h5giw6sr" path="res://scenes/tests/sina/floor.png" id="4_aseco"]
+[ext_resource type="Texture2D" uid="uid://5fx488hts2gu" path="res://scenes/tests/sina/frog.png" id="6_v3k8p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76kvw"]
+atlas = ExtResource("6_v3k8p")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc6rc"]
+atlas = ExtResource("6_v3k8p")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_axry1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76kvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bc6rc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Level1Forest" type="Node2D"]
 script = ExtResource("1_1pnjn")
@@ -44,6 +67,11 @@ unique_name_in_owner = true
 position = Vector2(9, 228)
 
 [node name="Floor" type="Sprite2D" parent="."]
-position = Vector2(241, 226)
+position = Vector2(241, 227)
 rotation = 3.1415927
 texture = ExtResource("4_aseco")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(237, 178)
+sprite_frames = SubResource("SpriteFrames_axry1")
+autoplay = "default"
