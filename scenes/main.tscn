@@ -1,9 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://pdevqwcxwtka"]
+[gd_scene load_steps=2 format=3 uid="uid://pdevqwcxwtka"]
 
-[ext_resource type="PackedScene" uid="uid://d1r5kkx3ukpgu" path="res://scenes/levels/Level1Forest.tscn" id="1_0wfyh"]
-[ext_resource type="Resource" uid="uid://bwedtka5n30t2" path="res://resources/level_info/level1_forest.tres" id="2_sugp2"]
+[ext_resource type="PackedScene" uid="uid://dwepekf68qenw" path="res://scenes/levels/LevelTemplate.tscn" id="1_o5qli"]
 
 [node name="Main" type="Node"]
 
-[node name="Level1Forest" parent="." instance=ExtResource("1_0wfyh")]
-next_level_info = ExtResource("2_sugp2")
+[node name="LevelTemplate" parent="." instance=ExtResource("1_o5qli")]
