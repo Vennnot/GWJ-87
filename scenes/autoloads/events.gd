@@ -1,3 +1,4 @@
 extends Node
 
-signal player_interacted
+signal interaction_started
+signal interaction_ended

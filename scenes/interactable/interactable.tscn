@@ -24,7 +24,6 @@ texture = ExtResource("1_g88tj")
 [node name="InteractableArea" type="Area2D" parent="."]
 unique_name_in_owner = true
 collision_layer = 2
-monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
 shape = SubResource("CircleShape2D_yl2oe")
