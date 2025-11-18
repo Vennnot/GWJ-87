@@ -3,11 +3,6 @@
 [ext_resource type="Script" uid="uid://dxetir3wcay4g" path="res://scenes/player/player.gd" id="1_8afob"]
 [ext_resource type="Texture2D" uid="uid://48np83qhqbdg" path="res://scenes/player/main_character.png" id="2_dovo2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_dovo2"]
-radius = 20.615528
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_dovo2"]
 atlas = ExtResource("2_dovo2")
 region = Rect2(0, 0, 32, 32)
@@ -26,9 +21,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dovo2")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle",
-"speed": 3.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -43,27 +38,37 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lvxji")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk",
-"speed": 3.0
+"speed": 6.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dovo2"]
+radius = 20.615528
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
 collision_mask = 7
 script = ExtResource("1_8afob")
 
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_p47bc")
+animation = &"walk"
+autoplay = "idle"
+frame = 3
+frame_progress = 1.0
+
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_dovo2")
 
 [node name="InteractionFinder" type="Area2D" parent="."]
+visible = false
 collision_mask = 2
 
 [node name="CollisionShape" type="CollisionShape2D" parent="InteractionFinder"]
 shape = SubResource("CircleShape2D_dovo2")
 debug_color = Color(0.21594244, 0.62630504, 0.38065058, 0.41960785)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_p47bc")
-animation = &"walk"
-autoplay = "idle"

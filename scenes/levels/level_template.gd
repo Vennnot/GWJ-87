@@ -22,4 +22,5 @@ func _on_interacted()->void:
 
 
 func instantiate_player()->void:
+	#TODO
 	pass
