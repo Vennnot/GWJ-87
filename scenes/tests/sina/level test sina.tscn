@@ -29,7 +29,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 1.5
 }]
 
 [node name="Level1Forest" type="Node2D"]
@@ -75,3 +75,4 @@ texture = ExtResource("4_aseco")
 position = Vector2(237, 178)
 sprite_frames = SubResource("SpriteFrames_axry1")
 autoplay = "default"
+frame_progress = 0.5829619
