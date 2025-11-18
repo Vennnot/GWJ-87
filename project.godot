@@ -61,6 +61,10 @@ folder_colors={
 "res://scenes/": "green"
 }
 
+[global_group]
+
+player=""
+
 [gui]
 
 theme/custom="uid://si1ih8poa8fd"
