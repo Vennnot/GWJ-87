@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://0m4e2jw1lto8"]
+[gd_scene load_steps=7 format=3 uid="uid://0m4e2jw1lto8"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_1pnjn"]
 [ext_resource type="PackedScene" uid="uid://c8e82w4lhfeo8" path="res://scenes/interactables/level_transition_interactable/level_transition_interactable.tscn" id="2_571mi"]
 [ext_resource type="PackedScene" uid="uid://dk2jjqclymris" path="res://scenes/player/player.tscn" id="2_ge1mu"]
+[ext_resource type="Texture2D" uid="uid://bkwneo7jche8o" path="res://scenes/tests/sina/bg.png" id="3_aseco"]
 [ext_resource type="Texture2D" uid="uid://buvs7h5giw6sr" path="res://scenes/tests/sina/floor.png" id="4_aseco"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
@@ -14,6 +15,7 @@ script = ExtResource("1_1pnjn")
 [node name="Player" parent="." instance=ExtResource("2_ge1mu")]
 z_index = 1
 position = Vector2(36, 214)
+speed = 100.0
 
 [node name="Environment" type="Node2D" parent="."]
 
@@ -28,6 +30,8 @@ shape = SubResource("RectangleShape2D_buro7")
 position = Vector2(0, 180)
 
 [node name="Background" type="Sprite2D" parent="Environment"]
+position = Vector2(240, 91)
+texture = ExtResource("3_aseco")
 
 [node name="Interactables" type="Node2D" parent="."]
 
@@ -41,4 +45,5 @@ position = Vector2(9, 228)
 
 [node name="Floor" type="Sprite2D" parent="."]
 position = Vector2(241, 226)
+rotation = 3.1415927
 texture = ExtResource("4_aseco")
