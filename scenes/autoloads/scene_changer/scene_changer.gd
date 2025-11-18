@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var color_rect: ColorRect = %ColorRect
 
+
 func go_to_scene(scene:String=""):
 	await darken()
 	# Dialogue would go here
