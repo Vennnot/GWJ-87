@@ -3,7 +3,7 @@ extends Node2D
 
 signal interacted
 
-@onready var sprite: Sprite2D = %Sprite
+@onready var sprite: AnimatedSprite2D = %Sprite
 @onready var interactable_area: Area2D = %InteractableArea
 @onready var interactable_sprite: Sprite2D = %InteractableSprite
 

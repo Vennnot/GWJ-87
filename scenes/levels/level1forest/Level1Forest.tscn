@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckfinctettmsj"]
+[gd_scene load_steps=5 format=3 uid="uid://ckfinctettmsj"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_l7u7t"]
 [ext_resource type="PackedScene" uid="uid://c8e82w4lhfeo8" path="res://scenes/interactables/level_transition_interactable/level_transition_interactable.tscn" id="2_xqm8n"]
+[ext_resource type="PackedScene" uid="uid://udqmeb03rb7k" path="res://scenes/interactables/frog/frog.tscn" id="3_xqm8n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -32,3 +33,6 @@ position = Vector2(453, 194)
 [node name="PlayerStartPosition" type="Marker2D" parent="Interactables"]
 unique_name_in_owner = true
 position = Vector2(9, 228)
+
+[node name="Frog" parent="." instance=ExtResource("3_xqm8n")]
+position = Vector2(107, 210)
