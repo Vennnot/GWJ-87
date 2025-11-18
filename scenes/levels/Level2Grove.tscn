@@ -28,3 +28,7 @@ position = Vector2(0, 180)
 [node name="LevelTransitionInteractable" parent="Interactables" instance=ExtResource("2_ncypk")]
 unique_name_in_owner = true
 position = Vector2(453, 194)
+
+[node name="PlayerStartPosition" type="Marker2D" parent="Interactables"]
+unique_name_in_owner = true
+position = Vector2(9, 228)

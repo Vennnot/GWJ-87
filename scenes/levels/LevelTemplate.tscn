@@ -18,13 +18,17 @@ collision_layer = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Collider"]
 shape = SubResource("RectangleShape2D_buro7")
 
+[node name="Background" type="Sprite2D" parent="Environment"]
+
 [node name="Foreground" type="Sprite2D" parent="Environment"]
 position = Vector2(0, 180)
 
-[node name="Background" type="Sprite2D" parent="Environment"]
+[node name="Other" type="Node2D" parent="."]
 
-[node name="Interactables" type="Node2D" parent="."]
-
-[node name="LevelTransitionInteractable" parent="Interactables" instance=ExtResource("2_u8naf")]
+[node name="LevelTransitionInteractable" parent="Other" instance=ExtResource("2_u8naf")]
 unique_name_in_owner = true
 position = Vector2(453, 194)
+
+[node name="PlayerStartPosition" type="Marker2D" parent="Other"]
+unique_name_in_owner = true
+position = Vector2(9, 228)
