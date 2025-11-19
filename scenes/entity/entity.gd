@@ -1,10 +1,14 @@
+@tool
 class_name Entity
 extends Node2D
 
 signal interacted
 
 @export_category("Visuals")
-@export var texture : Texture
+@export var texture : Texture :
+	set(value):
+		texture = value
+		sprite.texture = value
 @export var sprite_frames : SpriteFrames
 
 
@@ -33,6 +37,8 @@ signal interacted
 func _ready() -> void:
 	if texture:
 		sprite.texture = texture
+	else:
+		sprite.texture = null
 	
 	if sprite_frames:
 		sprite.hide()
