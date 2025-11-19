@@ -8,7 +8,12 @@ signal interacted
 @export var texture : Texture :
 	set(value):
 		texture = value
-		sprite.texture = value
+		if not sprite:
+			return
+		if texture:
+			sprite.texture = value
+		else: 
+			sprite.texture = null
 @export var sprite_frames : SpriteFrames
 
 

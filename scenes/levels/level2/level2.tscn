@@ -1,0 +1,121 @@
+[gd_scene load_steps=18 format=3 uid="uid://bp6nx1wq6v17c"]
+
+[ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_e0cvd"]
+[ext_resource type="Texture2D" uid="uid://d35qas4crf8gj" path="res://assets/visuals/backgrounds/bg.png" id="2_rj8cl"]
+[ext_resource type="Texture2D" uid="uid://dxhuhocw0yacp" path="res://assets/visuals/floors/floor.png" id="3_gblnm"]
+[ext_resource type="PackedScene" uid="uid://blnx8e7y58nef" path="res://scenes/entity/entity.tscn" id="4_iq8gt"]
+[ext_resource type="Texture2D" uid="uid://chtfggiy76lt6" path="res://assets/visuals/nature elements/grass1.png" id="5_cphpc"]
+[ext_resource type="SpriteFrames" uid="uid://bfcq1mhofcf1n" path="res://resources/sprite_frames/froggo.tres" id="5_expgy"]
+[ext_resource type="Resource" uid="uid://bsagudt83oym7" path="res://resources/dialogues/frog.dialogue" id="6_8t4y1"]
+[ext_resource type="Texture2D" uid="uid://cffo6v2lgb3qq" path="res://assets/visuals/nature elements/rocks1.png" id="6_expgy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
+size = Vector2(480, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8naf"]
+size = Vector2(10, 270)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_utwm8"]
+size = Vector2(480, 5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_expgy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ybc4"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g6esx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76kvw"]
+atlas = SubResource("CompressedTexture2D_g6esx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc6rc"]
+atlas = SubResource("CompressedTexture2D_g6esx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cphpc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76kvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bc6rc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.5
+}]
+
+[node name="Level2" type="Node2D"]
+script = ExtResource("1_e0cvd")
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="Environment"]
+position = Vector2(240, 90)
+texture = ExtResource("2_rj8cl")
+
+[node name="Foreground" type="Sprite2D" parent="Environment"]
+position = Vector2(240.00002, 225)
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("3_gblnm")
+
+[node name="Bounds" type="Node2D" parent="Environment"]
+
+[node name="Top" type="StaticBody2D" parent="Environment/Bounds"]
+position = Vector2(240, 90)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Bounds/Top"]
+shape = SubResource("RectangleShape2D_buro7")
+
+[node name="Left" type="StaticBody2D" parent="Environment/Bounds"]
+position = Vector2(0, 135)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Bounds/Left"]
+shape = SubResource("RectangleShape2D_u8naf")
+
+[node name="Right" type="StaticBody2D" parent="Environment/Bounds"]
+position = Vector2(480, 135)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Bounds/Right"]
+shape = SubResource("RectangleShape2D_u8naf")
+
+[node name="Bottom" type="StaticBody2D" parent="Environment/Bounds"]
+position = Vector2(241, 271)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Bounds/Bottom"]
+shape = SubResource("RectangleShape2D_utwm8")
+
+[node name="Entities" type="Node2D" parent="."]
+z_index = 5
+
+[node name="Froggo" parent="Entities" node_paths=PackedStringArray("collider", "interactable_collider") instance=ExtResource("4_iq8gt")]
+position = Vector2(194, 195)
+sprite_frames = ExtResource("5_expgy")
+collider = NodePath("froggo collision")
+dialogue_resource = ExtResource("6_8t4y1")
+interactable_collider = NodePath("froggo interaction")
+
+[node name="froggo collision" type="CollisionShape2D" parent="Entities/Froggo"]
+shape = SubResource("CapsuleShape2D_expgy")
+
+[node name="froggo interaction" type="CollisionShape2D" parent="Entities/Froggo"]
+shape = SubResource("CapsuleShape2D_0ybc4")
+debug_color = Color(0.8969291, 0.24314824, 0.52086973, 0.41960785)
+
+[node name="PlayerStartPosition" type="Marker2D" parent="Entities"]
+unique_name_in_owner = true
+position = Vector2(14, 228)
+
+[node name="grass1" parent="Entities" instance=ExtResource("4_iq8gt")]
+position = Vector2(444, 203)
+texture = ExtResource("5_cphpc")
+sprite_frames = SubResource("SpriteFrames_cphpc")
+
+[node name="rock1" parent="Entities" instance=ExtResource("4_iq8gt")]
+position = Vector2(456, 211)
+texture = ExtResource("6_expgy")
