@@ -14,16 +14,25 @@ signal interacted
 			sprite.texture = value
 		else: 
 			sprite.texture = null
-@export var sprite_frames : SpriteFrames
+@export var sprite_frames : SpriteFrames :
+	set(value):
+		sprite_frames = value
+		if not animated_sprite:
+			return
+		if sprite_frames:
+			animated_sprite.sprite_frames = value
+			animated_sprite.play(&"default")
+		else: 
+			animated_sprite.sprite_frames = null
 
 
-@export_category("Collider")
+@export_category("Physics")
 @export var collider : CollisionShape2D
 
 
 @export_category("Interaction")
-@export var dialogue_resource : DialogueResource
-@export var interactable_collider : CollisionShape2D
+@export var dialogue : DialogueResource
+@export var area_collider : CollisionShape2D
 
 @export_category("Level Transition")
 @export var level_transition : bool = false
@@ -40,6 +49,8 @@ signal interacted
 @onready var interactable_sprite: Sprite2D = %InteractableSprite
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
 	if texture:
 		sprite.texture = texture
 	else:
@@ -55,16 +66,16 @@ func _ready() -> void:
 		static_body.show()
 		collider.reparent(static_body)
 	
-	if interactable_collider:
+	if area_collider:
 		interactable_sprite.show()
-		interactable_collider.reparent(interactable_area)
+		area_collider.reparent(interactable_area)
 		interactable_area.area_entered.connect(_on_area_entered)
 		interactable_area.area_exited.connect(_on_area_exited)
 
 
 func interact():
-	if dialogue_resource:
-		DialogueManager.show_dialogue_balloon(dialogue_resource,"start")
+	if dialogue:
+		DialogueManager.show_dialogue_balloon(dialogue,"start")
 	interacted.emit()
 
 

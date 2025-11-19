@@ -53,6 +53,7 @@ collision_layer = 4
 shape = SubResource("RectangleShape2D_utwm8")
 
 [node name="Entities" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="PlayerStartPosition" type="Marker2D" parent="Entities"]
 unique_name_in_owner = true
