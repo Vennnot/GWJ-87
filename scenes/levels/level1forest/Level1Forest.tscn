@@ -1,38 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://ckfinctettmsj"]
+[gd_scene load_steps=6 format=3 uid="uid://ckfinctettmsj"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_l7u7t"]
 [ext_resource type="Texture2D" uid="uid://buvs7h5giw6sr" path="res://scenes/levels/level1forest/floor.png" id="2_lmprt"]
 [ext_resource type="PackedScene" uid="uid://c8e82w4lhfeo8" path="res://scenes/interactables/level_transition_interactable/level_transition_interactable.tscn" id="2_xqm8n"]
 [ext_resource type="Texture2D" uid="uid://bkwneo7jche8o" path="res://scenes/levels/level1forest/bg.png" id="3_u46rc"]
-[ext_resource type="PackedScene" uid="uid://udqmeb03rb7k" path="res://scenes/interactables/frog/frog.tscn" id="3_xqm8n"]
-[ext_resource type="Texture2D" uid="uid://5fx488hts2gu" path="res://scenes/levels/level1forest/frog.png" id="6_u46rc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_6x5ts"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_76kvw"]
-atlas = ExtResource("6_u46rc")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bc6rc"]
-atlas = ExtResource("6_u46rc")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_wqmrf"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_76kvw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bc6rc")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [node name="Level1Forest" type="Node2D"]
 script = ExtResource("1_l7u7t")
@@ -47,11 +21,13 @@ collision_layer = 4
 shape = SubResource("RectangleShape2D_buro7")
 
 [node name="Foreground" type="Sprite2D" parent="Environment"]
+visible = false
 position = Vector2(238, 224)
 rotation = 3.1415927
 texture = ExtResource("2_lmprt")
 
 [node name="Background" type="Sprite2D" parent="Environment"]
+visible = false
 position = Vector2(243, 92)
 texture = ExtResource("3_u46rc")
 
@@ -64,17 +40,3 @@ position = Vector2(453, 194)
 [node name="PlayerStartPosition" type="Marker2D" parent="Interactables"]
 unique_name_in_owner = true
 position = Vector2(9, 228)
-
-[node name="Frog" parent="." instance=ExtResource("3_xqm8n")]
-position = Vector2(107, 210)
-
-[node name="Sprite" parent="Frog" index="0"]
-sprite_frames = SubResource("SpriteFrames_6x5ts")
-autoplay = "default"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(106, 203)
-sprite_frames = SubResource("SpriteFrames_wqmrf")
-autoplay = "default"
-
-[editable path="Frog"]

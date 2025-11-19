@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwepekf68qenw"]
+[gd_scene load_steps=11 format=3 uid="uid://d1r5kkx3ukpgu"]
 
-[ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_vyyr7"]
-[ext_resource type="Texture2D" uid="uid://bkwneo7jche8o" path="res://scenes/levels/level1forest/bg.png" id="2_63ytt"]
-[ext_resource type="Texture2D" uid="uid://buvs7h5giw6sr" path="res://scenes/levels/level1forest/floor.png" id="3_8t8rg"]
+[ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_6n6vm"]
+[ext_resource type="Texture2D" uid="uid://bkwneo7jche8o" path="res://scenes/levels/level1forest/bg.png" id="2_vkqf1"]
+[ext_resource type="Texture2D" uid="uid://buvs7h5giw6sr" path="res://scenes/levels/level1forest/floor.png" id="3_c4gsc"]
+[ext_resource type="PackedScene" uid="uid://blnx8e7y58nef" path="res://scenes/entity/entity.tscn" id="4_c4gsc"]
+[ext_resource type="SpriteFrames" uid="uid://crrk41oyqt6vd" path="res://resources/sprite_frames/anim_frog.tres" id="5_lqv1k"]
+[ext_resource type="Resource" uid="uid://bsagudt83oym7" path="res://scenes/interactables/frog/frog.dialogue" id="6_lqv1k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -13,19 +16,21 @@ size = Vector2(10, 270)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utwm8"]
 size = Vector2(480, 5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_rwwc3"]
+
 [node name="LevelTemplate" type="Node2D"]
-script = ExtResource("1_vyyr7")
+script = ExtResource("1_6n6vm")
 
 [node name="Environment" type="Node2D" parent="."]
 
 [node name="Background" type="Sprite2D" parent="Environment"]
 position = Vector2(240, 90)
-texture = ExtResource("2_63ytt")
+texture = ExtResource("2_vkqf1")
 
 [node name="Foreground" type="Sprite2D" parent="Environment"]
 position = Vector2(240, 225)
 rotation = 3.1415927
-texture = ExtResource("3_8t8rg")
+texture = ExtResource("3_c4gsc")
 
 [node name="Bounds" type="Node2D" parent="Environment"]
 
@@ -62,3 +67,12 @@ shape = SubResource("RectangleShape2D_utwm8")
 [node name="PlayerStartPosition" type="Marker2D" parent="Entities"]
 unique_name_in_owner = true
 position = Vector2(9, 228)
+
+[node name="Entity" parent="Entities" node_paths=PackedStringArray("interactable_collider") instance=ExtResource("4_c4gsc")]
+position = Vector2(65, 221)
+sprite_frames = ExtResource("5_lqv1k")
+dialogue_resource = ExtResource("6_lqv1k")
+interactable_collider = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Entity"]
+shape = SubResource("CircleShape2D_rwwc3")

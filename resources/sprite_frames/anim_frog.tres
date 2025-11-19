@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://crrk41oyqt6vd"]
+
+[ext_resource type="Texture2D" uid="uid://5fx488hts2gu" path="res://scenes/levels/level1forest/frog.png" id="1_1bkpu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76kvw"]
+atlas = ExtResource("1_1bkpu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc6rc"]
+atlas = ExtResource("1_1bkpu")
+region = Rect2(32, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76kvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bc6rc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.5
+}]

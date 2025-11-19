@@ -3,18 +3,19 @@ extends Node2D
 
 
 @export var level_info : LevelInfo
+@export var level_transition_interactable: LevelTransitionInteractable
 
-@onready var level_transition_interactable: LevelTransitionInteractable = %LevelTransitionInteractable
+
 @onready var player_start_position: Marker2D = %PlayerStartPosition
 
 func _ready() -> void:
 	instantiate_player()
 	if not level_info:
-		level_transition_interactable.queue_free()
 		print("This is the last level!")
 		return
 	
-	level_transition_interactable.interacted.connect(_on_interacted)
+	if level_transition_interactable:
+		level_transition_interactable.interacted.connect(_on_interacted)
 
 
 func _on_interacted()->void:
