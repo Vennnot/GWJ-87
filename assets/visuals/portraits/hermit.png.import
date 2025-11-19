@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5fx488hts2gu"
-path="res://.godot/imported/frog.png-31464f11b36527e9b529656d547168e5.ctex"
+uid="uid://ba5g7s4j0vv7f"
+path="res://.godot/imported/hermit.png-e79890cbb902af9b0d83afbb1d07a682.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/tests/sina/frog.png"
-dest_files=["res://.godot/imported/frog.png-31464f11b36527e9b529656d547168e5.ctex"]
+source_file="res://assets/visuals/portraits/hermit.png"
+dest_files=["res://.godot/imported/hermit.png-e79890cbb902af9b0d83afbb1d07a682.ctex"]
 
 [params]
 

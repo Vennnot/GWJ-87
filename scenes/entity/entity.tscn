@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://blnx8e7y58nef"]
+
+[ext_resource type="Script" uid="uid://ddb7i3y8dsuni" path="res://scenes/entity/entity.gd" id="1_t6or0"]
+
+[node name="Entity" type="Node2D"]
+script = ExtResource("1_t6or0")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="Visuals"]
+unique_name_in_owner = true
+
+[node name="InteractableSprite" type="Sprite2D" parent="Visuals"]
+unique_name_in_owner = true
+visible = false
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="Visuals"]
+unique_name_in_owner = true
+visible = false
+
+[node name="StaticBody" type="StaticBody2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 4
+
+[node name="InteractableArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 2

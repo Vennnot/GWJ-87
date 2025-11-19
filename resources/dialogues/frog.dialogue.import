@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bsagudt83oym7"
+path="res://.godot/imported/frog.dialogue-b3efb798b8ca07e8d4035488ee37d0c1.tres"
+
+[deps]
+
+source_file="res://resources/dialogues/frog.dialogue"
+dest_files=["res://.godot/imported/frog.dialogue-b3efb798b8ca07e8d4035488ee37d0c1.tres"]
+
+[params]
+
+defaults=true

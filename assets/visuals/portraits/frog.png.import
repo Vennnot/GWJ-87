@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buvs7h5giw6sr"
-path="res://.godot/imported/floor.png-f726dfa4551e28a68f014997cedfde11.ctex"
+uid="uid://5gdj6n7ph82c"
+path="res://.godot/imported/frog.png-5539eb97a0b6ca8f03f7e351b1d1785a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/tests/sina/floor.png"
-dest_files=["res://.godot/imported/floor.png-f726dfa4551e28a68f014997cedfde11.ctex"]
+source_file="res://assets/visuals/portraits/frog.png"
+dest_files=["res://.godot/imported/frog.png-5539eb97a0b6ca8f03f7e351b1d1785a.ctex"]
 
 [params]
 
