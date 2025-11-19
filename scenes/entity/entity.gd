@@ -11,15 +11,19 @@ signal interacted
 		if not sprite:
 			return
 		if texture:
+			sprite.show()
 			sprite.texture = value
 		else: 
 			sprite.texture = null
+
 @export var sprite_frames : SpriteFrames :
 	set(value):
 		sprite_frames = value
 		if not animated_sprite:
 			return
 		if sprite_frames:
+			sprite.hide()
+			animated_sprite.show()
 			animated_sprite.sprite_frames = value
 			animated_sprite.play(&"default")
 		else: 
@@ -47,10 +51,12 @@ signal interacted
 @onready var animated_sprite: AnimatedSprite2D = %AnimatedSprite
 @onready var interactable_area: Area2D = %InteractableArea
 @onready var interactable_sprite: Sprite2D = %InteractableSprite
+@onready var point_light: PointLight2D = %PointLight
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
+	
 	if texture:
 		sprite.texture = texture
 	else:
@@ -71,7 +77,18 @@ func _ready() -> void:
 		area_collider.reparent(interactable_area)
 		interactable_area.area_entered.connect(_on_area_entered)
 		interactable_area.area_exited.connect(_on_area_exited)
+	
+	if dialogue:
+		point_light.show()
+		tween_light()
 
+
+func tween_light():
+	var tween :Tween= create_tween()
+	tween.tween_property(point_light,^"energy",0.3,0.8)
+	tween.chain().tween_property(point_light,^"energy",0,0.8)
+	await tween.finished
+	tween_light()
 
 func interact():
 	if dialogue:

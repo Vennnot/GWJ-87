@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://blnx8e7y58nef"]
+[gd_scene load_steps=5 format=3 uid="uid://blnx8e7y58nef"]
 
 [ext_resource type="Script" uid="uid://ddb7i3y8dsuni" path="res://scenes/entity/entity.gd" id="1_t6or0"]
+
+[sub_resource type="Gradient" id="Gradient_l1e1h"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_uorv3"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_uorv3"]
+noise = SubResource("FastNoiseLite_uorv3")
+color_ramp = SubResource("Gradient_l1e1h")
 
 [node name="Entity" type="Node2D"]
 y_sort_enabled = true
@@ -10,6 +18,7 @@ script = ExtResource("1_t6or0")
 
 [node name="Sprite" type="Sprite2D" parent="Visuals"]
 unique_name_in_owner = true
+light_mask = 3
 
 [node name="InteractableSprite" type="Sprite2D" parent="Visuals"]
 unique_name_in_owner = true
@@ -18,6 +27,15 @@ visible = false
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="Visuals"]
 unique_name_in_owner = true
 visible = false
+light_mask = 3
+
+[node name="PointLight" type="PointLight2D" parent="Visuals"]
+unique_name_in_owner = true
+color = Color(0.37738815, 0.29953024, 0.9999799, 1)
+energy = 0.0
+range_item_cull_mask = 2
+texture = SubResource("NoiseTexture2D_uorv3")
+texture_scale = 0.1
 
 [node name="StaticBody" type="StaticBody2D" parent="."]
 unique_name_in_owner = true

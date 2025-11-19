@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bp6nx1wq6v17c"]
+[gd_scene load_steps=18 format=3 uid="uid://bp6nx1wq6v17c"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_e0cvd"]
 [ext_resource type="Texture2D" uid="uid://d35qas4crf8gj" path="res://assets/visuals/backgrounds/bg.png" id="2_rj8cl"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://blnx8e7y58nef" path="res://scenes/entity/entity.tscn" id="4_iq8gt"]
 [ext_resource type="Texture2D" uid="uid://chtfggiy76lt6" path="res://assets/visuals/nature elements/grass1.png" id="5_cphpc"]
 [ext_resource type="SpriteFrames" uid="uid://bfcq1mhofcf1n" path="res://resources/sprite_frames/froggo.tres" id="5_expgy"]
+[ext_resource type="Resource" uid="uid://bsagudt83oym7" path="res://resources/dialogues/frog.dialogue" id="6_8t4y1"]
 [ext_resource type="Texture2D" uid="uid://cffo6v2lgb3qq" path="res://assets/visuals/nature elements/rocks1.png" id="6_expgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
@@ -93,9 +94,10 @@ shape = SubResource("RectangleShape2D_utwm8")
 y_sort_enabled = true
 
 [node name="Froggo" parent="Entities" node_paths=PackedStringArray("collider", "area_collider") instance=ExtResource("4_iq8gt")]
-position = Vector2(194, 195)
+position = Vector2(177, 200)
 sprite_frames = ExtResource("5_expgy")
 collider = NodePath("froggo collision")
+dialogue = ExtResource("6_8t4y1")
 area_collider = NodePath("froggo interaction")
 
 [node name="froggo interaction" type="CollisionShape2D" parent="Entities/Froggo"]
