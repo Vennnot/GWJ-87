@@ -3,7 +3,7 @@ extends Node2D
 
 
 @export var level_info : LevelInfo
-@export var level_transition_interactable: LevelTransitionInteractable
+@export var level_transition_interactable: Entity
 
 
 @onready var player_start_position: Marker2D = %PlayerStartPosition

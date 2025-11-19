@@ -1,8 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwepekf68qenw"]
+[gd_scene load_steps=5 format=3 uid="uid://dwepekf68qenw"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_vyyr7"]
-[ext_resource type="Texture2D" uid="uid://bkwneo7jche8o" path="res://scenes/levels/level1forest/bg.png" id="2_63ytt"]
-[ext_resource type="Texture2D" uid="uid://buvs7h5giw6sr" path="res://scenes/levels/level1forest/floor.png" id="3_8t8rg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -20,12 +18,9 @@ script = ExtResource("1_vyyr7")
 
 [node name="Background" type="Sprite2D" parent="Environment"]
 position = Vector2(240, 90)
-texture = ExtResource("2_63ytt")
 
 [node name="Foreground" type="Sprite2D" parent="Environment"]
 position = Vector2(240, 225)
-rotation = 3.1415927
-texture = ExtResource("3_8t8rg")
 
 [node name="Bounds" type="Node2D" parent="Environment"]
 

@@ -1,11 +1,15 @@
 [gd_scene load_steps=11 format=3 uid="uid://d1r5kkx3ukpgu"]
 
-[ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_6n6vm"]
-[ext_resource type="Texture2D" uid="uid://bkwneo7jche8o" path="res://scenes/levels/level1forest/bg.png" id="2_vkqf1"]
-[ext_resource type="Texture2D" uid="uid://buvs7h5giw6sr" path="res://scenes/levels/level1forest/floor.png" id="3_c4gsc"]
-[ext_resource type="PackedScene" uid="uid://blnx8e7y58nef" path="res://scenes/entity/entity.tscn" id="4_c4gsc"]
-[ext_resource type="SpriteFrames" uid="uid://crrk41oyqt6vd" path="res://resources/sprite_frames/anim_frog.tres" id="5_lqv1k"]
-[ext_resource type="Resource" uid="uid://bsagudt83oym7" path="res://scenes/interactables/frog/frog.dialogue" id="6_lqv1k"]
+[ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_stl25"]
+[ext_resource type="PackedScene" uid="uid://blnx8e7y58nef" path="res://scenes/entity/entity.tscn" id="2_lbv0h"]
+[ext_resource type="SpriteFrames" uid="uid://crrk41oyqt6vd" path="res://resources/sprite_frames/anim_frog.tres" id="3_gkwol"]
+[ext_resource type="Resource" uid="uid://bsagudt83oym7" path="res://resources/dialogues/frog.dialogue" id="4_vhwet"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vkqf1"]
+load_path = "res://.godot/imported/bg.png-d6691e962ae8fcd438ec64d8fcca414f.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c4gsc"]
+load_path = "res://.godot/imported/floor.png-236888887b7215aee2c566f5ad48b732.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -18,19 +22,18 @@ size = Vector2(480, 5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rwwc3"]
 
-[node name="LevelTemplate" type="Node2D"]
-script = ExtResource("1_6n6vm")
+[node name="Level1Forest" type="Node2D"]
+script = ExtResource("1_stl25")
 
 [node name="Environment" type="Node2D" parent="."]
 
 [node name="Background" type="Sprite2D" parent="Environment"]
 position = Vector2(240, 90)
-texture = ExtResource("2_vkqf1")
+texture = SubResource("CompressedTexture2D_vkqf1")
 
 [node name="Foreground" type="Sprite2D" parent="Environment"]
 position = Vector2(240, 225)
-rotation = 3.1415927
-texture = ExtResource("3_c4gsc")
+texture = SubResource("CompressedTexture2D_c4gsc")
 
 [node name="Bounds" type="Node2D" parent="Environment"]
 
@@ -68,10 +71,10 @@ shape = SubResource("RectangleShape2D_utwm8")
 unique_name_in_owner = true
 position = Vector2(9, 228)
 
-[node name="Entity" parent="Entities" node_paths=PackedStringArray("interactable_collider") instance=ExtResource("4_c4gsc")]
+[node name="Entity" parent="Entities" node_paths=PackedStringArray("interactable_collider") instance=ExtResource("2_lbv0h")]
 position = Vector2(65, 221)
-sprite_frames = ExtResource("5_lqv1k")
-dialogue_resource = ExtResource("6_lqv1k")
+sprite_frames = ExtResource("3_gkwol")
+dialogue_resource = ExtResource("4_vhwet")
 interactable_collider = NodePath("CollisionShape2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Entity"]

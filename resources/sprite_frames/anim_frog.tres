@@ -1,13 +1,14 @@
 [gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://crrk41oyqt6vd"]
 
-[ext_resource type="Texture2D" uid="uid://5fx488hts2gu" path="res://scenes/levels/level1forest/frog.png" id="1_1bkpu"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g6esx"]
+load_path = "res://.godot/imported/frog.png-ce3cc53a8dd3244448160f45e83bdec8.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_76kvw"]
-atlas = ExtResource("1_1bkpu")
+atlas = SubResource("CompressedTexture2D_g6esx")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bc6rc"]
-atlas = ExtResource("1_1bkpu")
+atlas = SubResource("CompressedTexture2D_g6esx")
 region = Rect2(32, 0, 32, 32)
 
 [resource]

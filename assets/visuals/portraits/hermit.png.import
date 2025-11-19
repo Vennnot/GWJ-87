@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkwneo7jche8o"
-path="res://.godot/imported/bg.png-d6691e962ae8fcd438ec64d8fcca414f.ctex"
+uid="uid://ba5g7s4j0vv7f"
+path="res://.godot/imported/hermit.png-e79890cbb902af9b0d83afbb1d07a682.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/levels/level1forest/bg.png"
-dest_files=["res://.godot/imported/bg.png-d6691e962ae8fcd438ec64d8fcca414f.ctex"]
+source_file="res://assets/visuals/portraits/hermit.png"
+dest_files=["res://.godot/imported/hermit.png-e79890cbb902af9b0d83afbb1d07a682.ctex"]
 
 [params]
 

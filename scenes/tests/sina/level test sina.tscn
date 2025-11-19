@@ -1,10 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://0m4e2jw1lto8"]
+[gd_scene load_steps=5 format=3 uid="uid://0m4e2jw1lto8"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_1pnjn"]
-[ext_resource type="PackedScene" uid="uid://c8e82w4lhfeo8" path="res://scenes/interactables/level_transition_interactable/level_transition_interactable.tscn" id="2_571mi"]
 [ext_resource type="PackedScene" uid="uid://dk2jjqclymris" path="res://scenes/player/player.tscn" id="2_ge1mu"]
-[ext_resource type="Texture2D" uid="uid://bkwneo7jche8o" path="res://scenes/levels/level1forest/bg.png" id="3_aseco"]
-[ext_resource type="Texture2D" uid="uid://buvs7h5giw6sr" path="res://scenes/levels/level1forest/floor.png" id="4_aseco"]
 [ext_resource type="SpriteFrames" uid="uid://crrk41oyqt6vd" path="res://resources/sprite_frames/anim_frog.tres" id="6_v3k8p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
@@ -32,13 +29,8 @@ position = Vector2(0, 180)
 
 [node name="Background" type="Sprite2D" parent="Environment"]
 position = Vector2(240, 91)
-texture = ExtResource("3_aseco")
 
 [node name="Interactables" type="Node2D" parent="."]
-
-[node name="LevelTransitionInteractable" parent="Interactables" instance=ExtResource("2_571mi")]
-unique_name_in_owner = true
-position = Vector2(453, 194)
 
 [node name="PlayerStartPosition" type="Marker2D" parent="Interactables"]
 unique_name_in_owner = true
@@ -47,7 +39,6 @@ position = Vector2(9, 228)
 [node name="Floor" type="Sprite2D" parent="."]
 position = Vector2(241, 227)
 rotation = 3.1415927
-texture = ExtResource("4_aseco")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(237, 178)

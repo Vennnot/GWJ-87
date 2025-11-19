@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buvs7h5giw6sr"
-path="res://.godot/imported/floor.png-236888887b7215aee2c566f5ad48b732.ctex"
+uid="uid://dihvn6jkposbg"
+path="res://.godot/imported/deer.png-9efdb4f82a9a4c16e9d322c164ef287f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/levels/level1forest/floor.png"
-dest_files=["res://.godot/imported/floor.png-236888887b7215aee2c566f5ad48b732.ctex"]
+source_file="res://assets/visuals/portraits/deer.png"
+dest_files=["res://.godot/imported/deer.png-9efdb4f82a9a4c16e9d322c164ef287f.ctex"]
 
 [params]
 
