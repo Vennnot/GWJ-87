@@ -130,6 +130,7 @@ func apply_dialogue_line() -> void:
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
 	var portrait_path :String= "res://assets/visuals/portraits/%s.png" % dialogue_line.character.to_lower()
+	set_text_color(dialogue_line.character.to_lower())
 	portrait_rect.texture = load(portrait_path)
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line
@@ -213,3 +214,14 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 
 #endregion
+
+
+func set_text_color(character:String):
+	var color := Color.WHITE
+	if character == "hermit":
+		color = Color.ANTIQUE_WHITE
+	elif character == "mother":
+		color = Color.GREEN
+	
+	character_label.self_modulate = color
+	dialogue_label.self_modulate = color
