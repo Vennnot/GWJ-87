@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbnvg6vct80cw"
-path="res://.godot/imported/bush2.png-b8cf04419e6ea0dc091df54afa71196a.ctex"
+uid="uid://558qcq42ayp4"
+path="res://.godot/imported/injured_guy.png-b5b708d13b0473d7bad86a58e737d7d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visuals/elements/bush2.png"
-dest_files=["res://.godot/imported/bush2.png-b8cf04419e6ea0dc091df54afa71196a.ctex"]
+source_file="res://assets/visuals/elements/injured_guy.png"
+dest_files=["res://.godot/imported/injured_guy.png-b5b708d13b0473d7bad86a58e737d7d6.ctex"]
 
 [params]
 

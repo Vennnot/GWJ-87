@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://yk1mbl3qkbcp"]
+[gd_scene load_steps=11 format=3 uid="uid://yk1mbl3qkbcp"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_ahqew"]
-[ext_resource type="Texture2D" uid="uid://d35qas4crf8gj" path="res://assets/visuals/backgrounds/bg.png" id="2_y2561"]
-[ext_resource type="Texture2D" uid="uid://dxhuhocw0yacp" path="res://assets/visuals/floors/floor.png" id="3_6s204"]
+[ext_resource type="Texture2D" uid="uid://dra6qgg1nri8w" path="res://assets/visuals/backgrounds/bg_plains.png" id="2_lbn3a"]
+[ext_resource type="Resource" uid="uid://cbbip37gujp5t" path="res://resources/level_info/level4.tres" id="2_sdmh0"]
+[ext_resource type="Texture2D" uid="uid://b5vmycs2lxloc" path="res://assets/visuals/floors/floor_plains.png" id="3_pso0i"]
+[ext_resource type="PackedScene" uid="uid://blnx8e7y58nef" path="res://scenes/entity/entity.tscn" id="5_d40we"]
+[ext_resource type="Texture2D" uid="uid://dihvn6jkposbg" path="res://assets/visuals/portraits/deer.png" id="6_4tddo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -13,19 +16,23 @@ size = Vector2(10, 270)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utwm8"]
 size = Vector2(480, 5)
 
-[node name="Level2" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_27x05"]
+radius = 31.144823
+
+[node name="Level4" type="Node2D" node_paths=PackedStringArray("level_transition_interactable")]
 script = ExtResource("1_ahqew")
+level_info = ExtResource("2_sdmh0")
+level_transition_interactable = NodePath("Entities/LevelTransition")
 
 [node name="Environment" type="Node2D" parent="."]
 
 [node name="Background" type="Sprite2D" parent="Environment"]
 position = Vector2(240, 90)
-texture = ExtResource("2_y2561")
+texture = ExtResource("2_lbn3a")
 
 [node name="Foreground" type="Sprite2D" parent="Environment"]
 position = Vector2(240.00002, 225)
-scale = Vector2(1.05, 1.05)
-texture = ExtResource("3_6s204")
+texture = ExtResource("3_pso0i")
 
 [node name="Bounds" type="Node2D" parent="Environment"]
 
@@ -63,3 +70,12 @@ y_sort_enabled = true
 [node name="PlayerStartPosition" type="Marker2D" parent="Entities"]
 unique_name_in_owner = true
 position = Vector2(14, 228)
+
+[node name="LevelTransition" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_d40we")]
+position = Vector2(142, 220)
+texture = ExtResource("6_4tddo")
+area_collider = NodePath("TransitionCollision")
+level_transition = true
+
+[node name="TransitionCollision" type="CollisionShape2D" parent="Entities/LevelTransition"]
+shape = SubResource("CircleShape2D_27x05")

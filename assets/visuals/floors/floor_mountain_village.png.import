@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbnvg6vct80cw"
-path="res://.godot/imported/bush2.png-b8cf04419e6ea0dc091df54afa71196a.ctex"
+uid="uid://toq0t7qahvqy"
+path="res://.godot/imported/floor_mountain_village.png-48ce865a2eb6419efc2c460a822617d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visuals/elements/bush2.png"
-dest_files=["res://.godot/imported/bush2.png-b8cf04419e6ea0dc091df54afa71196a.ctex"]
+source_file="res://assets/visuals/floors/floor_mountain_village.png"
+dest_files=["res://.godot/imported/floor_mountain_village.png-48ce865a2eb6419efc2c460a822617d0.ctex"]
 
 [params]
 

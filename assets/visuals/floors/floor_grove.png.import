@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbnvg6vct80cw"
-path="res://.godot/imported/bush2.png-b8cf04419e6ea0dc091df54afa71196a.ctex"
+uid="uid://crpcaolj203or"
+path="res://.godot/imported/floor_grove.png-a70f5b6731e3a3e8632fe3d383fae215.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visuals/elements/bush2.png"
-dest_files=["res://.godot/imported/bush2.png-b8cf04419e6ea0dc091df54afa71196a.ctex"]
+source_file="res://assets/visuals/floors/floor_grove.png"
+dest_files=["res://.godot/imported/floor_grove.png-a70f5b6731e3a3e8632fe3d383fae215.ctex"]
 
 [params]
 

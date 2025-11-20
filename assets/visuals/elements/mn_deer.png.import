@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbnvg6vct80cw"
-path="res://.godot/imported/bush2.png-b8cf04419e6ea0dc091df54afa71196a.ctex"
+uid="uid://bircvhoo7w72b"
+path="res://.godot/imported/mn_deer.png-62ed3f2ada32afcdeeb2f0db8d693c2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visuals/elements/bush2.png"
-dest_files=["res://.godot/imported/bush2.png-b8cf04419e6ea0dc091df54afa71196a.ctex"]
+source_file="res://assets/visuals/elements/mn_deer.png"
+dest_files=["res://.godot/imported/mn_deer.png-62ed3f2ada32afcdeeb2f0db8d693c2c.ctex"]
 
 [params]
 
