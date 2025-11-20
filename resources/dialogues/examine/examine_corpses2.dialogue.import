@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bs7yy3qqtbktg"
+path="res://.godot/imported/examine_corpses2.dialogue-a002f9d65ca9c48ef1298eb1441e2b47.tres"
+
+[deps]
+
+source_file="res://resources/dialogues/examine/examine_corpses2.dialogue"
+dest_files=["res://.godot/imported/examine_corpses2.dialogue-a002f9d65ca9c48ef1298eb1441e2b47.tres"]
+
+[params]
+
+defaults=true

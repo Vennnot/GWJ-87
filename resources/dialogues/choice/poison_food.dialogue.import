@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dxxaoqfiqpqrp"
+path="res://.godot/imported/poison_food.dialogue-3f80872862e14b3a742bf02714080eb2.tres"
+
+[deps]
+
+source_file="res://resources/dialogues/choice/poison_food.dialogue"
+dest_files=["res://.godot/imported/poison_food.dialogue-3f80872862e14b3a742bf02714080eb2.tres"]
+
+[params]
+
+defaults=true
