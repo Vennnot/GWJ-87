@@ -31,6 +31,7 @@ light_mask = 3
 
 [node name="PointLight" type="PointLight2D" parent="Visuals"]
 unique_name_in_owner = true
+visible = false
 color = Color(0.37738815, 0.29953024, 0.9999799, 1)
 energy = 0.0
 range_item_cull_mask = 2
