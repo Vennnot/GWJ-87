@@ -37,12 +37,13 @@ signal interacted
 @export_category("Interaction")
 @export var dialogue : DialogueResource
 @export var area_collider : CollisionShape2D
+@export var one_time := false
 
 @export_category("Level Transition")
 @export var level_transition : bool = false
 
 @export_category("Decayable")
-@export var decay_palette : Texture
+@export var decay_palette : Texture2D
 
 
 
@@ -52,6 +53,7 @@ signal interacted
 @onready var interactable_area: Area2D = %InteractableArea
 @onready var interactable_sprite: Sprite2D = %InteractableSprite
 @onready var point_light: PointLight2D = %PointLight
+
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
@@ -81,6 +83,8 @@ func _ready() -> void:
 	if dialogue:
 		point_light.show()
 		tween_light()
+	
+	Events.decay.connect(_on_decay)
 
 
 func tween_light():
@@ -90,10 +94,18 @@ func tween_light():
 	await tween.finished
 	tween_light()
 
+
 func interact():
-	if dialogue:
-		DialogueManager.show_dialogue_balloon(dialogue,"start")
+	if not dialogue:
+		return
+	
+	DialogueManager.show_dialogue_balloon(dialogue,"start")
 	interacted.emit()
+	if one_time:
+		dialogue = null
+		interactable_area.monitorable = false
+		interactable_area.monitoring = false
+		interactable_sprite.hide()
 
 
 func _on_area_entered(other_area:Area2D)->void:
@@ -102,3 +114,11 @@ func _on_area_entered(other_area:Area2D)->void:
 
 func _on_area_exited(other_area:Area2D)->void:
 	interactable_sprite.hide()
+
+
+func _on_decay():
+	if not decay_palette:
+		return
+	sprite.material = sprite.material.duplicate()
+	var palette_material :PaletteMaterial= sprite.material
+	palette_material.set_palette(decay_palette) 

@@ -5,9 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://dxhuhocw0yacp" path="res://assets/visuals/floors/floor.png" id="3_gblnm"]
 [ext_resource type="PackedScene" uid="uid://blnx8e7y58nef" path="res://scenes/entity/entity.tscn" id="4_iq8gt"]
 [ext_resource type="Texture2D" uid="uid://chtfggiy76lt6" path="res://assets/visuals/nature elements/grass1.png" id="5_cphpc"]
-[ext_resource type="SpriteFrames" uid="uid://bfcq1mhofcf1n" path="res://resources/sprite_frames/froggo.tres" id="5_expgy"]
-[ext_resource type="Resource" uid="uid://cnj4iukiab0r7" path="res://resources/dialogues/story/mommy_nature.dialogue" id="6_8t4y1"]
+[ext_resource type="Resource" uid="uid://bxmfyr3072prc" path="res://resources/dialogues/choice/flowers.dialogue" id="6_8t4y1"]
 [ext_resource type="Texture2D" uid="uid://cffo6v2lgb3qq" path="res://assets/visuals/nature elements/rocks1.png" id="6_expgy"]
+[ext_resource type="Texture2D" uid="uid://c4w43x25i8kbm" path="res://assets/visuals/nature elements/rocks1_palette.webp" id="7_8t4y1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -95,10 +95,12 @@ y_sort_enabled = true
 
 [node name="Froggo" parent="Entities" node_paths=PackedStringArray("collider", "area_collider") instance=ExtResource("4_iq8gt")]
 position = Vector2(177, 200)
-sprite_frames = ExtResource("5_expgy")
+texture = ExtResource("6_expgy")
 collider = NodePath("froggo collision")
 dialogue = ExtResource("6_8t4y1")
 area_collider = NodePath("froggo interaction")
+one_time = true
+decay_palette = ExtResource("7_8t4y1")
 
 [node name="froggo interaction" type="CollisionShape2D" parent="Entities/Froggo"]
 shape = SubResource("CapsuleShape2D_0ybc4")
@@ -115,7 +117,9 @@ position = Vector2(14, 228)
 position = Vector2(444, 203)
 texture = ExtResource("5_cphpc")
 sprite_frames = SubResource("SpriteFrames_cphpc")
+one_time = false
 
 [node name="rock1" parent="Entities" instance=ExtResource("4_iq8gt")]
 position = Vector2(456, 211)
 texture = ExtResource("6_expgy")
+one_time = false
