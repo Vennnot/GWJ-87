@@ -96,11 +96,11 @@ func tween_light():
 
 
 func interact():
+	interacted.emit()
 	if not dialogue:
 		return
 	
 	DialogueManager.show_dialogue_balloon(dialogue,"start")
-	interacted.emit()
 	if one_time:
 		dialogue = null
 		interactable_area.monitorable = false

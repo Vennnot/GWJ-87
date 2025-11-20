@@ -1,10 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bp6nx1wq6v17c"]
+[gd_scene load_steps=7 format=3 uid="uid://b1lk72amawefw"]
 
-[ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_e0cvd"]
-[ext_resource type="Texture2D" uid="uid://d35qas4crf8gj" path="res://assets/visuals/backgrounds/bg.png" id="2_rj8cl"]
-[ext_resource type="Texture2D" uid="uid://dxhuhocw0yacp" path="res://assets/visuals/floors/floor.png" id="3_gblnm"]
-[ext_resource type="PackedScene" uid="uid://blnx8e7y58nef" path="res://scenes/entity/entity.tscn" id="4_iq8gt"]
-[ext_resource type="Texture2D" uid="uid://dihvn6jkposbg" path="res://assets/visuals/portraits/deer.png" id="5_iq8gt"]
+[ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_a037e"]
+[ext_resource type="Texture2D" uid="uid://d35qas4crf8gj" path="res://assets/visuals/backgrounds/bg.png" id="2_ji68x"]
+[ext_resource type="Texture2D" uid="uid://dxhuhocw0yacp" path="res://assets/visuals/floors/floor.png" id="3_ji37s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -15,22 +13,19 @@ size = Vector2(10, 270)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utwm8"]
 size = Vector2(480, 5)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_cphpc"]
-radius = 31.144823
-
 [node name="Level2" type="Node2D"]
-script = ExtResource("1_e0cvd")
+script = ExtResource("1_a037e")
 
 [node name="Environment" type="Node2D" parent="."]
 
 [node name="Background" type="Sprite2D" parent="Environment"]
 position = Vector2(240, 90)
-texture = ExtResource("2_rj8cl")
+texture = ExtResource("2_ji68x")
 
 [node name="Foreground" type="Sprite2D" parent="Environment"]
 position = Vector2(240.00002, 225)
 scale = Vector2(1.05, 1.05)
-texture = ExtResource("3_gblnm")
+texture = ExtResource("3_ji37s")
 
 [node name="Bounds" type="Node2D" parent="Environment"]
 
@@ -68,12 +63,3 @@ y_sort_enabled = true
 [node name="PlayerStartPosition" type="Marker2D" parent="Entities"]
 unique_name_in_owner = true
 position = Vector2(14, 228)
-
-[node name="LevelTransition" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("4_iq8gt")]
-position = Vector2(75, 216)
-texture = ExtResource("5_iq8gt")
-area_collider = NodePath("TransitionCollision")
-level_transition = true
-
-[node name="TransitionCollision" type="CollisionShape2D" parent="Entities/LevelTransition"]
-shape = SubResource("CircleShape2D_cphpc")
