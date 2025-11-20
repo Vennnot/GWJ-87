@@ -1,10 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://bp6nx1wq6v17c"]
+[gd_scene load_steps=13 format=3 uid="uid://bp6nx1wq6v17c"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_e0cvd"]
 [ext_resource type="Texture2D" uid="uid://d35qas4crf8gj" path="res://assets/visuals/backgrounds/bg.png" id="2_rj8cl"]
 [ext_resource type="Texture2D" uid="uid://dxhuhocw0yacp" path="res://assets/visuals/floors/floor.png" id="3_gblnm"]
 [ext_resource type="PackedScene" uid="uid://blnx8e7y58nef" path="res://scenes/entity/entity.tscn" id="4_iq8gt"]
-[ext_resource type="Texture2D" uid="uid://chtfggiy76lt6" path="res://assets/visuals/nature elements/grass1.png" id="5_cphpc"]
 [ext_resource type="Resource" uid="uid://bxmfyr3072prc" path="res://resources/dialogues/choice/flowers.dialogue" id="6_8t4y1"]
 [ext_resource type="Texture2D" uid="uid://cffo6v2lgb3qq" path="res://assets/visuals/nature elements/rocks1.png" id="6_expgy"]
 [ext_resource type="Texture2D" uid="uid://c4w43x25i8kbm" path="res://assets/visuals/nature elements/rocks1_palette.webp" id="7_8t4y1"]
@@ -21,30 +20,6 @@ size = Vector2(480, 5)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ybc4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_expgy"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g6esx"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_76kvw"]
-atlas = SubResource("CompressedTexture2D_g6esx")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bc6rc"]
-atlas = SubResource("CompressedTexture2D_g6esx")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_cphpc"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_76kvw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bc6rc")
-}],
-"loop": true,
-"name": &"default",
-"speed": 1.5
-}]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_e0cvd")
@@ -94,7 +69,7 @@ shape = SubResource("RectangleShape2D_utwm8")
 y_sort_enabled = true
 
 [node name="Froggo" parent="Entities" node_paths=PackedStringArray("collider", "area_collider") instance=ExtResource("4_iq8gt")]
-position = Vector2(177, 200)
+position = Vector2(73, 223)
 texture = ExtResource("6_expgy")
 collider = NodePath("froggo collision")
 dialogue = ExtResource("6_8t4y1")
@@ -112,14 +87,3 @@ shape = SubResource("CapsuleShape2D_expgy")
 [node name="PlayerStartPosition" type="Marker2D" parent="Entities"]
 unique_name_in_owner = true
 position = Vector2(14, 228)
-
-[node name="grass1" parent="Entities" instance=ExtResource("4_iq8gt")]
-position = Vector2(444, 203)
-texture = ExtResource("5_cphpc")
-sprite_frames = SubResource("SpriteFrames_cphpc")
-one_time = false
-
-[node name="rock1" parent="Entities" instance=ExtResource("4_iq8gt")]
-position = Vector2(456, 211)
-texture = ExtResource("6_expgy")
-one_time = false
