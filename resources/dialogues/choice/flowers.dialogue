@@ -2,6 +2,7 @@
 Osmomancer: These flowers are beautiful.
 - I should take one.
 	Osmomancer: The rest will wither but that is a price I can pay.
+	do Events.decay.emit()
 - I should not disturb nature.
 	Osmomancer: Everything has its place. Even me.
 => END
