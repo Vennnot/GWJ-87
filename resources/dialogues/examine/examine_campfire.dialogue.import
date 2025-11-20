@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b7mqcqsrmsy4t"
+path="res://.godot/imported/examine_campfire.dialogue-83925a38b2838aa765727e9c5793e992.tres"
+
+[deps]
+
+source_file="res://resources/dialogues/examine/examine_campfire.dialogue"
+dest_files=["res://.godot/imported/examine_campfire.dialogue-83925a38b2838aa765727e9c5793e992.tres"]
+
+[params]
+
+defaults=true

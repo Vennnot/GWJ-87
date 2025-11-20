@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dxjdi53ox7tlv"
+path="res://.godot/imported/examine_background.dialogue-41473fbfad41d352a461001f37c270f0.tres"
+
+[deps]
+
+source_file="res://resources/dialogues/examine/examine_background.dialogue"
+dest_files=["res://.godot/imported/examine_background.dialogue-41473fbfad41d352a461001f37c270f0.tres"]
+
+[params]
+
+defaults=true

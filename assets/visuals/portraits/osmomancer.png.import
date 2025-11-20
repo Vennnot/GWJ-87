@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ba5g7s4j0vv7f"
-path="res://.godot/imported/hermit.png-e79890cbb902af9b0d83afbb1d07a682.ctex"
+path="res://.godot/imported/osmomancer.png-69fa329d449c57c37598c4fc3ea093c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visuals/portraits/hermit.png"
-dest_files=["res://.godot/imported/hermit.png-e79890cbb902af9b0d83afbb1d07a682.ctex"]
+source_file="res://assets/visuals/portraits/osmomancer.png"
+dest_files=["res://.godot/imported/osmomancer.png-69fa329d449c57c37598c4fc3ea093c0.ctex"]
 
 [params]
 

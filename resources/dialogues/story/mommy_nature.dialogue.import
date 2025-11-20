@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cnj4iukiab0r7"
+path="res://.godot/imported/mommy_nature.dialogue-c09357815287d478a0c6719f20c67be4.tres"
+
+[deps]
+
+source_file="res://resources/dialogues/story/mommy_nature.dialogue"
+dest_files=["res://.godot/imported/mommy_nature.dialogue-c09357815287d478a0c6719f20c67be4.tres"]
+
+[params]
+
+defaults=true

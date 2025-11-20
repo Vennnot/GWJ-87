@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://camt24kui6p3y"
+path="res://.godot/imported/examine_mushroom.dialogue-b73f218f24ea560d628aecd3e9f6e562.tres"
+
+[deps]
+
+source_file="res://resources/dialogues/examine/examine_mushroom.dialogue"
+dest_files=["res://.godot/imported/examine_mushroom.dialogue-b73f218f24ea560d628aecd3e9f6e562.tres"]
+
+[params]
+
+defaults=true

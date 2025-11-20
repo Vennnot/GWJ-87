@@ -21,6 +21,7 @@ extends CanvasLayer
 ## A sound player for voice lines (if they exist).
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 
+
 ## Temporary game states
 var temporary_game_states: Array = []
 
@@ -131,7 +132,9 @@ func apply_dialogue_line() -> void:
 	character_label.text = tr(dialogue_line.character, "dialogue")
 	var portrait_path :String= "res://assets/visuals/portraits/%s.png" % dialogue_line.character.to_lower()
 	set_text_color(dialogue_line.character.to_lower())
-	portrait_rect.texture = load(portrait_path)
+	var portrait_texture := load(portrait_path) 
+	if portrait_texture != null:
+		portrait_rect.texture = portrait_texture
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line
 
@@ -217,11 +220,11 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 
 func set_text_color(character:String):
-	var color := Color.WHITE
-	if character == "hermit":
-		color = Color.ANTIQUE_WHITE
+	var color := Global.neutral_color
+	if character == "osmomancer":
+		color = Global.osmomancer_color
 	elif character == "mother":
-		color = Color.GREEN
+		color = Global.mother_color
 	
 	character_label.self_modulate = color
 	dialogue_label.self_modulate = color

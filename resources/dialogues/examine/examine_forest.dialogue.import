@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://s4k18mk30su8"
+path="res://.godot/imported/examine_forest.dialogue-68393f0544c25ac8f4fe43e8a45fefad.tres"
+
+[deps]
+
+source_file="res://resources/dialogues/examine/examine_forest.dialogue"
+dest_files=["res://.godot/imported/examine_forest.dialogue-68393f0544c25ac8f4fe43e8a45fefad.tres"]
+
+[params]
+
+defaults=true

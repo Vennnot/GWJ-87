@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://55v8fe8xuew0"
+path="res://.godot/imported/victim.dialogue-fa7db9fdc1aa9834e4cdede43524f994.tres"
+
+[deps]
+
+source_file="res://resources/dialogues/choice/victim.dialogue"
+dest_files=["res://.godot/imported/victim.dialogue-fa7db9fdc1aa9834e4cdede43524f994.tres"]
+
+[params]
+
+defaults=true

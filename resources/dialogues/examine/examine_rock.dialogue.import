@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dgfo6aprgwggr"
+path="res://.godot/imported/examine_rock.dialogue-80f4871af38009bf99fe4151ffe6c8f2.tres"
+
+[deps]
+
+source_file="res://resources/dialogues/examine/examine_rock.dialogue"
+dest_files=["res://.godot/imported/examine_rock.dialogue-80f4871af38009bf99fe4151ffe6c8f2.tres"]
+
+[params]
+
+defaults=true

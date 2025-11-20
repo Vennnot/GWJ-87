@@ -140,6 +140,7 @@ func _apply_responses() -> void:
 			item.set_meta("response", response)
 
 			add_child(item)
+			item.self_modulate = Global.osmomancer_color
 
 		if auto_configure_focus:
 			configure_focus()

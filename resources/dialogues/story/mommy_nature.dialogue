@@ -1,0 +1,19 @@
+~ start
+Elk?: I am glad to see you return safe.
+Osmomancer: And I to see you, Mother.
+Elk?: Your journey has left you ragged and worn. Will you not rest a moment before your next task?
+Osmomancer: I'm fine.
+Elk?: Very well. Have it your way.
+Elk?: To the east, a town grows unfettered. They have begun to rampage nature.
+Elk?: Trees fall in the forest, animals flee and lakes are pillaged. The balance is disturbed.
+Elk?: Do you know what you must do?
+- No
+	Elk?: "Moss will grow where footsteps cease,
+	Rot restores the forest’s peace."
+- Yes
+	Elk?: You've grown wise quickly.
+	Osmomancer: It's been centuries... I sure hope so.
+Elk?: Restore the balance quickly. Time is of the essence.
+Osmomancer: Very well Mother.
+Elk?: May the soil beneath your feet guide your way.
+=> END

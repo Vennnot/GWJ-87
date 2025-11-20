@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c17rb6uh0dgvw"
+path="res://.godot/imported/frog_mommy_nature.dialogue-f0d478aac5998e064437679bfff1e230.tres"
+
+[deps]
+
+source_file="res://resources/dialogues/story/frog_mommy_nature.dialogue"
+dest_files=["res://.godot/imported/frog_mommy_nature.dialogue-f0d478aac5998e064437679bfff1e230.tres"]
+
+[params]
+
+defaults=true
