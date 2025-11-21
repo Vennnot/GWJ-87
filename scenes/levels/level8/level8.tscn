@@ -1,6 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://innn321iugk8"]
+[gd_scene load_steps=13 format=3 uid="uid://innn321iugk8"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_anutj"]
+[ext_resource type="Texture2D" uid="uid://cg46jyhn6b26x" path="res://assets/visuals/backgrounds/plaza.png" id="2_5s33c"]
+[ext_resource type="Texture2D" uid="uid://dvp3jl8wl075l" path="res://assets/visuals/backgrounds/Floor_plaza.png" id="3_s2i63"]
+[ext_resource type="PackedScene" uid="uid://blnx8e7y58nef" path="res://scenes/entity/entity.tscn" id="4_af80s"]
+[ext_resource type="Texture2D" uid="uid://prrecvje2ih4" path="res://assets/visuals/elements/arrow.png" id="5_r5mya"]
+[ext_resource type="Texture2D" uid="uid://cjg14vavsa3qq" path="res://assets/visuals/elements/fountain.png" id="6_r5mya"]
+[ext_resource type="Resource" uid="uid://uvjqie3v6p26" path="res://resources/dialogues/choice/trader.dialogue" id="7_6076s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -11,6 +17,12 @@ size = Vector2(10, 270)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utwm8"]
 size = Vector2(480, 5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_kddao"]
+radius = 18.027756
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_38wwo"]
+radius = 22.0
+
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_anutj")
 
@@ -18,10 +30,12 @@ script = ExtResource("1_anutj")
 
 [node name="Background" type="Sprite2D" parent="Environment"]
 position = Vector2(240, 90)
+texture = ExtResource("2_5s33c")
 
 [node name="Foreground" type="Sprite2D" parent="Environment"]
 position = Vector2(240.00002, 225)
 scale = Vector2(1.05, 1.05)
+texture = ExtResource("3_s2i63")
 
 [node name="Bounds" type="Node2D" parent="Environment"]
 
@@ -58,4 +72,39 @@ y_sort_enabled = true
 
 [node name="PlayerStartPosition" type="Marker2D" parent="Entities"]
 unique_name_in_owner = true
-position = Vector2(14, 228)
+position = Vector2(26, 220)
+
+[node name="Kids" parent="Entities" node_paths=PackedStringArray("collider", "area_collider") instance=ExtResource("4_af80s")]
+position = Vector2(94, 216)
+scale = Vector2(2, 2)
+texture = ExtResource("5_r5mya")
+collider = NodePath("")
+area_collider = NodePath("KidsInteractionCollision")
+
+[node name="KidsInteractionCollision" type="CollisionShape2D" parent="Entities/Kids"]
+shape = SubResource("CircleShape2D_kddao")
+debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
+
+[node name="City" parent="Entities" node_paths=PackedStringArray("collider", "area_collider") instance=ExtResource("4_af80s")]
+position = Vector2(94, 216)
+scale = Vector2(2, 2)
+texture = ExtResource("5_r5mya")
+collider = NodePath("")
+area_collider = NodePath("CityInteractionCollision")
+
+[node name="CityInteractionCollision" type="CollisionShape2D" parent="Entities/City"]
+shape = SubResource("CircleShape2D_kddao")
+debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
+
+[node name="Fountain" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("4_af80s")]
+position = Vector2(238, 124.000015)
+scale = Vector2(5, 5)
+texture = ExtResource("6_r5mya")
+dialogue = ExtResource("7_6076s")
+area_collider = NodePath("FountainInteractionCollision")
+one_time = true
+
+[node name="FountainInteractionCollision" type="CollisionShape2D" parent="Entities/Fountain"]
+position = Vector2(-0.39999986, 3.1999965)
+shape = SubResource("CircleShape2D_38wwo")
+debug_color = Color(0.94963473, 4.235506e-06, 0.5749154, 0.41960785)
