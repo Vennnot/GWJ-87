@@ -20,7 +20,7 @@ func _ready() -> void:
 
 func _on_interacted()->void:
 	SceneChanger.go_to_scene(level_info.next_scene_file, level_info.end_scene_text)
-
+	queue_free()
 
 func instantiate_player()->void:
 	var player := Global.PLAYER_SCENE.instantiate()

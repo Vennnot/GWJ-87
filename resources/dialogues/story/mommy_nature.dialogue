@@ -8,8 +8,7 @@ Elk?: To the east, a town grows unfettered. They have begun to rampage nature.
 Elk?: Trees fall in the forest, animals flee and lakes are pillaged. The balance is disturbed.
 Elk?: Do you know what you must do?
 - No
-	Elk?: "Moss will grow where footsteps cease,
-	Rot restores the forest’s peace."
+	Elk?: "Moss will grow where footsteps cease, Rot restores the forest’s peace."
 - Yes
 	Elk?: You've grown wise quickly.
 	Osmomancer: It's been centuries... I wouldn't say it was quick.

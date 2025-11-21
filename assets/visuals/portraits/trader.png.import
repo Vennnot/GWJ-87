@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w7iue8yyseyv"
-path="res://.godot/imported/mn_frog_portrait.png-3378f6f0b9535332ad70248e3dea26e7.ctex"
+uid="uid://caq2xm1vhv2o7"
+path="res://.godot/imported/trader.png-ef910ba7127d966f5f602b2f7ea849dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visuals/elements/mn_frog_portrait.png"
-dest_files=["res://.godot/imported/mn_frog_portrait.png-3378f6f0b9535332ad70248e3dea26e7.ctex"]
+source_file="res://assets/visuals/portraits/trader.png"
+dest_files=["res://.godot/imported/trader.png-ef910ba7127d966f5f602b2f7ea849dd.ctex"]
 
 [params]
 

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d7meoepka8m1"
+path="res://.godot/imported/bat_mommy.dialogue-18d79b6ae1c118d73420e1c8111e76b5.tres"
+
+[deps]
+
+source_file="res://resources/dialogues/story/bat_mommy.dialogue"
+dest_files=["res://.godot/imported/bat_mommy.dialogue-18d79b6ae1c118d73420e1c8111e76b5.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dnhdukmf638dk"
+path="res://.godot/imported/examine_kids.dialogue-9bb8317220ab20bc533a70518d0a1805.tres"
+
+[deps]
+
+source_file="res://resources/dialogues/examine/examine_kids.dialogue"
+dest_files=["res://.godot/imported/examine_kids.dialogue-9bb8317220ab20bc533a70518d0a1805.tres"]
+
+[params]
+
+defaults=true

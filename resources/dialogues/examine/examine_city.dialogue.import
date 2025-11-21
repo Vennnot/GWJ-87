@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://hq3u4bshf0ui"
+path="res://.godot/imported/examine_city.dialogue-380db4ab3cfe46a3181807d8ea4e51b1.tres"
+
+[deps]
+
+source_file="res://resources/dialogues/examine/examine_city.dialogue"
+dest_files=["res://.godot/imported/examine_city.dialogue-380db4ab3cfe46a3181807d8ea4e51b1.tres"]
+
+[params]
+
+defaults=true

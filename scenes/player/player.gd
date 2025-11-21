@@ -19,6 +19,7 @@ func _set_interacting(value:bool)->void:
 func _ready() -> void:
 	DialogueManager.dialogue_started.connect(_on_dialogue_started)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
+	Events.player_interacted.connect(_interact)
 
 
 func _on_dialogue_started(dialogue:DialogueResource)->void:
@@ -27,13 +28,6 @@ func _on_dialogue_started(dialogue:DialogueResource)->void:
 
 func _on_dialogue_ended(dialogue:DialogueResource)->void:
 	interacting = false
-
-
-func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed(&"interact"):
-		Events.player_interacted.emit()
-		_interact()
-		return
 
 
 func _interact()->void:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0d5wnvoo8epv"
-path="res://.godot/imported/mn_bat_portrait.png-33a3999d6798205dcf1d4b6c5a6aafac.ctex"
+uid="uid://dihvn6jkposbg"
+path="res://.godot/imported/elk?.png-dbcd7221dee4665cb3d16d80c3a79a6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visuals/elements/mn_bat_portrait.png"
-dest_files=["res://.godot/imported/mn_bat_portrait.png-33a3999d6798205dcf1d4b6c5a6aafac.ctex"]
+source_file="res://assets/visuals/portraits/elk?.png"
+dest_files=["res://.godot/imported/elk?.png-dbcd7221dee4665cb3d16d80c3a79a6c.ctex"]
 
 [params]
 

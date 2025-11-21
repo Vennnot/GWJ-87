@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bving1xsn4wx1" path="res://assets/visuals/floors/floor_lv1.png" id="4_dvtaw"]
 [ext_resource type="Texture2D" uid="uid://prrecvje2ih4" path="res://assets/visuals/elements/arrow.png" id="6_dvtaw"]
 [ext_resource type="SpriteFrames" uid="uid://bfcq1mhofcf1n" path="res://resources/sprite_frames/froggo.tres" id="7_65gyt"]
-[ext_resource type="Resource" uid="uid://bsagudt83oym7" path="res://resources/dialogues/examine/level1/frog.dialogue" id="8_1nwpw"]
+[ext_resource type="Resource" uid="uid://bsagudt83oym7" path="res://resources/dialogues/examine/frog.dialogue" id="8_1nwpw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)

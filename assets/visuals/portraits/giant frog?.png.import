@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpm8ji1e2a38q"
-path="res://.godot/imported/mn-horse_portrait.png-a5fa296c9182f948e66b07c1b0820e99.ctex"
+uid="uid://w7iue8yyseyv"
+path="res://.godot/imported/giant frog?.png-cf55320a6ca9789ea1d431b498b39b06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visuals/elements/mn-horse_portrait.png"
-dest_files=["res://.godot/imported/mn-horse_portrait.png-a5fa296c9182f948e66b07c1b0820e99.ctex"]
+source_file="res://assets/visuals/portraits/giant frog?.png"
+dest_files=["res://.godot/imported/giant frog?.png-cf55320a6ca9789ea1d431b498b39b06.ctex"]
 
 [params]
 

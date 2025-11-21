@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://pdevqwcxwtka"]
+[gd_scene load_steps=2 format=3 uid="uid://pdevqwcxwtka"]
 
 [ext_resource type="Script" uid="uid://b5bxo3d75kmtw" path="res://scenes/main.gd" id="1_o5qli"]
-[ext_resource type="PackedScene" uid="uid://dk2jjqclymris" path="res://scenes/player/player.tscn" id="2_0wfyh"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_o5qli")
@@ -18,6 +17,3 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
-
-[node name="Player" parent="." instance=ExtResource("2_0wfyh")]
-z_index = -5

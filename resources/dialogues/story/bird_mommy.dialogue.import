@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bnioh25ohmbde"
+path="res://.godot/imported/bird_mommy.dialogue-3dd81f5e275632ee96c7443ca316be82.tres"
+
+[deps]
+
+source_file="res://resources/dialogues/story/bird_mommy.dialogue"
+dest_files=["res://.godot/imported/bird_mommy.dialogue-3dd81f5e275632ee96c7443ca316be82.tres"]
+
+[params]
+
+defaults=true

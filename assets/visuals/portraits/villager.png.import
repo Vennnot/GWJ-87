@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tago1vk1efpf"
-path="res://.godot/imported/injured_guy_ortrait.png-0537088278efd586d3bdb1cf9f0f1b05.ctex"
+uid="uid://bx7a2dimbdwvu"
+path="res://.godot/imported/villager.png-e5afc4ea8d7ca443273ba2def2382daf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visuals/elements/injured_guy_ortrait.png"
-dest_files=["res://.godot/imported/injured_guy_ortrait.png-0537088278efd586d3bdb1cf9f0f1b05.ctex"]
+source_file="res://assets/visuals/portraits/villager.png"
+dest_files=["res://.godot/imported/villager.png-e5afc4ea8d7ca443273ba2def2382daf.ctex"]
 
 [params]
 

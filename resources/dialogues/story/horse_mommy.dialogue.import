@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://coav508f06oyh"
+path="res://.godot/imported/horse_mommy.dialogue-a860a7e8624113d60d3f431d4c05d516.tres"
+
+[deps]
+
+source_file="res://resources/dialogues/story/horse_mommy.dialogue"
+dest_files=["res://.godot/imported/horse_mommy.dialogue-a860a7e8624113d60d3f431d4c05d516.tres"]
+
+[params]
+
+defaults=true
