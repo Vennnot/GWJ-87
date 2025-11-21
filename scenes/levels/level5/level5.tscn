@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dg3ik4ihg2bp6"]
+[gd_scene load_steps=23 format=3 uid="uid://dg3ik4ihg2bp6"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_yiof3"]
 [ext_resource type="Resource" uid="uid://seqi8dpqdytu" path="res://resources/level_info/level5.tres" id="2_qp3x7"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://dmce0gdlm0kx4" path="res://assets/visuals/elements/rocks2.png" id="9_7o5g8"]
 [ext_resource type="Resource" uid="uid://dgfo6aprgwggr" path="res://resources/dialogues/examine/examine_rock.dialogue" id="10_qu0uu"]
 [ext_resource type="Resource" uid="uid://dxjdi53ox7tlv" path="res://resources/dialogues/examine/examine_background.dialogue" id="11_qu0uu"]
+[ext_resource type="Texture2D" uid="uid://c4d12ssjf4qmm" path="res://assets/visuals/elements/bat.png" id="12_n1v7q"]
+[ext_resource type="Resource" uid="uid://d7meoepka8m1" path="res://resources/dialogues/story/bat_mommy.dialogue" id="13_vdg2u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -35,6 +37,9 @@ size = Vector2(32.5, 18.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n1v7q"]
 radius = 28.539446
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8060c"]
+radius = 18.027756
 
 [node name="Level5" type="Node2D" node_paths=PackedStringArray("level_transition_interactable")]
 script = ExtResource("1_yiof3")
@@ -117,6 +122,7 @@ texture = ExtResource("9_7o5g8")
 collider = NodePath("RockCollision")
 dialogue = ExtResource("10_qu0uu")
 area_collider = NodePath("RockInteractionCollision")
+one_time = true
 
 [node name="RockInteractionCollision" type="CollisionShape2D" parent="Entities/Rock"]
 shape = SubResource("CircleShape2D_l7hbl")
@@ -135,3 +141,24 @@ area_collider = NodePath("BackgroundInteractionCollision")
 [node name="BackgroundInteractionCollision" type="CollisionShape2D" parent="Entities/Background"]
 shape = SubResource("CircleShape2D_n1v7q")
 debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
+
+[node name="Bat" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_y1jwd")]
+position = Vector2(60, 45)
+scale = Vector2(2, 2)
+texture = ExtResource("12_n1v7q")
+dialogue = ExtResource("13_vdg2u")
+area_collider = NodePath("BatInteractionCollision")
+one_time = true
+
+[node name="Sprite" parent="Entities/Bat/Visuals" index="0"]
+texture = ExtResource("12_n1v7q")
+
+[node name="InteractableSprite" parent="Entities/Bat/Visuals" index="1"]
+position = Vector2(13, 71.5)
+
+[node name="BatInteractionCollision" type="CollisionShape2D" parent="Entities/Bat"]
+position = Vector2(0, 74.5)
+shape = SubResource("CircleShape2D_8060c")
+debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
+
+[editable path="Entities/Bat"]

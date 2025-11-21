@@ -109,11 +109,10 @@ func interact():
 		return
 	
 	DialogueManager.show_dialogue_balloon(dialogue,"start")
-	if one_time:
-		dialogue = null
-		interactable_area.monitorable = false
-		interactable_area.monitoring = false
-		interactable_sprite.hide()
+	dialogue = null
+	interactable_area.monitorable = false
+	interactable_area.monitoring = false
+	interactable_sprite.hide()
 
 
 func _on_area_entered(other_area:Area2D)->void:

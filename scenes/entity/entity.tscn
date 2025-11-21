@@ -30,7 +30,7 @@ material = SubResource("ShaderMaterial_uorv3")
 [node name="InteractableSprite" type="AnimatedSprite2D" parent="Visuals"]
 unique_name_in_owner = true
 visible = false
-position = Vector2(18, -10)
+position = Vector2(13, -10)
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("3_uorv3")
 autoplay = "default"

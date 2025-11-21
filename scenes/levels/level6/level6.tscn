@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://host1ddaioqk"]
+[gd_scene load_steps=19 format=3 uid="uid://host1ddaioqk"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_kid5g"]
 [ext_resource type="Resource" uid="uid://cfl7721aqlj8d" path="res://resources/level_info/level6.tres" id="2_ktt83"]
@@ -11,8 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://ney6qmqsmd6b" path="res://assets/visuals/elements/table.png" id="9_oigun"]
 [ext_resource type="Resource" uid="uid://cgg34yp7bbdtk" path="res://resources/dialogues/examine/examine_festival.dialogue" id="10_ljsju"]
 [ext_resource type="Resource" uid="uid://b7mqcqsrmsy4t" path="res://resources/dialogues/examine/examine_campfire.dialogue" id="11_imcx4"]
-[ext_resource type="Texture2D" uid="uid://c4d12ssjf4qmm" path="res://assets/visuals/elements/bat.png" id="11_vaamq"]
-[ext_resource type="Resource" uid="uid://d7meoepka8m1" path="res://resources/dialogues/story/bat_mommy.dialogue" id="12_vaamq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -125,18 +123,6 @@ dialogue = ExtResource("10_ljsju")
 area_collider = NodePath("FestivalInteractionCollision")
 
 [node name="FestivalInteractionCollision" type="CollisionShape2D" parent="Entities/Festival"]
-shape = SubResource("CircleShape2D_vaamq")
-debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
-
-[node name="Bat" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("4_77ktg")]
-position = Vector2(339, 192)
-scale = Vector2(2, 2)
-texture = ExtResource("11_vaamq")
-dialogue = ExtResource("12_vaamq")
-area_collider = NodePath("BatInteractionCollision")
-one_time = true
-
-[node name="BatInteractionCollision" type="CollisionShape2D" parent="Entities/Bat"]
 shape = SubResource("CircleShape2D_vaamq")
 debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
 
