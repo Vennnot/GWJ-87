@@ -6,7 +6,7 @@ var neutral_color := Color.WHITE
 var mother_color := Color.GREEN
 var osmomancer_color := Color.BLUE
 
-var favor : float = 0
+var favor : int = 100
 
 
 func change_favor(value:int)->void:

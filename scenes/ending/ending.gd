@@ -5,8 +5,18 @@ extends Control
 @onready var texture: TextureRect = %Texture
 @onready var label: Label = %Label
 
+@export var good_ending_text_array : PackedStringArray
+@export var neutral_ending_text_array : PackedStringArray
+@export var bad_ending_text_array : PackedStringArray
+
+var ending_array : PackedStringArray
+var count := -1
 
 func _ready() -> void:
+	Events.player_interacted.connect(_interact)
+	_neutral_ending()
+	_interact()
+	return
 	if Global.favor > 0:
 		_good_ending()
 	elif Global.favor < 0:
@@ -18,19 +28,24 @@ func _ready() -> void:
 
 func _neutral_ending()->void:
 	texture.texture = null
-	label.text = ""
+	ending_array = neutral_ending_text_array
 
 
 func _good_ending()->void:
 	texture.texture = null
-	label.text = ""
+	ending_array = good_ending_text_array
 
 
 func _bad_ending()->void:
 	texture.texture = null
-	label.text = ""
+	ending_array = bad_ending_text_array
 
 
 func tween_text()->void:
 	var tween := create_tween()
 	tween.tween_property(label,"visible_ratio",0,1)
+
+
+func _interact():
+	count+=1
+	label.text = ending_array[count]

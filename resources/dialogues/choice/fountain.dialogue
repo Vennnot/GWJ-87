@@ -1,0 +1,18 @@
+~ start
+Osmomancer: I've made it.
+Osmomancer: Rotherham... it's really changed.
+Osmomancer: I barely recognize it.
+- It's not natural.
+	Osmomancer: Mother was right.
+	Osmomancer: I can't let them continue this.
+	Osmomancer: Water brings life and tonight, it will bring death.
+	do Events.decay.emit()
+- There's a beauty to it.
+	Osmomancer: I'm not sure what it is...
+	Osmomancer: Maybe... maybe this time I'll let them thrive.
+	Osmomancer: I want to see what comes next.
+	do change_favor(100)
+Osmomancer: The world is small.
+Osmomancer: I will come back one day.
+do SceneChanger.go_to_scene("res://scenes/ending/ending.tscn","")
+=> END
