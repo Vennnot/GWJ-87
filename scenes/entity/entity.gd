@@ -57,9 +57,6 @@ signal interacted
 
 
 func _ready() -> void:
-	if Engine.is_editor_hint():
-		return
-	
 	if texture:
 		sprite.texture = texture
 	else:
@@ -70,6 +67,9 @@ func _ready() -> void:
 		animated_sprite.show()
 		animated_sprite.sprite_frames = sprite_frames
 		animated_sprite.play(&"default")
+	
+	if Engine.is_editor_hint():
+		return
 	
 	if collider:
 		static_body.show()

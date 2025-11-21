@@ -7,9 +7,11 @@ extends Node2D
 
 
 @onready var player_start_position: Marker2D = %PlayerStartPosition
+@onready var entities: Node2D = $Entities
 
 func _ready() -> void:
 	instantiate_player()
+	Events.free_scene.connect(queue_free)
 	if not level_info:
 		print("This is the last level!")
 		return
@@ -20,9 +22,8 @@ func _ready() -> void:
 
 func _on_interacted()->void:
 	SceneChanger.go_to_scene(level_info.next_scene_file, level_info.end_scene_text)
-	queue_free()
 
 func instantiate_player()->void:
 	var player := Global.PLAYER_SCENE.instantiate()
-	add_child(player)
+	entities.add_child(player)
 	player.global_position = player_start_position.global_position

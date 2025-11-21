@@ -50,16 +50,16 @@ radius = 8.062258
 y_sort_enabled = true
 collision_mask = 4
 script = ExtResource("1_8afob")
-speed = 50.0
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="." groups=["player"]]
 unique_name_in_owner = true
+position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_p47bc")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2.5)
+position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_dovo2")
 
 [node name="InteractionFinder" type="Area2D" parent="."]

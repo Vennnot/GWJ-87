@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cs30pqbsdw2ka"]
+[gd_scene load_steps=20 format=3 uid="uid://cs30pqbsdw2ka"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_py1vs"]
 [ext_resource type="Resource" uid="uid://drbnnhypk5ier" path="res://resources/level_info/level7.tres" id="2_kqmug"]
@@ -10,7 +10,9 @@
 [ext_resource type="Resource" uid="uid://bs7yy3qqtbktg" path="res://resources/dialogues/examine/examine_corpses2.dialogue" id="8_m3nhs"]
 [ext_resource type="Texture2D" uid="uid://be1dav56hxyhp" path="res://assets/visuals/elements/trader.png" id="9_m3nhs"]
 [ext_resource type="Texture2D" uid="uid://blkafthp37f1w" path="res://assets/visuals/elements/farmer.png" id="9_yen31"]
+[ext_resource type="Texture2D" uid="uid://dqbyumyn4jjy6" path="res://assets/visuals/elements/mn_crow.png" id="10_1bbg3"]
 [ext_resource type="Resource" uid="uid://uvjqie3v6p26" path="res://resources/dialogues/choice/trader.dialogue" id="10_3tvwi"]
+[ext_resource type="Resource" uid="uid://bnioh25ohmbde" path="res://resources/dialogues/story/bird_mommy.dialogue" id="11_t3ssf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -91,11 +93,10 @@ level_transition = true
 [node name="TransitionCollision" type="CollisionShape2D" parent="Entities/LevelTransition"]
 shape = SubResource("CircleShape2D_m3nhs")
 
-[node name="Corpses1" parent="Entities" node_paths=PackedStringArray("collider", "area_collider") instance=ExtResource("5_ir7x8")]
+[node name="Corpses1" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_ir7x8")]
 position = Vector2(337, 186)
 scale = Vector2(2, 2)
 texture = ExtResource("6_kqmug")
-collider = NodePath("")
 dialogue = ExtResource("7_fcbuj")
 area_collider = NodePath("CorpsesInteractionCollision")
 
@@ -103,11 +104,10 @@ area_collider = NodePath("CorpsesInteractionCollision")
 shape = SubResource("CircleShape2D_3tvwi")
 debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
 
-[node name="Corpses2" parent="Entities" node_paths=PackedStringArray("collider", "area_collider") instance=ExtResource("5_ir7x8")]
+[node name="Corpses2" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_ir7x8")]
 position = Vector2(214, 189)
 scale = Vector2(2, 2)
 texture = ExtResource("6_kqmug")
-collider = NodePath("")
 dialogue = ExtResource("8_m3nhs")
 area_collider = NodePath("CorpsesInteractionCollision")
 
@@ -115,14 +115,25 @@ area_collider = NodePath("CorpsesInteractionCollision")
 shape = SubResource("CircleShape2D_3tvwi")
 debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
 
-[node name="Farmer" parent="Entities" node_paths=PackedStringArray("collider", "area_collider") instance=ExtResource("5_ir7x8")]
+[node name="Farmer" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_ir7x8")]
 position = Vector2(282, 234)
 scale = Vector2(2, 2)
 texture = ExtResource("9_yen31")
-collider = NodePath("")
 area_collider = NodePath("FarmerInteractionCollision")
 
 [node name="FarmerInteractionCollision" type="CollisionShape2D" parent="Entities/Farmer"]
+shape = SubResource("CircleShape2D_3tvwi")
+debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
+
+[node name="Bird" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_ir7x8")]
+position = Vector2(44, 172)
+scale = Vector2(2, 2)
+texture = ExtResource("10_1bbg3")
+dialogue = ExtResource("11_t3ssf")
+area_collider = NodePath("BirdInteractionCollision")
+one_time = true
+
+[node name="BirdInteractionCollision" type="CollisionShape2D" parent="Entities/Bird"]
 shape = SubResource("CircleShape2D_3tvwi")
 debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
 

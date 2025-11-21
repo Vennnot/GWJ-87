@@ -1,12 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://innn321iugk8"]
+[gd_scene load_steps=15 format=3 uid="uid://innn321iugk8"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_anutj"]
 [ext_resource type="Texture2D" uid="uid://cg46jyhn6b26x" path="res://assets/visuals/backgrounds/plaza.png" id="2_5s33c"]
 [ext_resource type="Texture2D" uid="uid://dvp3jl8wl075l" path="res://assets/visuals/backgrounds/Floor_plaza.png" id="3_s2i63"]
 [ext_resource type="PackedScene" uid="uid://blnx8e7y58nef" path="res://scenes/entity/entity.tscn" id="4_af80s"]
 [ext_resource type="Texture2D" uid="uid://prrecvje2ih4" path="res://assets/visuals/elements/arrow.png" id="5_r5mya"]
+[ext_resource type="Texture2D" uid="uid://b07qmmfhti35o" path="res://assets/visuals/elements/mn_horse.png" id="6_6076s"]
 [ext_resource type="Texture2D" uid="uid://cjg14vavsa3qq" path="res://assets/visuals/elements/fountain.png" id="6_r5mya"]
 [ext_resource type="Resource" uid="uid://uvjqie3v6p26" path="res://resources/dialogues/choice/trader.dialogue" id="7_6076s"]
+[ext_resource type="Resource" uid="uid://coav508f06oyh" path="res://resources/dialogues/story/horse_mommy.dialogue" id="7_kddao"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -74,25 +76,35 @@ y_sort_enabled = true
 unique_name_in_owner = true
 position = Vector2(26, 220)
 
-[node name="Kids" parent="Entities" node_paths=PackedStringArray("collider", "area_collider") instance=ExtResource("4_af80s")]
+[node name="Kids" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("4_af80s")]
 position = Vector2(94, 216)
 scale = Vector2(2, 2)
 texture = ExtResource("5_r5mya")
-collider = NodePath("")
 area_collider = NodePath("KidsInteractionCollision")
 
 [node name="KidsInteractionCollision" type="CollisionShape2D" parent="Entities/Kids"]
 shape = SubResource("CircleShape2D_kddao")
 debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
 
-[node name="City" parent="Entities" node_paths=PackedStringArray("collider", "area_collider") instance=ExtResource("4_af80s")]
+[node name="City" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("4_af80s")]
 position = Vector2(94, 216)
 scale = Vector2(2, 2)
 texture = ExtResource("5_r5mya")
-collider = NodePath("")
 area_collider = NodePath("CityInteractionCollision")
 
 [node name="CityInteractionCollision" type="CollisionShape2D" parent="Entities/City"]
+shape = SubResource("CircleShape2D_kddao")
+debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
+
+[node name="Horse" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("4_af80s")]
+position = Vector2(395, 223)
+scale = Vector2(2, 2)
+texture = ExtResource("6_6076s")
+dialogue = ExtResource("7_kddao")
+area_collider = NodePath("HorseInteractionCollision")
+one_time = true
+
+[node name="HorseInteractionCollision" type="CollisionShape2D" parent="Entities/Horse"]
 shape = SubResource("CircleShape2D_kddao")
 debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
 

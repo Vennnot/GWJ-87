@@ -6,6 +6,7 @@ extends CanvasLayer
 
 func go_to_scene(scene:String="", end_scene_text:String=""):
 	await darken()
+	Events.free_scene.emit()
 	scene_text.text = end_scene_text
 	if end_scene_text:
 		await animate_text()

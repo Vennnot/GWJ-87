@@ -57,10 +57,6 @@ bg_color = Color(0.16924527, 0.16924533, 0.16924518, 1)
 [node name="DialogueBalloon" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_36de5")
-start_from_title = null
-auto_start = null
-next_action = null
-skip_action = null
 
 [node name="Balloon" type="Control" parent="."]
 unique_name_in_owner = true

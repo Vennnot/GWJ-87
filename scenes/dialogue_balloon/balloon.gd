@@ -221,10 +221,17 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 func set_text_color(character:String):
 	var color := Global.neutral_color
-	if character == "osmomancer":
-		color = Global.osmomancer_color
-	elif character == "mother":
-		color = Global.mother_color
+	match character:
+		"osmomancer":
+			color = Global.osmomancer_color
+		"elk?":
+			color = Global.mother_color
+		"horse?":
+			color = Global.mother_color	
+		"crow?":
+			color = Global.mother_color	
+		"bat?":
+			color = Global.mother_color	
 	
 	character_label.self_modulate = color
 	dialogue_label.self_modulate = color
