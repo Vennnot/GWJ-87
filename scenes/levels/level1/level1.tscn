@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d1r5kkx3ukpgu"]
+[gd_scene load_steps=15 format=3 uid="uid://d1r5kkx3ukpgu"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_stl25"]
 [ext_resource type="PackedScene" uid="uid://blnx8e7y58nef" path="res://scenes/entity/entity.tscn" id="2_3xb12"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://d35qas4crf8gj" path="res://assets/visuals/backgrounds/bg.png" id="3_o5tsl"]
 [ext_resource type="Texture2D" uid="uid://bving1xsn4wx1" path="res://assets/visuals/floors/floor_lv1.png" id="4_dvtaw"]
 [ext_resource type="Texture2D" uid="uid://prrecvje2ih4" path="res://assets/visuals/elements/arrow.png" id="6_dvtaw"]
+[ext_resource type="SpriteFrames" uid="uid://bfcq1mhofcf1n" path="res://resources/sprite_frames/froggo.tres" id="7_65gyt"]
+[ext_resource type="Resource" uid="uid://bsagudt83oym7" path="res://resources/dialogues/examine/level1/frog.dialogue" id="8_1nwpw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -18,6 +20,12 @@ size = Vector2(480, 5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bvf2d"]
 radius = 31.144823
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5bog2"]
+size = Vector2(23, 8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yc1fu"]
+radius = 22.0
 
 [node name="Level1" type="Node2D" node_paths=PackedStringArray("level_transition_interactable")]
 script = ExtResource("1_stl25")
@@ -72,10 +80,29 @@ unique_name_in_owner = true
 position = Vector2(9, 228)
 
 [node name="LevelTransition" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("2_3xb12")]
-position = Vector2(142, 220)
+position = Vector2(219, 192)
+rotation = 4.712389
 texture = ExtResource("6_dvtaw")
 area_collider = NodePath("TransitionCollision")
 level_transition = true
 
 [node name="TransitionCollision" type="CollisionShape2D" parent="Entities/LevelTransition"]
 shape = SubResource("CircleShape2D_bvf2d")
+
+[node name="Frog" parent="Entities" node_paths=PackedStringArray("collider", "area_collider") instance=ExtResource("2_3xb12")]
+position = Vector2(108, 209)
+scale = Vector2(-1, 1)
+sprite_frames = ExtResource("7_65gyt")
+collider = NodePath("FrogCollision")
+dialogue = ExtResource("8_1nwpw")
+area_collider = NodePath("FrogInteractionCollision")
+one_time = true
+
+[node name="FrogCollision" type="CollisionShape2D" parent="Entities/Frog"]
+position = Vector2(-0.5, 12)
+shape = SubResource("RectangleShape2D_5bog2")
+
+[node name="FrogInteractionCollision" type="CollisionShape2D" parent="Entities/Frog"]
+position = Vector2(1, -1)
+shape = SubResource("CircleShape2D_yc1fu")
+debug_color = Color(0.94963473, 4.235506e-06, 0.5749154, 0.41960785)

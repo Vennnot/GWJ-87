@@ -1,11 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://host1ddaioqk"]
+[gd_scene load_steps=19 format=3 uid="uid://host1ddaioqk"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_kid5g"]
 [ext_resource type="Resource" uid="uid://cfl7721aqlj8d" path="res://resources/level_info/level6.tres" id="2_ktt83"]
 [ext_resource type="Texture2D" uid="uid://cysefn481g6fd" path="res://assets/visuals/backgrounds/bg_mountain_village.png" id="2_ymfgg"]
 [ext_resource type="Texture2D" uid="uid://toq0t7qahvqy" path="res://assets/visuals/floors/floor_mountain_village.png" id="3_rjpb1"]
 [ext_resource type="PackedScene" uid="uid://blnx8e7y58nef" path="res://scenes/entity/entity.tscn" id="4_77ktg"]
-[ext_resource type="Texture2D" uid="uid://dihvn6jkposbg" path="res://assets/visuals/portraits/deer.png" id="5_ktt83"]
+[ext_resource type="Texture2D" uid="uid://prrecvje2ih4" path="res://assets/visuals/elements/arrow.png" id="6_ktt83"]
+[ext_resource type="Texture2D" uid="uid://d2hcwhyf4w5s1" path="res://assets/visuals/elements/person3.png" id="7_qbjt4"]
+[ext_resource type="Resource" uid="uid://dxxaoqfiqpqrp" path="res://resources/dialogues/choice/poison_food.dialogue" id="8_oigun"]
+[ext_resource type="Texture2D" uid="uid://ney6qmqsmd6b" path="res://assets/visuals/elements/table.png" id="9_oigun"]
+[ext_resource type="Resource" uid="uid://cgg34yp7bbdtk" path="res://resources/dialogues/examine/examine_festival.dialogue" id="10_ljsju"]
+[ext_resource type="Resource" uid="uid://b7mqcqsrmsy4t" path="res://resources/dialogues/examine/examine_campfire.dialogue" id="11_imcx4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -18,6 +23,15 @@ size = Vector2(480, 5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iun15"]
 radius = 31.144823
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d0h1k"]
+radius = 22.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljsju"]
+size = Vector2(28.333328, 11.333328)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vaamq"]
+radius = 18.027756
 
 [node name="Level6" type="Node2D" node_paths=PackedStringArray("level_transition_interactable")]
 script = ExtResource("1_kid5g")
@@ -72,10 +86,55 @@ unique_name_in_owner = true
 position = Vector2(14, 228)
 
 [node name="LevelTransition" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("4_77ktg")]
-position = Vector2(142, 220)
-texture = ExtResource("5_ktt83")
+position = Vector2(447, 209)
+texture = ExtResource("6_ktt83")
 area_collider = NodePath("TransitionCollision")
 level_transition = true
 
 [node name="TransitionCollision" type="CollisionShape2D" parent="Entities/LevelTransition"]
 shape = SubResource("CircleShape2D_iun15")
+
+[node name="Villager" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("4_77ktg")]
+position = Vector2(279, 238)
+texture = ExtResource("7_qbjt4")
+dialogue = ExtResource("8_oigun")
+area_collider = NodePath("VillagerInteractionCollision")
+one_time = true
+
+[node name="VillagerInteractionCollision" type="CollisionShape2D" parent="Entities/Villager"]
+position = Vector2(1, -1)
+shape = SubResource("CircleShape2D_d0h1k")
+debug_color = Color(0.94963473, 4.235506e-06, 0.5749154, 0.41960785)
+
+[node name="Food" parent="Entities" instance=ExtResource("4_77ktg")]
+position = Vector2(298, 250)
+scale = Vector2(2, 2)
+texture = ExtResource("9_oigun")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Food"]
+position = Vector2(0.16666412, 4.333336)
+shape = SubResource("RectangleShape2D_ljsju")
+
+[node name="Festival" parent="Entities" node_paths=PackedStringArray("collider", "area_collider") instance=ExtResource("4_77ktg")]
+position = Vector2(94, 221)
+scale = Vector2(2, 2)
+texture = ExtResource("6_ktt83")
+collider = NodePath("")
+dialogue = ExtResource("10_ljsju")
+area_collider = NodePath("FestivalInteractionCollision")
+
+[node name="FestivalInteractionCollision" type="CollisionShape2D" parent="Entities/Festival"]
+shape = SubResource("CircleShape2D_vaamq")
+debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
+
+[node name="Campfire" parent="Entities" node_paths=PackedStringArray("collider", "area_collider") instance=ExtResource("4_77ktg")]
+position = Vector2(218, 205)
+scale = Vector2(2, 2)
+texture = ExtResource("6_ktt83")
+collider = NodePath("")
+dialogue = ExtResource("11_imcx4")
+area_collider = NodePath("CampfireInteractionCollision")
+
+[node name="CampfireInteractionCollision" type="CollisionShape2D" parent="Entities/Campfire"]
+shape = SubResource("CircleShape2D_vaamq")
+debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)

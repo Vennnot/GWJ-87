@@ -41,6 +41,7 @@ signal interacted
 
 @export_category("Level Transition")
 @export var level_transition : bool = false
+@export var initially_disabled : bool = false
 
 @export_category("Decayable")
 @export var decay_palette : Texture2D
@@ -84,7 +85,14 @@ func _ready() -> void:
 		point_light.show()
 		tween_light()
 	
+	if level_transition and initially_disabled:
+		hide()
+		interactable_area.monitorable = false
+	
 	Events.decay.connect(_on_decay)
+	Events.enable_level_transition.connect(func():
+		show()
+		interactable_area.monitorable = true)
 
 
 func tween_light():

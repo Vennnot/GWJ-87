@@ -1,5 +1,5 @@
 ~ start
-Osmomancer: These flowers are beautiful.
+Osmomancer: These fields of flowers are beautiful.
 - I should take one.
 	Osmomancer: The rest will wither but that is a price I can pay.
 	do Events.decay.emit()

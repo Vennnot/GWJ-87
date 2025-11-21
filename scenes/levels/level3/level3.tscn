@@ -1,11 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1lk72amawefw"]
+[gd_scene load_steps=15 format=3 uid="uid://b1lk72amawefw"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_a037e"]
 [ext_resource type="Texture2D" uid="uid://c3g7hftnkliru" path="res://assets/visuals/backgrounds/bg_lv1.png" id="2_aod77"]
 [ext_resource type="Resource" uid="uid://3bg0uv0q6mc" path="res://resources/level_info/level3.tres" id="2_ohtdt"]
 [ext_resource type="Texture2D" uid="uid://bving1xsn4wx1" path="res://assets/visuals/floors/floor_lv1.png" id="3_lirhk"]
 [ext_resource type="PackedScene" uid="uid://blnx8e7y58nef" path="res://scenes/entity/entity.tscn" id="5_orhx0"]
-[ext_resource type="Texture2D" uid="uid://dihvn6jkposbg" path="res://assets/visuals/portraits/deer.png" id="6_hjakd"]
+[ext_resource type="Texture2D" uid="uid://prrecvje2ih4" path="res://assets/visuals/elements/arrow.png" id="6_ohtdt"]
+[ext_resource type="SpriteFrames" uid="uid://bfcq1mhofcf1n" path="res://resources/sprite_frames/froggo.tres" id="7_hjakd"]
+[ext_resource type="Resource" uid="uid://c17rb6uh0dgvw" path="res://resources/dialogues/story/frog_mommy_nature.dialogue" id="8_hjakd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -18,6 +20,12 @@ size = Vector2(480, 5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5fsi0"]
 radius = 31.144823
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfwes"]
+size = Vector2(23, 8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t1p5v"]
+radius = 22.0
 
 [node name="Level3" type="Node2D" node_paths=PackedStringArray("level_transition_interactable")]
 script = ExtResource("1_a037e")
@@ -69,13 +77,30 @@ y_sort_enabled = true
 
 [node name="PlayerStartPosition" type="Marker2D" parent="Entities"]
 unique_name_in_owner = true
-position = Vector2(14, 228)
+position = Vector2(230, 188)
 
 [node name="LevelTransition" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_orhx0")]
-position = Vector2(142, 220)
-texture = ExtResource("6_hjakd")
+position = Vector2(437, 206)
+texture = ExtResource("6_ohtdt")
 area_collider = NodePath("TransitionCollision")
 level_transition = true
 
 [node name="TransitionCollision" type="CollisionShape2D" parent="Entities/LevelTransition"]
 shape = SubResource("CircleShape2D_5fsi0")
+
+[node name="Frog" parent="Entities" node_paths=PackedStringArray("collider", "area_collider") instance=ExtResource("5_orhx0")]
+position = Vector2(108, 209)
+sprite_frames = ExtResource("7_hjakd")
+collider = NodePath("FrogCollision")
+dialogue = ExtResource("8_hjakd")
+area_collider = NodePath("FrogInteractionCollision")
+one_time = true
+
+[node name="FrogCollision" type="CollisionShape2D" parent="Entities/Frog"]
+position = Vector2(-0.5, 12)
+shape = SubResource("RectangleShape2D_nfwes")
+
+[node name="FrogInteractionCollision" type="CollisionShape2D" parent="Entities/Frog"]
+position = Vector2(1, -1)
+shape = SubResource("CircleShape2D_t1p5v")
+debug_color = Color(0.94963473, 4.235506e-06, 0.5749154, 0.41960785)

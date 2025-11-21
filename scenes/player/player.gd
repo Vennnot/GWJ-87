@@ -50,6 +50,10 @@ func _physics_process(delta: float) -> void:
 	if input_vector != Vector2.ZERO:
 		if not animated_sprite.is_playing():
 			animated_sprite.play("walk")
+		if input_vector.x > 0:
+			animated_sprite.scale = Vector2.ONE
+		elif input_vector.x < 0:
+			animated_sprite.scale = Vector2(-1,1)
 		velocity = input_vector * speed
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, friction*delta)

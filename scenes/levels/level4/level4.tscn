@@ -1,11 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://yk1mbl3qkbcp"]
+[gd_scene load_steps=17 format=3 uid="uid://yk1mbl3qkbcp"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_ahqew"]
 [ext_resource type="Texture2D" uid="uid://dra6qgg1nri8w" path="res://assets/visuals/backgrounds/bg_plains.png" id="2_lbn3a"]
 [ext_resource type="Resource" uid="uid://cbbip37gujp5t" path="res://resources/level_info/level4.tres" id="2_sdmh0"]
 [ext_resource type="Texture2D" uid="uid://b5vmycs2lxloc" path="res://assets/visuals/floors/floor_plains.png" id="3_pso0i"]
 [ext_resource type="PackedScene" uid="uid://blnx8e7y58nef" path="res://scenes/entity/entity.tscn" id="5_d40we"]
-[ext_resource type="Texture2D" uid="uid://dihvn6jkposbg" path="res://assets/visuals/portraits/deer.png" id="6_4tddo"]
+[ext_resource type="Texture2D" uid="uid://prrecvje2ih4" path="res://assets/visuals/elements/arrow.png" id="6_sdmh0"]
+[ext_resource type="Texture2D" uid="uid://br85y4cyxt5yr" path="res://assets/visuals/elements/flowers.png" id="7_4tddo"]
+[ext_resource type="Resource" uid="uid://bxmfyr3072prc" path="res://resources/dialogues/choice/flowers.dialogue" id="8_4tddo"]
+[ext_resource type="Texture2D" uid="uid://bxe3ro03darms" path="res://assets/visuals/elements/mushroom.png" id="9_gor1f"]
+[ext_resource type="Resource" uid="uid://camt24kui6p3y" path="res://resources/dialogues/examine/examine_mushroom.dialogue" id="10_6jcyl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -18,6 +22,12 @@ size = Vector2(480, 5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_27x05"]
 radius = 31.144823
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gor1f"]
+radius = 22.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q4udx"]
+radius = 15.132746
 
 [node name="Level4" type="Node2D" node_paths=PackedStringArray("level_transition_interactable")]
 script = ExtResource("1_ahqew")
@@ -69,13 +79,36 @@ y_sort_enabled = true
 
 [node name="PlayerStartPosition" type="Marker2D" parent="Entities"]
 unique_name_in_owner = true
-position = Vector2(14, 228)
+position = Vector2(45, 220)
 
 [node name="LevelTransition" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_d40we")]
-position = Vector2(142, 220)
-texture = ExtResource("6_4tddo")
+position = Vector2(462, 215)
+texture = ExtResource("6_sdmh0")
 area_collider = NodePath("TransitionCollision")
 level_transition = true
 
 [node name="TransitionCollision" type="CollisionShape2D" parent="Entities/LevelTransition"]
 shape = SubResource("CircleShape2D_27x05")
+
+[node name="Flowers" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_d40we")]
+position = Vector2(205, 201)
+scale = Vector2(2, 2)
+texture = ExtResource("7_4tddo")
+dialogue = ExtResource("8_4tddo")
+area_collider = NodePath("FlowersInteractionCollision")
+one_time = true
+
+[node name="FlowersInteractionCollision" type="CollisionShape2D" parent="Entities/Flowers"]
+position = Vector2(1, -1)
+shape = SubResource("CircleShape2D_gor1f")
+debug_color = Color(0.94963473, 4.235506e-06, 0.5749154, 0.41960785)
+
+[node name="Mushroom" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_d40we")]
+position = Vector2(312, 212)
+texture = ExtResource("9_gor1f")
+dialogue = ExtResource("10_6jcyl")
+area_collider = NodePath("MushroomInteractionCollision")
+
+[node name="MushroomInteractionCollision" type="CollisionShape2D" parent="Entities/Mushroom"]
+shape = SubResource("CircleShape2D_q4udx")
+debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)

@@ -1,11 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://cs30pqbsdw2ka"]
+[gd_scene load_steps=16 format=3 uid="uid://cs30pqbsdw2ka"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_py1vs"]
 [ext_resource type="Resource" uid="uid://drbnnhypk5ier" path="res://resources/level_info/level7.tres" id="2_kqmug"]
 [ext_resource type="Texture2D" uid="uid://w2t4b2njcjjv" path="res://assets/visuals/floors/floor_fields.png" id="3_gghws"]
-[ext_resource type="Texture2D" uid="uid://dkddm4ctshvs1" path="res://assets/visuals/backgrounds/bg_fields.png" id="3_kqmug"]
+[ext_resource type="Texture2D" uid="uid://l8nxnqlbpv1j" path="res://assets/visuals/backgrounds/bg_fields.png" id="3_kqmug"]
 [ext_resource type="PackedScene" uid="uid://blnx8e7y58nef" path="res://scenes/entity/entity.tscn" id="5_ir7x8"]
-[ext_resource type="Texture2D" uid="uid://dihvn6jkposbg" path="res://assets/visuals/portraits/deer.png" id="6_fcbuj"]
+[ext_resource type="Texture2D" uid="uid://prrecvje2ih4" path="res://assets/visuals/elements/arrow.png" id="6_kqmug"]
+[ext_resource type="Resource" uid="uid://xrk3a2gyg4ky" path="res://resources/dialogues/examine/examine_corpses1.dialogue" id="7_fcbuj"]
+[ext_resource type="Resource" uid="uid://bs7yy3qqtbktg" path="res://resources/dialogues/examine/examine_corpses2.dialogue" id="8_m3nhs"]
+[ext_resource type="Texture2D" uid="uid://be1dav56hxyhp" path="res://assets/visuals/elements/trader.png" id="9_m3nhs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -18,6 +21,12 @@ size = Vector2(480, 5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m3nhs"]
 radius = 31.144823
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3tvwi"]
+radius = 18.027756
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yen31"]
+radius = 22.0
 
 [node name="Level7" type="Node2D" node_paths=PackedStringArray("level_transition_interactable")]
 script = ExtResource("1_py1vs")
@@ -69,13 +78,49 @@ y_sort_enabled = true
 
 [node name="PlayerStartPosition" type="Marker2D" parent="Entities"]
 unique_name_in_owner = true
-position = Vector2(14, 228)
+position = Vector2(25, 225)
 
 [node name="LevelTransition" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_ir7x8")]
-position = Vector2(142, 220)
-texture = ExtResource("6_fcbuj")
+position = Vector2(455, 216)
+texture = ExtResource("6_kqmug")
 area_collider = NodePath("TransitionCollision")
 level_transition = true
 
 [node name="TransitionCollision" type="CollisionShape2D" parent="Entities/LevelTransition"]
 shape = SubResource("CircleShape2D_m3nhs")
+
+[node name="Corpses1" parent="Entities" node_paths=PackedStringArray("collider", "area_collider") instance=ExtResource("5_ir7x8")]
+position = Vector2(337, 186)
+scale = Vector2(2, 2)
+texture = ExtResource("6_kqmug")
+collider = NodePath("")
+dialogue = ExtResource("7_fcbuj")
+area_collider = NodePath("CorpsesInteractionCollision")
+
+[node name="CorpsesInteractionCollision" type="CollisionShape2D" parent="Entities/Corpses1"]
+shape = SubResource("CircleShape2D_3tvwi")
+debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
+
+[node name="Corpses2" parent="Entities" node_paths=PackedStringArray("collider", "area_collider") instance=ExtResource("5_ir7x8")]
+position = Vector2(214, 189)
+scale = Vector2(2, 2)
+texture = ExtResource("6_kqmug")
+collider = NodePath("")
+dialogue = ExtResource("8_m3nhs")
+area_collider = NodePath("CorpsesInteractionCollision")
+
+[node name="CorpsesInteractionCollision" type="CollisionShape2D" parent="Entities/Corpses2"]
+shape = SubResource("CircleShape2D_3tvwi")
+debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
+
+[node name="Trader" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_ir7x8")]
+position = Vector2(107, 220)
+scale = Vector2(2, 2)
+texture = ExtResource("9_m3nhs")
+area_collider = NodePath("TraderInteractionCollision")
+one_time = true
+
+[node name="TraderInteractionCollision" type="CollisionShape2D" parent="Entities/Trader"]
+position = Vector2(1, -1)
+shape = SubResource("CircleShape2D_yen31")
+debug_color = Color(0.94963473, 4.235506e-06, 0.5749154, 0.41960785)

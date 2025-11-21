@@ -17,4 +17,5 @@ Elk?: ...
 Elk?: Restore the balance quickly. Time is of the essence.
 Osmomancer: Very well Mother.
 Elk?: May the soil beneath your feet guide your way.
+do Events.enable_level_transition.emit()
 => END

@@ -1,15 +1,15 @@
 [gd_scene load_steps=9 format=3 uid="uid://dk2jjqclymris"]
 
 [ext_resource type="Script" uid="uid://dxetir3wcay4g" path="res://scenes/player/player.gd" id="1_8afob"]
-[ext_resource type="Texture2D" uid="uid://gni2vgiht7bv" path="res://assets/visuals/player/lil_player.png" id="2_dovo2"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gmlin"]
-atlas = ExtResource("2_dovo2")
-region = Rect2(0, 0, 7, 7)
+[ext_resource type="Texture2D" uid="uid://cxbg6gh3x3il5" path="res://assets/visuals/player/lil_player.png" id="2_dovo2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lvxji"]
 atlas = ExtResource("2_dovo2")
 region = Rect2(7, 0, 7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmlin"]
+atlas = ExtResource("2_dovo2")
+region = Rect2(0, 0, 7, 7)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p47bc"]
 atlas = ExtResource("2_dovo2")
@@ -19,7 +19,7 @@ region = Rect2(14, 0, 7, 7)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gmlin")
+"texture": SubResource("AtlasTexture_lvxji")
 }],
 "loop": false,
 "name": &"idle",
@@ -41,9 +41,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
+size = Vector2(4, 3)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dovo2"]
-radius = 20.615528
+radius = 8.062258
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -57,13 +58,8 @@ sprite_frames = SubResource("SpriteFrames_p47bc")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="AnimatedSprite" type="AnimatedSprite2D" parent="AnimatedSprite" groups=["player"]]
-sprite_frames = SubResource("SpriteFrames_p47bc")
-animation = &"idle"
-autoplay = "idle"
-
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
+position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_dovo2")
 
 [node name="InteractionFinder" type="Area2D" parent="."]

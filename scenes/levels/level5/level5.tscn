@@ -1,11 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://dg3ik4ihg2bp6"]
+[gd_scene load_steps=20 format=3 uid="uid://dg3ik4ihg2bp6"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_yiof3"]
 [ext_resource type="Resource" uid="uid://seqi8dpqdytu" path="res://resources/level_info/level5.tres" id="2_qp3x7"]
 [ext_resource type="Texture2D" uid="uid://dk2cgp3fh1rxl" path="res://assets/visuals/floors/mountains_floor.png" id="3_5jqg7"]
 [ext_resource type="Texture2D" uid="uid://djx0381re675n" path="res://assets/visuals/backgrounds/Bg_mountains.png" id="3_qp3x7"]
 [ext_resource type="PackedScene" uid="uid://blnx8e7y58nef" path="res://scenes/entity/entity.tscn" id="5_y1jwd"]
-[ext_resource type="Texture2D" uid="uid://dihvn6jkposbg" path="res://assets/visuals/portraits/deer.png" id="6_ooy8r"]
+[ext_resource type="Texture2D" uid="uid://prrecvje2ih4" path="res://assets/visuals/elements/arrow.png" id="6_qp3x7"]
+[ext_resource type="Texture2D" uid="uid://558qcq42ayp4" path="res://assets/visuals/elements/injured_guy.png" id="7_ooy8r"]
+[ext_resource type="Resource" uid="uid://55v8fe8xuew0" path="res://resources/dialogues/choice/victim.dialogue" id="8_ooy8r"]
+[ext_resource type="Texture2D" uid="uid://dmce0gdlm0kx4" path="res://assets/visuals/elements/rocks2.png" id="9_7o5g8"]
+[ext_resource type="Resource" uid="uid://dgfo6aprgwggr" path="res://resources/dialogues/examine/examine_rock.dialogue" id="10_qu0uu"]
+[ext_resource type="Resource" uid="uid://dxjdi53ox7tlv" path="res://resources/dialogues/examine/examine_background.dialogue" id="11_qu0uu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -18,6 +23,18 @@ size = Vector2(480, 5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wn2ti"]
 radius = 31.144823
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7o5g8"]
+radius = 22.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l7hbl"]
+radius = 15.132746
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7o5g8"]
+size = Vector2(32.5, 18.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n1v7q"]
+radius = 28.539446
 
 [node name="Level5" type="Node2D" node_paths=PackedStringArray("level_transition_interactable")]
 script = ExtResource("1_yiof3")
@@ -72,10 +89,51 @@ unique_name_in_owner = true
 position = Vector2(14, 228)
 
 [node name="LevelTransition" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_y1jwd")]
-position = Vector2(142, 220)
-texture = ExtResource("6_ooy8r")
+position = Vector2(457, 216)
+texture = ExtResource("6_qp3x7")
 area_collider = NodePath("TransitionCollision")
 level_transition = true
 
 [node name="TransitionCollision" type="CollisionShape2D" parent="Entities/LevelTransition"]
 shape = SubResource("CircleShape2D_wn2ti")
+
+[node name="Victim" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_y1jwd")]
+position = Vector2(388, 256)
+scale = Vector2(2, 2)
+texture = ExtResource("7_ooy8r")
+dialogue = ExtResource("8_ooy8r")
+area_collider = NodePath("VictimInteractionCollision")
+one_time = true
+
+[node name="VictimInteractionCollision" type="CollisionShape2D" parent="Entities/Victim"]
+position = Vector2(1, -1)
+shape = SubResource("CircleShape2D_7o5g8")
+debug_color = Color(0.94963473, 4.235506e-06, 0.5749154, 0.41960785)
+
+[node name="Rock" parent="Entities" node_paths=PackedStringArray("collider", "area_collider") instance=ExtResource("5_y1jwd")]
+position = Vector2(149, 214)
+scale = Vector2(2, 2)
+texture = ExtResource("9_7o5g8")
+collider = NodePath("RockCollision")
+dialogue = ExtResource("10_qu0uu")
+area_collider = NodePath("RockInteractionCollision")
+
+[node name="RockInteractionCollision" type="CollisionShape2D" parent="Entities/Rock"]
+shape = SubResource("CircleShape2D_l7hbl")
+debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
+
+[node name="RockCollision" type="CollisionShape2D" parent="Entities/Rock"]
+position = Vector2(0.25, 3.75)
+shape = SubResource("RectangleShape2D_7o5g8")
+
+[node name="Background" parent="Entities" node_paths=PackedStringArray("collider", "area_collider") instance=ExtResource("5_y1jwd")]
+position = Vector2(247, 176)
+scale = Vector2(2, 2)
+texture = ExtResource("6_qp3x7")
+collider = NodePath("")
+dialogue = ExtResource("11_qu0uu")
+area_collider = NodePath("BackgroundInteractionCollision")
+
+[node name="BackgroundInteractionCollision" type="CollisionShape2D" parent="Entities/Background"]
+shape = SubResource("CircleShape2D_n1v7q")
+debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
