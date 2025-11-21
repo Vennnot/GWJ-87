@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_stl25"]
 [ext_resource type="PackedScene" uid="uid://blnx8e7y58nef" path="res://scenes/entity/entity.tscn" id="2_3xb12"]
 [ext_resource type="Resource" uid="uid://bwedtka5n30t2" path="res://resources/level_info/level1.tres" id="2_bvf2d"]
-[ext_resource type="Texture2D" uid="uid://d35qas4crf8gj" path="res://assets/visuals/backgrounds/bg.png" id="3_o5tsl"]
+[ext_resource type="Texture2D" uid="uid://c3g7hftnkliru" path="res://assets/visuals/backgrounds/bg_lv1.png" id="3_1nwpw"]
 [ext_resource type="Texture2D" uid="uid://bving1xsn4wx1" path="res://assets/visuals/floors/floor_lv1.png" id="4_dvtaw"]
 [ext_resource type="Texture2D" uid="uid://prrecvje2ih4" path="res://assets/visuals/elements/arrow.png" id="6_dvtaw"]
 [ext_resource type="SpriteFrames" uid="uid://bfcq1mhofcf1n" path="res://resources/sprite_frames/froggo.tres" id="7_65gyt"]
@@ -36,7 +36,7 @@ level_transition_interactable = NodePath("Entities/LevelTransition")
 
 [node name="Background" type="Sprite2D" parent="Environment"]
 position = Vector2(240, 90)
-texture = ExtResource("3_o5tsl")
+texture = ExtResource("3_1nwpw")
 
 [node name="Foreground" type="Sprite2D" parent="Environment"]
 position = Vector2(240, 225)

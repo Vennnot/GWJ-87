@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d35qas4crf8gj"
-path="res://.godot/imported/bg.png-8edcf5f205ef44a848ee01b1d6b0a71c.ctex"
+uid="uid://bx7a2dimbdwvu"
+path="res://.godot/imported/mountaon_villager_portrait.png-71b7302e4c36f3da62619ca170a4d7e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visuals/backgrounds/bg.png"
-dest_files=["res://.godot/imported/bg.png-8edcf5f205ef44a848ee01b1d6b0a71c.ctex"]
+source_file="res://assets/visuals/elements/mountaon_villager_portrait.png"
+dest_files=["res://.godot/imported/mountaon_villager_portrait.png-71b7302e4c36f3da62619ca170a4d7e5.ctex"]
 
 [params]
 
