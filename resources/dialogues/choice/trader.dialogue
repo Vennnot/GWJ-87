@@ -1,0 +1,23 @@
+~ start
+Trader: Someone else, thank god!
+Trader: I'm no longer welcome in this city due to... some savvy trades.
+Osmomancer: ...
+Trader: Lucky to not have lost my head of course as the others around here, as you say.
+Osmomancer: ...
+Trader: However my throat is dry and I already hunger although my journey has barely begun.
+Trader: Would you exchange some goods with me. I will offer you good prices friend!
+- I've nothing to trade.
+	Osmomancer: Even if I did I doubt I would deal with you.
+	Trader: It seems there's only madmen in this country.
+	Trader: I hope you get what's coming to you!
+	Osmomancer: I hope so too.
+- I have some fermented berries.
+	Osmomancer: Take these fermented berries.
+	Osmomancer: They will satisfy you. I promise you won't thirst or hunger again.
+	Trader: My friend you are too generous!
+	Trader: I myself bequeath you my autograph. A prized possession in all lands!
+	Trader: I am after all Jarko the Trader.
+	Osmomancer: ...
+	Osmomancer: Of course.
+	Trader: Until next time my friend! 
+=> END

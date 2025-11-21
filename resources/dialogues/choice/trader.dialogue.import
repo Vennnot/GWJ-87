@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://uvjqie3v6p26"
+path="res://.godot/imported/trader.dialogue-403a50adc205e9e8421aa800b19ec707.tres"
+
+[deps]
+
+source_file="res://resources/dialogues/choice/trader.dialogue"
+dest_files=["res://.godot/imported/trader.dialogue-403a50adc205e9e8421aa800b19ec707.tres"]
+
+[params]
+
+defaults=true
