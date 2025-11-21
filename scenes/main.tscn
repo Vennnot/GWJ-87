@@ -1,7 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://pdevqwcxwtka"]
+[gd_scene load_steps=3 format=3 uid="uid://pdevqwcxwtka"]
 
-[ext_resource type="PackedScene" uid="uid://d1r5kkx3ukpgu" path="res://scenes/levels/level1/level1.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://b5bxo3d75kmtw" path="res://scenes/main.gd" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://dk2jjqclymris" path="res://scenes/player/player.tscn" id="2_0wfyh"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_o5qli")
+starting_text = "After another successful task, he returns to the grove. His shoulders heavy and eyes glazed; he moves forward.
 
-[node name="Level1" parent="." instance=ExtResource("1_o5qli")]
+
+The moon shines through the canopy. It's a beautiful night."
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Player" parent="." instance=ExtResource("2_0wfyh")]
+z_index = -5
