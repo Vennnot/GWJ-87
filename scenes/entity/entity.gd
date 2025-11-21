@@ -52,7 +52,7 @@ signal interacted
 @onready var sprite: Sprite2D = %Sprite
 @onready var animated_sprite: AnimatedSprite2D = %AnimatedSprite
 @onready var interactable_area: Area2D = %InteractableArea
-@onready var interactable_sprite: Sprite2D = %InteractableSprite
+@onready var interactable_sprite: AnimatedSprite2D = %InteractableSprite
 @onready var point_light: PointLight2D = %PointLight
 
 

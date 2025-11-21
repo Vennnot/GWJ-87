@@ -126,11 +126,9 @@ debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
 position = Vector2(0.25, 3.75)
 shape = SubResource("RectangleShape2D_7o5g8")
 
-[node name="Background" parent="Entities" node_paths=PackedStringArray("collider", "area_collider") instance=ExtResource("5_y1jwd")]
+[node name="Background" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_y1jwd")]
 position = Vector2(247, 176)
 scale = Vector2(2, 2)
-texture = ExtResource("6_qp3x7")
-collider = NodePath("")
 dialogue = ExtResource("11_qu0uu")
 area_collider = NodePath("BackgroundInteractionCollision")
 

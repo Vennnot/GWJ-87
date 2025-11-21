@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://blnx8e7y58nef"]
+[gd_scene load_steps=8 format=3 uid="uid://blnx8e7y58nef"]
 
 [ext_resource type="Script" uid="uid://ddb7i3y8dsuni" path="res://scenes/entity/entity.gd" id="1_t6or0"]
 [ext_resource type="Script" uid="uid://vrs1twpulcy0" path="res://addons/PaletteSwapShader/PaletteMaterial.gd" id="2_l1e1h"]
+[ext_resource type="SpriteFrames" uid="uid://lnjt4lohe0xy" path="res://resources/sprite_frames/star.tres" id="3_uorv3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uorv3"]
 script = ExtResource("2_l1e1h")
@@ -26,9 +27,13 @@ unique_name_in_owner = true
 light_mask = 3
 material = SubResource("ShaderMaterial_uorv3")
 
-[node name="InteractableSprite" type="Sprite2D" parent="Visuals"]
+[node name="InteractableSprite" type="AnimatedSprite2D" parent="Visuals"]
 unique_name_in_owner = true
 visible = false
+position = Vector2(18, -10)
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("3_uorv3")
+autoplay = "default"
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="Visuals"]
 unique_name_in_owner = true
