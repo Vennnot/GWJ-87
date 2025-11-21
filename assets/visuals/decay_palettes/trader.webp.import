@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c78sei8ynr4ja"
-path="res://.godot/imported/trader.webp-b7b3d169a7e7e08d9bab9896251250e7.ctex"
+path="res://.godot/imported/trader.webp-386a1da7588c5195238a61ce198c2050.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="/home/dan/projects/gwj-87/assets/visuals/decay_palettes/trader.webp"
-dest_files=["res://.godot/imported/trader.webp-b7b3d169a7e7e08d9bab9896251250e7.ctex"]
+source_file="res://assets/visuals/decay_palettes/trader.webp"
+dest_files=["res://.godot/imported/trader.webp-386a1da7588c5195238a61ce198c2050.ctex"]
 
 [params]
 
