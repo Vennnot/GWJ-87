@@ -1,9 +1,15 @@
 ~ start
-Victim: ...
-Osmomancer: He's unconscious. Heavily wounded as well.
-- I won't allow him to suffer any longer...
-	Osmomancer: Return to the soil. From the earth new life will come.
-- Life must go on, sadly.
-	Osmomancer: Endure. The cycle will claim you in time.
-	Victim: ...
+Villager: Welcome traveler! Why such a sour face? It is Tyri eve!
+Osmomancer: ...
+Villager: Pray, tell, what is your name traveler?
+Osmomancer: I'm Edrin.
+Villager: Edrin, I promise tonight will be a night to remember. Won't you join us?
+- It will be. You'll remember to respect nature.
+	Osmomancer: These bounties belong to the earth.
+	do Events.decay.emit()
+	Villager: Our food! What did you do?
+	Osmomancer: Do not come closer lest you want to cut your cycle short.
+- Enjoy your evening. I must be on my way
+	Villager: A shame! I'll carry your name in my songs tonight, safe travels!
+	Osmomancer: Thank you.	
 => END
