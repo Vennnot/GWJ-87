@@ -44,5 +44,13 @@ func tween_text()->void:
 
 
 func _interact():
+	if count >= ending_array.size():
+		_ending()
+		return
 	count+=1
 	label.text = ending_array[count]
+
+
+func _ending():
+	label.text = "The end! \n
+	Thank you for playing"
