@@ -16,16 +16,18 @@ func go_to_scene(scene:String="", end_scene_text:String=""):
 
 
 func darken()->void:
+	AudioManager.play("transition")
 	var tween := create_tween()
-	tween.tween_property(color_rect,"material:shader_parameter/progress",1,0.5)
+	tween.tween_property(color_rect,"material:shader_parameter/progress",1,0.25)
 	await tween.step_finished
 
 
 func undarken()->void:
 	var tween := create_tween()
 	tween.tween_property(scene_text,"visible_ratio",0,1)
-	tween.chain().tween_property(color_rect,"material:shader_parameter/progress",0,0.5)
+	tween.chain().tween_property(color_rect,"material:shader_parameter/progress",0,0.25)
 	await tween.step_finished
+	AudioManager.play("transition")
 
 
 func animate_text()->void:

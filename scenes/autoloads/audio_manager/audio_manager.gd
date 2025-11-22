@@ -3,7 +3,7 @@ extends Node
 @export_category("Audio Files")
 @export var audio_library: Dictionary = {
 	"interaction": preload("uid://ceg1f3wu0suxq"),
-	
+	"transition":preload("uid://brrqrhgr4ghic"),
 	
 	# SFX - Arrays (multiple variations)
 
