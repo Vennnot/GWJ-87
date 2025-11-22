@@ -14,9 +14,6 @@ var count := -1
 
 func _ready() -> void:
 	Events.player_interacted.connect(_interact)
-	_neutral_ending()
-	_interact()
-	return
 	if Global.favor > 0:
 		_good_ending()
 	elif Global.favor < 0:
