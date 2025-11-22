@@ -121,6 +121,7 @@ func start(with_dialogue_resource: DialogueResource = null, title: String = "", 
 
 ## Apply any changes to the balloon given a new [DialogueLine].
 func apply_dialogue_line() -> void:
+	AudioManager.play("typing")
 	mutation_cooldown.stop()
 
 	progress.hide()

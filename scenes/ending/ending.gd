@@ -13,6 +13,7 @@ var ending_array : PackedStringArray
 var count := -1
 
 func _ready() -> void:
+	AudioManager.play("ending","music")
 	Events.player_interacted.connect(_interact)
 	if Global.favor > 0:
 		_good_ending()
@@ -40,7 +41,7 @@ func _bad_ending()->void:
 
 func tween_text()->void:
 	var tween := create_tween()
-	tween.tween_property(label,"visible_ratio",0,1)
+	tween.tween_property(label,"visible_ratio",0,0.5)
 
 
 func _interact():

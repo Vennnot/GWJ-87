@@ -105,6 +105,7 @@ func tween_light():
 
 func interact():
 	interacted.emit()
+	AudioManager.play("interaction")
 	if not dialogue:
 		return
 	

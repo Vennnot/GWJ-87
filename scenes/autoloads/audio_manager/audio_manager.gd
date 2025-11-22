@@ -2,16 +2,18 @@ extends Node
 
 @export_category("Audio Files")
 @export var audio_library: Dictionary = {
-	# SFX - Single files
+	"interaction": preload("uid://ceg1f3wu0suxq"),
+	
 	
 	# SFX - Arrays (multiple variations)
 
-	#"player_died":[preload("uid://fiyumv3p5far"), preload("uid://cj0yv680dtpm2")],
+	"typing":[preload("uid://cwa4vxcwvm3xk"), preload("uid://6la2wp2i4os3"), preload("uid://cqc2dh0f5rvtx"), preload("uid://bl0coci0xvx5r"), preload("uid://c2vl72pr5qp01"), preload("uid://e1qvjm0cokpr")],
 }
 
 @export_category("Music")
 @export var music_library: Dictionary = {
-	#"music":preload("uid://dus7jmygpnesw")
+	"default":preload("uid://c4nja6bv82o6o"),
+	"ending":preload("uid://db0qrwfctldfw")
 }
 
 @onready var current_music: AudioStreamPlayer = %CurrentMusic
@@ -19,7 +21,7 @@ extends Node
 @export var crossfade_time := 0.1
 
 func _ready():
-	pass
+	play("default","music")
 
 func play(sound: String, sound_bus: String = "sfx"):
 	if sound_bus == "sfx":
