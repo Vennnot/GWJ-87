@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d1r5kkx3ukpgu"]
+[gd_scene load_steps=20 format=3 uid="uid://d1r5kkx3ukpgu"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_stl25"]
 [ext_resource type="PackedScene" uid="uid://blnx8e7y58nef" path="res://scenes/entity/entity.tscn" id="2_3xb12"]
@@ -8,6 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://prrecvje2ih4" path="res://assets/visuals/elements/arrow.png" id="6_dvtaw"]
 [ext_resource type="SpriteFrames" uid="uid://bfcq1mhofcf1n" path="res://resources/sprite_frames/froggo.tres" id="7_65gyt"]
 [ext_resource type="Resource" uid="uid://bsagudt83oym7" path="res://resources/dialogues/examine/frog.dialogue" id="8_1nwpw"]
+[ext_resource type="Texture2D" uid="uid://bbnvg6vct80cw" path="res://assets/visuals/elements/bush2.png" id="9_1vdy0"]
+[ext_resource type="Texture2D" uid="uid://c02b82jb6bd46" path="res://assets/visuals/elements/grass2.png" id="10_d50gp"]
+[ext_resource type="Texture2D" uid="uid://dmce0gdlm0kx4" path="res://assets/visuals/elements/rocks2.png" id="11_apumb"]
+[ext_resource type="Texture2D" uid="uid://cffo6v2lgb3qq" path="res://assets/visuals/elements/rocks1.png" id="12_hdarg"]
+[ext_resource type="Texture2D" uid="uid://bxe3ro03darms" path="res://assets/visuals/elements/mushroom.png" id="13_8ytgl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -43,6 +48,7 @@ position = Vector2(240, 225)
 texture = ExtResource("4_dvtaw")
 
 [node name="Bounds" type="Node2D" parent="Environment"]
+visible = false
 
 [node name="Top" type="StaticBody2D" parent="Environment/Bounds"]
 position = Vector2(240, 90)
@@ -107,3 +113,32 @@ shape = SubResource("RectangleShape2D_5bog2")
 position = Vector2(1, -1)
 shape = SubResource("CircleShape2D_yc1fu")
 debug_color = Color(0.94963473, 4.235506e-06, 0.5749154, 0.41960785)
+
+[node name="Bush" parent="Entities" instance=ExtResource("2_3xb12")]
+position = Vector2(19, 158)
+texture = ExtResource("9_1vdy0")
+
+[node name="Bush2" parent="Entities" instance=ExtResource("2_3xb12")]
+position = Vector2(51, 178)
+texture = ExtResource("9_1vdy0")
+
+[node name="Bush3" parent="Entities" instance=ExtResource("2_3xb12")]
+position = Vector2(19, 193.99998)
+scale = Vector2(1.5689279, 1.5689279)
+texture = ExtResource("9_1vdy0")
+
+[node name="Grass2" type="Sprite2D" parent="Entities"]
+position = Vector2(128, 156)
+texture = ExtResource("10_d50gp")
+
+[node name="Rocks2" type="Sprite2D" parent="Entities"]
+position = Vector2(151, 207)
+texture = ExtResource("11_apumb")
+
+[node name="Rocks1" type="Sprite2D" parent="Entities"]
+position = Vector2(170, 172)
+texture = ExtResource("12_hdarg")
+
+[node name="Mushroom" type="Sprite2D" parent="Entities"]
+position = Vector2(139, 230)
+texture = ExtResource("13_8ytgl")

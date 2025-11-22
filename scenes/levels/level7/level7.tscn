@@ -116,8 +116,8 @@ shape = SubResource("CircleShape2D_3tvwi")
 debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
 
 [node name="Farmer" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_ir7x8")]
-position = Vector2(282, 234)
-scale = Vector2(2, 2)
+position = Vector2(276, 240)
+scale = Vector2(3, 3)
 texture = ExtResource("9_yen31")
 area_collider = NodePath("FarmerInteractionCollision")
 
@@ -139,7 +139,7 @@ debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
 
 [node name="Trader" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_ir7x8")]
 position = Vector2(107, 220)
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 texture = ExtResource("9_m3nhs")
 dialogue = ExtResource("10_3tvwi")
 area_collider = NodePath("TraderInteractionCollision")
