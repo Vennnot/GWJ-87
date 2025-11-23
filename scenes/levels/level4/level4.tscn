@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://yk1mbl3qkbcp"]
+[gd_scene load_steps=25 format=3 uid="uid://yk1mbl3qkbcp"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_ahqew"]
 [ext_resource type="Texture2D" uid="uid://dra6qgg1nri8w" path="res://assets/visuals/backgrounds/bg_plains.png" id="2_lbn3a"]
@@ -9,7 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://br85y4cyxt5yr" path="res://assets/visuals/elements/flowers.png" id="7_4tddo"]
 [ext_resource type="Resource" uid="uid://bxmfyr3072prc" path="res://resources/dialogues/choice/flowers.dialogue" id="8_4tddo"]
 [ext_resource type="Texture2D" uid="uid://bxe3ro03darms" path="res://assets/visuals/elements/mushroom.png" id="9_gor1f"]
+[ext_resource type="Texture2D" uid="uid://ctues4m527bpw" path="res://assets/visuals/elements/bush1.png" id="9_wocd4"]
 [ext_resource type="Resource" uid="uid://camt24kui6p3y" path="res://resources/dialogues/examine/examine_mushroom.dialogue" id="10_6jcyl"]
+[ext_resource type="Texture2D" uid="uid://cffo6v2lgb3qq" path="res://assets/visuals/elements/rocks1.png" id="12_6w5mp"]
+[ext_resource type="Texture2D" uid="uid://dmce0gdlm0kx4" path="res://assets/visuals/elements/rocks2.png" id="13_doaon"]
+[ext_resource type="Texture2D" uid="uid://chtfggiy76lt6" path="res://assets/visuals/elements/grass1.png" id="14_cwptf"]
+[ext_resource type="Texture2D" uid="uid://c02b82jb6bd46" path="res://assets/visuals/elements/grass2.png" id="15_chqwm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -25,6 +30,17 @@ radius = 31.144823
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gor1f"]
 radius = 22.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6w5mp"]
+size = Vector2(12, 7)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kbe5j"]
+radius = 6.0
+height = 26.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b5byo"]
+radius = 7.0
+height = 26.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q4udx"]
 radius = 15.132746
@@ -98,17 +114,201 @@ dialogue = ExtResource("8_4tddo")
 area_collider = NodePath("FlowersInteractionCollision")
 one_time = true
 
+[node name="Sprite" parent="Entities/Flowers/Visuals" index="0"]
+position = Vector2(0, -5)
+texture = ExtResource("7_4tddo")
+
 [node name="FlowersInteractionCollision" type="CollisionShape2D" parent="Entities/Flowers"]
 position = Vector2(1, -1)
 shape = SubResource("CircleShape2D_gor1f")
 debug_color = Color(0.94963473, 4.235506e-06, 0.5749154, 0.41960785)
 
-[node name="Mushroom" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_d40we")]
-position = Vector2(312, 212)
+[node name="Bush1" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("5_d40we")]
+position = Vector2(246, 299)
+scale = Vector2(2, 2)
+texture = ExtResource("9_wocd4")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/Bush1/Visuals" index="0"]
+position = Vector2(0, -14)
+texture = ExtResource("9_wocd4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Bush1"]
+shape = SubResource("RectangleShape2D_6w5mp")
+
+[node name="Rock11" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("5_d40we")]
+position = Vector2(55, 284)
+texture = ExtResource("12_6w5mp")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/Rock11/Visuals" index="0"]
+position = Vector2(0, -11)
+texture = ExtResource("12_6w5mp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Rock11"]
+position = Vector2(0, -6)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_kbe5j")
+
+[node name="Rock21" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("5_d40we")]
+position = Vector2(7, 280)
+texture = ExtResource("13_doaon")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/Rock21/Visuals" index="0"]
+position = Vector2(0, -13)
+texture = ExtResource("13_doaon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Rock21"]
+position = Vector2(0, -7)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_b5byo")
+
+[node name="Rock23" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("5_d40we")]
+position = Vector2(335, 239)
+texture = ExtResource("13_doaon")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/Rock23/Visuals" index="0"]
+position = Vector2(0, -13)
+texture = ExtResource("13_doaon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Rock23"]
+position = Vector2(0, -7)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_b5byo")
+
+[node name="Rock24" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("5_d40we")]
+position = Vector2(476, 295)
+scale = Vector2(2, 2)
+texture = ExtResource("13_doaon")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/Rock24/Visuals" index="0"]
+position = Vector2(0, -13)
+texture = ExtResource("13_doaon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Rock24"]
+position = Vector2(0, -7)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_b5byo")
+
+[node name="Rock22" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("5_d40we")]
+position = Vector2(118, 226)
+texture = ExtResource("13_doaon")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/Rock22/Visuals" index="0"]
+position = Vector2(0, -13)
+texture = ExtResource("13_doaon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Rock22"]
+position = Vector2(0, -7)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_b5byo")
+
+[node name="Grass11" parent="Entities" instance=ExtResource("5_d40we")]
+position = Vector2(32, 281)
+texture = ExtResource("14_cwptf")
+
+[node name="Sprite" parent="Entities/Grass11/Visuals" index="0"]
+position = Vector2(0, -16)
+texture = ExtResource("14_cwptf")
+
+[node name="Grass15" parent="Entities" instance=ExtResource("5_d40we")]
+position = Vector2(319, 234)
+texture = ExtResource("14_cwptf")
+
+[node name="Sprite" parent="Entities/Grass15/Visuals" index="0"]
+position = Vector2(0, -16)
+texture = ExtResource("14_cwptf")
+
+[node name="Grass14" parent="Entities" instance=ExtResource("5_d40we")]
+position = Vector2(410, 259)
+texture = ExtResource("14_cwptf")
+
+[node name="Sprite" parent="Entities/Grass14/Visuals" index="0"]
+position = Vector2(0, -16)
+texture = ExtResource("14_cwptf")
+
+[node name="Grass13" parent="Entities" instance=ExtResource("5_d40we")]
+position = Vector2(105, 214)
+texture = ExtResource("14_cwptf")
+
+[node name="Sprite" parent="Entities/Grass13/Visuals" index="0"]
+position = Vector2(0, -16)
+texture = ExtResource("14_cwptf")
+
+[node name="Grass12" parent="Entities" instance=ExtResource("5_d40we")]
+position = Vector2(73, 274)
+texture = ExtResource("14_cwptf")
+
+[node name="Sprite" parent="Entities/Grass12/Visuals" index="0"]
+position = Vector2(0, -16)
+texture = ExtResource("14_cwptf")
+
+[node name="Grass21" parent="Entities" instance=ExtResource("5_d40we")]
+position = Vector2(1, 262)
+texture = ExtResource("15_chqwm")
+
+[node name="Sprite" parent="Entities/Grass21/Visuals" index="0"]
+position = Vector2(0, -16)
+texture = ExtResource("15_chqwm")
+
+[node name="Grass24" parent="Entities" instance=ExtResource("5_d40we")]
+position = Vector2(459, 195)
+texture = ExtResource("15_chqwm")
+
+[node name="Sprite" parent="Entities/Grass24/Visuals" index="0"]
+position = Vector2(0, -16)
+texture = ExtResource("15_chqwm")
+
+[node name="Grass23" parent="Entities" instance=ExtResource("5_d40we")]
+position = Vector2(348, 244)
+texture = ExtResource("15_chqwm")
+
+[node name="Sprite" parent="Entities/Grass23/Visuals" index="0"]
+position = Vector2(0, -16)
+texture = ExtResource("15_chqwm")
+
+[node name="Grass22" parent="Entities" instance=ExtResource("5_d40we")]
+position = Vector2(127, 260)
+texture = ExtResource("15_chqwm")
+
+[node name="Sprite" parent="Entities/Grass22/Visuals" index="0"]
+position = Vector2(0, -16)
+texture = ExtResource("15_chqwm")
+
+[node name="Mushroom1" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_d40we")]
+position = Vector2(92.000015, 277)
+scale = Vector2(3, 3)
 texture = ExtResource("9_gor1f")
 dialogue = ExtResource("10_6jcyl")
 area_collider = NodePath("MushroomInteractionCollision")
 
-[node name="MushroomInteractionCollision" type="CollisionShape2D" parent="Entities/Mushroom"]
+[node name="Sprite" parent="Entities/Mushroom1/Visuals" index="0"]
+position = Vector2(0, -4.333333)
+texture = ExtResource("9_gor1f")
+
+[node name="MushroomInteractionCollision" type="CollisionShape2D" parent="Entities/Mushroom1"]
+scale = Vector2(0.33333334, 0.33333334)
 shape = SubResource("CircleShape2D_q4udx")
 debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
+
+[editable path="Entities/Flowers"]
+[editable path="Entities/Bush1"]
+[editable path="Entities/Rock11"]
+[editable path="Entities/Rock21"]
+[editable path="Entities/Rock23"]
+[editable path="Entities/Rock24"]
+[editable path="Entities/Rock22"]
+[editable path="Entities/Grass11"]
+[editable path="Entities/Grass15"]
+[editable path="Entities/Grass14"]
+[editable path="Entities/Grass13"]
+[editable path="Entities/Grass12"]
+[editable path="Entities/Grass21"]
+[editable path="Entities/Grass24"]
+[editable path="Entities/Grass23"]
+[editable path="Entities/Grass22"]
+[editable path="Entities/Mushroom1"]
