@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://innn321iugk8"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_anutj"]
-[ext_resource type="Texture2D" uid="uid://cg46jyhn6b26x" path="res://assets/visuals/backgrounds/plaza.png" id="2_5s33c"]
+[ext_resource type="Texture2D" uid="uid://dcmpiua3fct5d" path="res://assets/visuals/backgrounds/full_plaza.png" id="2_kddao"]
 [ext_resource type="Texture2D" uid="uid://dvp3jl8wl075l" path="res://assets/visuals/backgrounds/Floor_plaza.png" id="3_s2i63"]
 [ext_resource type="PackedScene" uid="uid://blnx8e7y58nef" path="res://scenes/entity/entity.tscn" id="4_af80s"]
 [ext_resource type="Texture2D" uid="uid://bk6mb6ilixat0" path="res://assets/visuals/elements/kid2.png" id="5_38wwo"]
@@ -34,10 +34,11 @@ script = ExtResource("1_anutj")
 [node name="Environment" type="Node2D" parent="."]
 
 [node name="Background" type="Sprite2D" parent="Environment"]
-position = Vector2(240, 90)
-texture = ExtResource("2_5s33c")
+position = Vector2(240, 135)
+texture = ExtResource("2_kddao")
 
 [node name="Foreground" type="Sprite2D" parent="Environment"]
+visible = false
 position = Vector2(240.00002, 225)
 texture = ExtResource("3_s2i63")
 
