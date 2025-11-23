@@ -96,7 +96,6 @@ shape = SubResource("CircleShape2D_m3nhs")
 [node name="Corpses1" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_ir7x8")]
 position = Vector2(337, 186)
 scale = Vector2(2, 2)
-texture = ExtResource("6_kqmug")
 dialogue = ExtResource("7_fcbuj")
 area_collider = NodePath("CorpsesInteractionCollision")
 
@@ -105,9 +104,8 @@ shape = SubResource("CircleShape2D_3tvwi")
 debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
 
 [node name="Corpses2" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_ir7x8")]
-position = Vector2(214, 189)
+position = Vector2(345, 140)
 scale = Vector2(2, 2)
-texture = ExtResource("6_kqmug")
 dialogue = ExtResource("8_m3nhs")
 area_collider = NodePath("CorpsesInteractionCollision")
 
