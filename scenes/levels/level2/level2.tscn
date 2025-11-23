@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bp6nx1wq6v17c"]
+[gd_scene load_steps=24 format=3 uid="uid://bp6nx1wq6v17c"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_e0cvd"]
 [ext_resource type="Resource" uid="uid://h58m7jysjyb3" path="res://resources/level_info/level2.tres" id="2_cphpc"]
@@ -8,6 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://prrecvje2ih4" path="res://assets/visuals/elements/arrow.png" id="6_8t4y1"]
 [ext_resource type="Resource" uid="uid://cnj4iukiab0r7" path="res://resources/dialogues/story/mommy_nature.dialogue" id="7_expgy"]
 [ext_resource type="Texture2D" uid="uid://bircvhoo7w72b" path="res://assets/visuals/elements/mn_deer.png" id="8_0ybc4"]
+[ext_resource type="Texture2D" uid="uid://bbnvg6vct80cw" path="res://assets/visuals/elements/bush2.png" id="9_l44s0"]
+[ext_resource type="Texture2D" uid="uid://cffo6v2lgb3qq" path="res://assets/visuals/elements/rocks1.png" id="10_pwggy"]
+[ext_resource type="Texture2D" uid="uid://dmce0gdlm0kx4" path="res://assets/visuals/elements/rocks2.png" id="11_ntc21"]
+[ext_resource type="Texture2D" uid="uid://chtfggiy76lt6" path="res://assets/visuals/elements/grass1.png" id="12_1d62k"]
+[ext_resource type="Texture2D" uid="uid://c02b82jb6bd46" path="res://assets/visuals/elements/grass2.png" id="13_385ab"]
+[ext_resource type="Texture2D" uid="uid://bxe3ro03darms" path="res://assets/visuals/elements/mushroom.png" id="14_i8ch4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -22,10 +28,21 @@ size = Vector2(480, 5)
 radius = 31.144823
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x0tvk"]
-size = Vector2(23, 8)
+size = Vector2(15.333332, 6.9999924)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bwnqv"]
 radius = 22.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1evj"]
+size = Vector2(12, 7)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fxmmb"]
+radius = 6.0
+height = 26.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_438s1"]
+radius = 7.0
+height = 26.0
 
 [node name="Level2" type="Node2D" node_paths=PackedStringArray("level_transition_interactable")]
 script = ExtResource("1_e0cvd")
@@ -80,7 +97,7 @@ unique_name_in_owner = true
 position = Vector2(14, 228)
 
 [node name="LevelTransition" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("4_iq8gt")]
-position = Vector2(43, 220)
+position = Vector2(16, 222)
 scale = Vector2(-1, 1)
 texture = ExtResource("6_8t4y1")
 dialogue = ExtResource("7_expgy")
@@ -92,8 +109,8 @@ initially_disabled = true
 shape = SubResource("CircleShape2D_expgy")
 
 [node name="Elk" parent="Entities" node_paths=PackedStringArray("collider", "area_collider") instance=ExtResource("4_iq8gt")]
-position = Vector2(257, 219)
-scale = Vector2(-1, 1)
+position = Vector2(222, 117.000015)
+scale = Vector2(-3, 3)
 texture = ExtResource("8_0ybc4")
 collider = NodePath("ElkCollision")
 dialogue = ExtResource("7_expgy")
@@ -101,10 +118,252 @@ area_collider = NodePath("ElkInteractionCollision")
 one_time = true
 
 [node name="ElkCollision" type="CollisionShape2D" parent="Entities/Elk"]
-position = Vector2(-0.5, 12)
+position = Vector2(-1.0000153, 11.499992)
 shape = SubResource("RectangleShape2D_x0tvk")
 
 [node name="ElkInteractionCollision" type="CollisionShape2D" parent="Entities/Elk"]
 position = Vector2(1, -1)
 shape = SubResource("CircleShape2D_bwnqv")
 debug_color = Color(0.94963473, 4.235506e-06, 0.5749154, 0.41960785)
+
+[node name="Bush1" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("4_iq8gt")]
+modulate = Color(0.7137255, 0.85490197, 0.78431374, 1)
+position = Vector2(-4, 205)
+texture = ExtResource("9_l44s0")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/Bush1/Visuals" index="0"]
+position = Vector2(0, -14)
+texture = ExtResource("9_l44s0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Bush1"]
+shape = SubResource("RectangleShape2D_m1evj")
+
+[node name="Rock11" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("4_iq8gt")]
+modulate = Color(0.7137255, 0.85490197, 0.78431374, 1)
+position = Vector2(2, 159)
+texture = ExtResource("10_pwggy")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/Rock11/Visuals" index="0"]
+position = Vector2(0, -11)
+texture = ExtResource("10_pwggy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Rock11"]
+position = Vector2(0, -6)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_fxmmb")
+
+[node name="Rock12" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("4_iq8gt")]
+modulate = Color(0.7137255, 0.85490197, 0.78431374, 1)
+position = Vector2(83, 224)
+scale = Vector2(-1, 1)
+texture = ExtResource("10_pwggy")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/Rock12/Visuals" index="0"]
+position = Vector2(0, -11)
+texture = ExtResource("10_pwggy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Rock12"]
+position = Vector2(0, -6)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_fxmmb")
+
+[node name="Rock21" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("4_iq8gt")]
+modulate = Color(0.7137255, 0.85490197, 0.78431374, 1)
+position = Vector2(122, 164)
+texture = ExtResource("11_ntc21")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/Rock21/Visuals" index="0"]
+position = Vector2(0, -13)
+texture = ExtResource("11_ntc21")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Rock21"]
+position = Vector2(0, -7)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_438s1")
+
+[node name="Rock22" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("4_iq8gt")]
+modulate = Color(0.7137255, 0.85490197, 0.78431374, 1)
+position = Vector2(67, 216)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_ntc21")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/Rock22/Visuals" index="0"]
+position = Vector2(0, -13)
+texture = ExtResource("11_ntc21")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Rock22"]
+position = Vector2(0, -7)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_438s1")
+
+[node name="Rock23" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("4_iq8gt")]
+modulate = Color(0.7137255, 0.85490197, 0.78431374, 1)
+position = Vector2(81, 211)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_ntc21")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/Rock23/Visuals" index="0"]
+position = Vector2(0, -13)
+texture = ExtResource("11_ntc21")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Rock23"]
+position = Vector2(0, -7)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_438s1")
+
+[node name="Grass11" parent="Entities" instance=ExtResource("4_iq8gt")]
+modulate = Color(0.7137255, 0.85490197, 0.78431374, 1)
+position = Vector2(-1, 126)
+texture = ExtResource("12_1d62k")
+
+[node name="Sprite" parent="Entities/Grass11/Visuals" index="0"]
+position = Vector2(0, -16)
+texture = ExtResource("12_1d62k")
+
+[node name="Grass14" parent="Entities" instance=ExtResource("4_iq8gt")]
+modulate = Color(0.7137255, 0.85490197, 0.78431374, 1)
+position = Vector2(139, 152)
+texture = ExtResource("12_1d62k")
+
+[node name="Sprite" parent="Entities/Grass14/Visuals" index="0"]
+position = Vector2(0, -16)
+texture = ExtResource("12_1d62k")
+
+[node name="Grass15" parent="Entities" instance=ExtResource("4_iq8gt")]
+modulate = Color(0.7137255, 0.85490197, 0.78431374, 1)
+position = Vector2(111, 171)
+texture = ExtResource("12_1d62k")
+
+[node name="Sprite" parent="Entities/Grass15/Visuals" index="0"]
+position = Vector2(0, -16)
+texture = ExtResource("12_1d62k")
+
+[node name="Grass13" parent="Entities" instance=ExtResource("4_iq8gt")]
+modulate = Color(0.7137255, 0.85490197, 0.78431374, 1)
+position = Vector2(63, 219)
+texture = ExtResource("12_1d62k")
+
+[node name="Sprite" parent="Entities/Grass13/Visuals" index="0"]
+position = Vector2(0, -16)
+texture = ExtResource("12_1d62k")
+
+[node name="Grass12" parent="Entities" instance=ExtResource("4_iq8gt")]
+modulate = Color(0.7137255, 0.85490197, 0.78431374, 1)
+position = Vector2(14, 170)
+texture = ExtResource("12_1d62k")
+
+[node name="Sprite" parent="Entities/Grass12/Visuals" index="0"]
+position = Vector2(0, -16)
+texture = ExtResource("12_1d62k")
+
+[node name="Grass21" parent="Entities" instance=ExtResource("4_iq8gt")]
+modulate = Color(0.7137255, 0.85490197, 0.78431374, 1)
+position = Vector2(11, 137)
+texture = ExtResource("13_385ab")
+
+[node name="Sprite" parent="Entities/Grass21/Visuals" index="0"]
+position = Vector2(0, -16)
+texture = ExtResource("13_385ab")
+
+[node name="Grass23" parent="Entities" instance=ExtResource("4_iq8gt")]
+modulate = Color(0.7137255, 0.85490197, 0.78431374, 1)
+position = Vector2(77, 229)
+texture = ExtResource("13_385ab")
+
+[node name="Sprite" parent="Entities/Grass23/Visuals" index="0"]
+position = Vector2(0, -16)
+texture = ExtResource("13_385ab")
+
+[node name="Grass24" parent="Entities" instance=ExtResource("4_iq8gt")]
+modulate = Color(0.7137255, 0.85490197, 0.78431374, 1)
+position = Vector2(97, 213)
+texture = ExtResource("13_385ab")
+
+[node name="Sprite" parent="Entities/Grass24/Visuals" index="0"]
+position = Vector2(0, -16)
+texture = ExtResource("13_385ab")
+
+[node name="Grass25" parent="Entities" instance=ExtResource("4_iq8gt")]
+modulate = Color(0.7137255, 0.85490197, 0.78431374, 1)
+position = Vector2(67, 157)
+texture = ExtResource("13_385ab")
+
+[node name="Sprite" parent="Entities/Grass25/Visuals" index="0"]
+position = Vector2(0, -16)
+texture = ExtResource("13_385ab")
+
+[node name="Grass22" parent="Entities" instance=ExtResource("4_iq8gt")]
+modulate = Color(0.7137255, 0.85490197, 0.78431374, 1)
+position = Vector2(42, 139)
+texture = ExtResource("13_385ab")
+
+[node name="Sprite" parent="Entities/Grass22/Visuals" index="0"]
+position = Vector2(0, -16)
+texture = ExtResource("13_385ab")
+
+[node name="Mushroom1" parent="Entities" instance=ExtResource("4_iq8gt")]
+modulate = Color(0.7137255, 0.85490197, 0.78431374, 1)
+position = Vector2(69, 186)
+scale = Vector2(3, 3)
+texture = ExtResource("14_i8ch4")
+
+[node name="Sprite" parent="Entities/Mushroom1/Visuals" index="0"]
+position = Vector2(0, -4.333333)
+texture = ExtResource("14_i8ch4")
+
+[node name="Mushroom2" parent="Entities" instance=ExtResource("4_iq8gt")]
+modulate = Color(0.7137255, 0.85490197, 0.78431374, 1)
+position = Vector2(30, 152)
+scale = Vector2(3, 3)
+texture = ExtResource("14_i8ch4")
+
+[node name="Sprite" parent="Entities/Mushroom2/Visuals" index="0"]
+position = Vector2(0, -4.333333)
+texture = ExtResource("14_i8ch4")
+
+[node name="Mushroom3" parent="Entities" instance=ExtResource("4_iq8gt")]
+modulate = Color(0.7137255, 0.85490197, 0.78431374, 1)
+position = Vector2(179, 171)
+scale = Vector2(3, 3)
+texture = ExtResource("14_i8ch4")
+
+[node name="Sprite" parent="Entities/Mushroom3/Visuals" index="0"]
+position = Vector2(0, -4.333333)
+texture = ExtResource("14_i8ch4")
+
+[node name="Mushroom4" parent="Entities" instance=ExtResource("4_iq8gt")]
+modulate = Color(0.7137255, 0.85490197, 0.78431374, 1)
+position = Vector2(294, 157)
+scale = Vector2(3, 3)
+texture = ExtResource("14_i8ch4")
+
+[node name="Sprite" parent="Entities/Mushroom4/Visuals" index="0"]
+position = Vector2(0, -4.333333)
+texture = ExtResource("14_i8ch4")
+
+[editable path="Entities/Bush1"]
+[editable path="Entities/Rock11"]
+[editable path="Entities/Rock12"]
+[editable path="Entities/Rock21"]
+[editable path="Entities/Rock22"]
+[editable path="Entities/Rock23"]
+[editable path="Entities/Grass11"]
+[editable path="Entities/Grass14"]
+[editable path="Entities/Grass15"]
+[editable path="Entities/Grass13"]
+[editable path="Entities/Grass12"]
+[editable path="Entities/Grass21"]
+[editable path="Entities/Grass23"]
+[editable path="Entities/Grass24"]
+[editable path="Entities/Grass25"]
+[editable path="Entities/Grass22"]
+[editable path="Entities/Mushroom1"]
+[editable path="Entities/Mushroom2"]
+[editable path="Entities/Mushroom3"]
+[editable path="Entities/Mushroom4"]
