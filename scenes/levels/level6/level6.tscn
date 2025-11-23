@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://host1ddaioqk"]
+[gd_scene load_steps=26 format=3 uid="uid://host1ddaioqk"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_kid5g"]
 [ext_resource type="Resource" uid="uid://cfl7721aqlj8d" path="res://resources/level_info/level6.tres" id="2_ktt83"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cffo6v2lgb3qq" path="res://assets/visuals/elements/rocks1.png" id="12_vaamq"]
 [ext_resource type="Texture2D" uid="uid://dmce0gdlm0kx4" path="res://assets/visuals/elements/rocks2.png" id="13_0dp8p"]
 [ext_resource type="Texture2D" uid="uid://b1oe4nsi82m50" path="res://assets/visuals/elements/villager1.png" id="16_e6tow"]
+[ext_resource type="Texture2D" uid="uid://bk6mb6ilixat0" path="res://assets/visuals/elements/kid2.png" id="17_sdhcg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 243)
@@ -237,6 +238,74 @@ texture = ExtResource("7_qbjt4")
 position = Vector2(294, 252)
 scale = Vector2(3, 3)
 texture = ExtResource("16_e6tow")
+
+[node name="Kid2" type="Sprite2D" parent="Entities"]
+position = Vector2(262, 263)
+scale = Vector2(3, 3)
+texture = ExtResource("17_sdhcg")
+
+[node name="Villager2" type="Sprite2D" parent="Entities"]
+position = Vector2(94, 188)
+texture = ExtResource("16_e6tow")
+
+[node name="Villager3" type="Sprite2D" parent="Entities"]
+position = Vector2(403, 214)
+scale = Vector2(2, 2)
+texture = ExtResource("16_e6tow")
+
+[node name="Person4" type="Sprite2D" parent="Entities"]
+position = Vector2(390, 214)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qbjt4")
+
+[node name="Table" type="Sprite2D" parent="Entities"]
+position = Vector2(398, 222)
+texture = ExtResource("9_oigun")
+
+[node name="Villager6" type="Sprite2D" parent="Entities"]
+position = Vector2(47, 211)
+scale = Vector2(2, 2)
+texture = ExtResource("16_e6tow")
+
+[node name="Person5" type="Sprite2D" parent="Entities"]
+position = Vector2(34, 211)
+scale = Vector2(2, 2)
+texture = ExtResource("7_erfn0")
+
+[node name="Table3" type="Sprite2D" parent="Entities"]
+position = Vector2(42, 219)
+texture = ExtResource("9_oigun")
+
+[node name="Villager7" type="Sprite2D" parent="Entities"]
+position = Vector2(450, 234)
+scale = Vector2(2, 2)
+texture = ExtResource("16_e6tow")
+
+[node name="Person7" type="Sprite2D" parent="Entities"]
+position = Vector2(437, 234)
+scale = Vector2(-2, 2)
+texture = ExtResource("16_e6tow")
+
+[node name="Table4" type="Sprite2D" parent="Entities"]
+position = Vector2(445, 242)
+texture = ExtResource("9_oigun")
+
+[node name="Villager4" type="Sprite2D" parent="Entities"]
+position = Vector2(94, 188)
+texture = ExtResource("16_e6tow")
+
+[node name="Villager5" type="Sprite2D" parent="Entities"]
+position = Vector2(403, 214)
+scale = Vector2(2, 2)
+texture = ExtResource("16_e6tow")
+
+[node name="Table2" type="Sprite2D" parent="Entities"]
+position = Vector2(398, 222)
+texture = ExtResource("9_oigun")
+
+[node name="Person6" type="Sprite2D" parent="Entities"]
+position = Vector2(295, 178)
+texture = ExtResource("7_qbjt4")
 
 [editable path="Entities/Villager"]
 [editable path="Entities/Food"]

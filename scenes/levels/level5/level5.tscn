@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dg3ik4ihg2bp6"]
+[gd_scene load_steps=29 format=3 uid="uid://dg3ik4ihg2bp6"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_yiof3"]
 [ext_resource type="Resource" uid="uid://seqi8dpqdytu" path="res://resources/level_info/level5.tres" id="2_qp3x7"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cffo6v2lgb3qq" path="res://assets/visuals/elements/rocks1.png" id="14_8060c"]
 [ext_resource type="Texture2D" uid="uid://c02b82jb6bd46" path="res://assets/visuals/elements/grass2.png" id="15_qdufj"]
 [ext_resource type="Texture2D" uid="uid://cwqvjjamoqued" path="res://assets/visuals/elements/mountains_tree.png" id="16_qdufj"]
+[ext_resource type="Texture2D" uid="uid://c0000xweo7nb7" path="res://assets/visuals/elements/campfire.png" id="17_phhxm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -328,6 +329,15 @@ texture = ExtResource("16_qdufj")
 position = Vector2(0, -88)
 texture = ExtResource("16_qdufj")
 
+[node name="Campfire" parent="Entities" instance=ExtResource("5_y1jwd")]
+position = Vector2(143, 244)
+scale = Vector2(2, 2)
+texture = ExtResource("17_phhxm")
+
+[node name="Sprite" parent="Entities/Campfire/Visuals" index="0"]
+position = Vector2(0, -10)
+texture = ExtResource("17_phhxm")
+
 [editable path="Entities/Bat"]
 [editable path="Entities/Rock11"]
 [editable path="Entities/Rock12"]
@@ -342,3 +352,4 @@ texture = ExtResource("16_qdufj")
 [editable path="Entities/Grass23"]
 [editable path="Entities/Tree1"]
 [editable path="Entities/Tree2"]
+[editable path="Entities/Campfire"]

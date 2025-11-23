@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cs30pqbsdw2ka"]
+[gd_scene load_steps=24 format=3 uid="uid://cs30pqbsdw2ka"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_py1vs"]
 [ext_resource type="Resource" uid="uid://drbnnhypk5ier" path="res://resources/level_info/level7.tres" id="2_kqmug"]
@@ -8,14 +8,16 @@
 [ext_resource type="Texture2D" uid="uid://prrecvje2ih4" path="res://assets/visuals/elements/arrow.png" id="6_kqmug"]
 [ext_resource type="Resource" uid="uid://xrk3a2gyg4ky" path="res://resources/dialogues/examine/examine_corpses1.dialogue" id="7_fcbuj"]
 [ext_resource type="Resource" uid="uid://bs7yy3qqtbktg" path="res://resources/dialogues/examine/examine_corpses2.dialogue" id="8_m3nhs"]
+[ext_resource type="Texture2D" uid="uid://dygvx5hgdnwls" path="res://assets/visuals/elements/corpse.png" id="8_yvar7"]
 [ext_resource type="Texture2D" uid="uid://be1dav56hxyhp" path="res://assets/visuals/elements/trader.png" id="9_m3nhs"]
 [ext_resource type="Texture2D" uid="uid://blkafthp37f1w" path="res://assets/visuals/elements/farmer.png" id="9_yen31"]
 [ext_resource type="Texture2D" uid="uid://dqbyumyn4jjy6" path="res://assets/visuals/elements/mn_crow.png" id="10_1bbg3"]
 [ext_resource type="Resource" uid="uid://uvjqie3v6p26" path="res://resources/dialogues/choice/trader.dialogue" id="10_3tvwi"]
 [ext_resource type="Resource" uid="uid://bnioh25ohmbde" path="res://resources/dialogues/story/bird_mommy.dialogue" id="11_t3ssf"]
+[ext_resource type="Texture2D" uid="uid://cxw8h63rohbge" path="res://assets/visuals/elements/hay.png" id="15_u67ve"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
-size = Vector2(480, 180)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnatq"]
+size = Vector2(480, 205)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8naf"]
 size = Vector2(10, 270)
@@ -27,10 +29,17 @@ size = Vector2(480, 5)
 radius = 31.144823
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3tvwi"]
-radius = 18.027756
+radius = 16.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yen31"]
-radius = 22.0
+radius = 18.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u67ve"]
+radius = 8.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d5ddy"]
+radius = 7.0000153
+height = 22.0
 
 [node name="Level7" type="Node2D" node_paths=PackedStringArray("level_transition_interactable")]
 script = ExtResource("1_py1vs")
@@ -54,7 +63,8 @@ position = Vector2(240, 90)
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Bounds/Top"]
-shape = SubResource("RectangleShape2D_buro7")
+position = Vector2(0, 12.5)
+shape = SubResource("RectangleShape2D_nnatq")
 
 [node name="Left" type="StaticBody2D" parent="Environment/Bounds"]
 position = Vector2(0, 135)
@@ -82,10 +92,10 @@ y_sort_enabled = true
 
 [node name="PlayerStartPosition" type="Marker2D" parent="Entities"]
 unique_name_in_owner = true
-position = Vector2(25, 225)
+position = Vector2(122, 221)
 
 [node name="LevelTransition" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_ir7x8")]
-position = Vector2(455, 216)
+position = Vector2(454, 230)
 texture = ExtResource("6_kqmug")
 area_collider = NodePath("TransitionCollision")
 level_transition = true
@@ -100,31 +110,30 @@ dialogue = ExtResource("7_fcbuj")
 area_collider = NodePath("CorpsesInteractionCollision")
 
 [node name="CorpsesInteractionCollision" type="CollisionShape2D" parent="Entities/Corpses1"]
+position = Vector2(-7.5, 10)
 shape = SubResource("CircleShape2D_3tvwi")
 debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
 
 [node name="Corpses2" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_ir7x8")]
-position = Vector2(345, 140)
-scale = Vector2(2, 2)
+modulate = Color(0.74978, 0.74978, 0.74977994, 1)
+position = Vector2(238.00002, 276)
+scale = Vector2(3, 3)
+texture = ExtResource("8_yvar7")
 dialogue = ExtResource("8_m3nhs")
 area_collider = NodePath("CorpsesInteractionCollision")
 
+[node name="Sprite" parent="Entities/Corpses2/Visuals" index="0"]
+position = Vector2(0, -13)
+texture = ExtResource("8_yvar7")
+
 [node name="CorpsesInteractionCollision" type="CollisionShape2D" parent="Entities/Corpses2"]
-shape = SubResource("CircleShape2D_3tvwi")
-debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
-
-[node name="Farmer" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_ir7x8")]
-position = Vector2(276, 240)
-scale = Vector2(3, 3)
-texture = ExtResource("9_yen31")
-area_collider = NodePath("FarmerInteractionCollision")
-
-[node name="FarmerInteractionCollision" type="CollisionShape2D" parent="Entities/Farmer"]
+position = Vector2(-5.086263e-06, -14.666667)
 shape = SubResource("CircleShape2D_3tvwi")
 debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
 
 [node name="Bird" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_ir7x8")]
-position = Vector2(44, 172)
+z_index = 11
+position = Vector2(134, 228)
 scale = Vector2(2, 2)
 texture = ExtResource("10_1bbg3")
 dialogue = ExtResource("11_t3ssf")
@@ -136,8 +145,8 @@ shape = SubResource("CircleShape2D_3tvwi")
 debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
 
 [node name="Trader" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_ir7x8")]
-position = Vector2(107, 220)
-scale = Vector2(3, 3)
+position = Vector2(389, 246)
+scale = Vector2(2, 2)
 texture = ExtResource("9_m3nhs")
 dialogue = ExtResource("10_3tvwi")
 area_collider = NodePath("TraderInteractionCollision")
@@ -147,3 +156,143 @@ one_time = true
 position = Vector2(1, -1)
 shape = SubResource("CircleShape2D_yen31")
 debug_color = Color(0.94963473, 4.235506e-06, 0.5749154, 0.41960785)
+
+[node name="Farmer" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_ir7x8")]
+position = Vector2(55, 239.00002)
+scale = Vector2(3, 3)
+texture = ExtResource("9_yen31")
+area_collider = NodePath("FarmerInteractionCollision")
+
+[node name="FarmerInteractionCollision" type="CollisionShape2D" parent="Entities/Farmer"]
+shape = SubResource("CircleShape2D_u67ve")
+debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
+
+[node name="Hay1" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("5_ir7x8")]
+position = Vector2(-1, 283)
+scale = Vector2(2, 2)
+texture = ExtResource("15_u67ve")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/Hay1/Visuals" index="0"]
+position = Vector2(0, -9)
+texture = ExtResource("15_u67ve")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Hay1"]
+position = Vector2(0, -7)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_d5ddy")
+
+[node name="Hay5" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("5_ir7x8")]
+position = Vector2(71, 181)
+texture = ExtResource("15_u67ve")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/Hay5/Visuals" index="0"]
+position = Vector2(0, -9)
+texture = ExtResource("15_u67ve")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Hay5"]
+position = Vector2(0, -7)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_d5ddy")
+
+[node name="Hay6" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("5_ir7x8")]
+position = Vector2(152, 191)
+texture = ExtResource("15_u67ve")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/Hay6/Visuals" index="0"]
+position = Vector2(0, -9)
+texture = ExtResource("15_u67ve")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Hay6"]
+position = Vector2(0, -7)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_d5ddy")
+
+[node name="Hay7" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("5_ir7x8")]
+position = Vector2(216, 190)
+texture = ExtResource("15_u67ve")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/Hay7/Visuals" index="0"]
+position = Vector2(0, -9)
+texture = ExtResource("15_u67ve")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Hay7"]
+position = Vector2(0, -7)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_d5ddy")
+
+[node name="s5Hay8498+7*-_" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("5_ir7x8")]
+position = Vector2(283, 192)
+texture = ExtResource("15_u67ve")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/s5Hay8498+7*-_/Visuals" index="0"]
+position = Vector2(0, -9)
+texture = ExtResource("15_u67ve")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/s5Hay8498+7*-_"]
+position = Vector2(0, -7)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_d5ddy")
+
+[node name="Hay2" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("5_ir7x8")]
+position = Vector2(32, 284)
+scale = Vector2(2, 2)
+texture = ExtResource("15_u67ve")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/Hay2/Visuals" index="0"]
+position = Vector2(0, -9)
+texture = ExtResource("15_u67ve")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Hay2"]
+position = Vector2(0, -7)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_d5ddy")
+
+[node name="Hay3" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("5_ir7x8")]
+z_index = 10
+y_sort_enabled = false
+position = Vector2(13, 254)
+scale = Vector2(2, 2)
+texture = ExtResource("15_u67ve")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/Hay3/Visuals" index="0"]
+position = Vector2(0, -9)
+texture = ExtResource("15_u67ve")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Hay3"]
+position = Vector2(0, -7)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_d5ddy")
+
+[node name="Hay4" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("5_ir7x8")]
+z_index = 10
+y_sort_enabled = false
+position = Vector2(138, 309)
+scale = Vector2(4, 4)
+texture = ExtResource("15_u67ve")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/Hay4/Visuals" index="0"]
+position = Vector2(0, -9)
+texture = ExtResource("15_u67ve")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Hay4"]
+position = Vector2(0, -7)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_d5ddy")
+
+[editable path="Entities/Corpses2"]
+[editable path="Entities/Hay1"]
+[editable path="Entities/Hay5"]
+[editable path="Entities/Hay6"]
+[editable path="Entities/Hay7"]
+[editable path="Entities/s5Hay8498+7*-_"]
+[editable path="Entities/Hay2"]
+[editable path="Entities/Hay3"]
+[editable path="Entities/Hay4"]
