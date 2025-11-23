@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://d1r5kkx3ukpgu"]
+[gd_scene load_steps=29 format=3 uid="uid://d1r5kkx3ukpgu"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_stl25"]
 [ext_resource type="PackedScene" uid="uid://blnx8e7y58nef" path="res://scenes/entity/entity.tscn" id="2_3xb12"]
@@ -53,6 +53,9 @@ height = 22.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ke34q"]
 size = Vector2(1.5833335, 0.9999981)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hdarg"]
+font_size = 96
 
 [node name="Level1" type="Node2D" node_paths=PackedStringArray("level_transition_interactable")]
 script = ExtResource("1_stl25")
@@ -483,6 +486,24 @@ texture = ExtResource("16_hdarg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Kid1"]
 position = Vector2(0, -0.6666641)
 shape = SubResource("RectangleShape2D_ke34q")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 181.0
+offset_top = 121.0
+offset_right = 277.0
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "EDRIN"
+label_settings = SubResource("LabelSettings_hdarg")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [editable path="Entities/Frog"]
 [editable path="Entities/Bush1"]
