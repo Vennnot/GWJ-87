@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://dvp3jl8wl075l" path="res://assets/visuals/backgrounds/Floor_plaza.png" id="3_s2i63"]
 [ext_resource type="PackedScene" uid="uid://blnx8e7y58nef" path="res://scenes/entity/entity.tscn" id="4_af80s"]
 [ext_resource type="Texture2D" uid="uid://bk6mb6ilixat0" path="res://assets/visuals/elements/kid2.png" id="5_38wwo"]
-[ext_resource type="Texture2D" uid="uid://prrecvje2ih4" path="res://assets/visuals/elements/arrow.png" id="5_r5mya"]
 [ext_resource type="Texture2D" uid="uid://b07qmmfhti35o" path="res://assets/visuals/elements/mn_horse.png" id="6_6076s"]
 [ext_resource type="Texture2D" uid="uid://cjg14vavsa3qq" path="res://assets/visuals/elements/fountain.png" id="6_r5mya"]
 [ext_resource type="Resource" uid="uid://uvjqie3v6p26" path="res://resources/dialogues/choice/trader.dialogue" id="7_6076s"]
@@ -20,11 +19,14 @@ size = Vector2(10, 270)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utwm8"]
 size = Vector2(480, 5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7cume"]
+radius = 8.498368
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_kddao"]
-radius = 18.027756
+radius = 14.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_38wwo"]
-radius = 22.0
+radius = 14.0
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_anutj")
@@ -83,13 +85,12 @@ texture = ExtResource("5_38wwo")
 area_collider = NodePath("KidsInteractionCollision")
 
 [node name="KidsInteractionCollision" type="CollisionShape2D" parent="Entities/Kids"]
-shape = SubResource("CircleShape2D_kddao")
+shape = SubResource("CircleShape2D_7cume")
 debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
 
 [node name="City" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("4_af80s")]
-position = Vector2(94, 216)
+position = Vector2(327, 258)
 scale = Vector2(2, 2)
-texture = ExtResource("5_r5mya")
 area_collider = NodePath("CityInteractionCollision")
 
 [node name="CityInteractionCollision" type="CollisionShape2D" parent="Entities/City"]
@@ -117,6 +118,6 @@ area_collider = NodePath("FountainInteractionCollision")
 one_time = true
 
 [node name="FountainInteractionCollision" type="CollisionShape2D" parent="Entities/Fountain"]
-position = Vector2(-0.39999986, 3.1999965)
+position = Vector2(-0.39999986, 8.999996)
 shape = SubResource("CircleShape2D_38wwo")
 debug_color = Color(0.94963473, 4.235506e-06, 0.5749154, 0.41960785)
