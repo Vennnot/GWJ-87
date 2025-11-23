@@ -3,6 +3,8 @@ Osmomancer: These fields of flowers are beautiful.
 - I should take one.
 	Osmomancer: The rest will wither but that is a price I can pay.
 	do Events.decay.emit()
+	do change_favor(-1)
 - I should not disturb nature.
 	Osmomancer: Everything has its place. Even me.
+	do change_favor(1)
 => END

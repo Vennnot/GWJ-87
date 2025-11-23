@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cs30pqbsdw2ka"]
+[gd_scene load_steps=25 format=3 uid="uid://cs30pqbsdw2ka"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_py1vs"]
 [ext_resource type="Resource" uid="uid://drbnnhypk5ier" path="res://resources/level_info/level7.tres" id="2_kqmug"]
@@ -15,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://uvjqie3v6p26" path="res://resources/dialogues/choice/trader.dialogue" id="10_3tvwi"]
 [ext_resource type="Resource" uid="uid://bnioh25ohmbde" path="res://resources/dialogues/story/bird_mommy.dialogue" id="11_t3ssf"]
 [ext_resource type="Texture2D" uid="uid://cxw8h63rohbge" path="res://assets/visuals/elements/hay.png" id="15_u67ve"]
+[ext_resource type="Texture2D" uid="uid://cel5fcg0i8tcm" path="res://assets/visuals/elements/c_stone.png" id="16_nnatq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nnatq"]
 size = Vector2(480, 205)
@@ -55,6 +56,510 @@ texture = ExtResource("3_kqmug")
 [node name="Foreground" type="Sprite2D" parent="Environment"]
 position = Vector2(240.00002, 225)
 texture = ExtResource("3_gghws")
+
+[node name="CStone" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(469, 243)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone2" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(467, 255)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone3" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(468, 267)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone4" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(464, 257)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone5" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(450, 254)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone6" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(439, 249)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone7" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(430, 243)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone8" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(427, 251)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone9" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(434, 259)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone10" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(445, 262)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone11" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(457, 265)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone12" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(448, 271)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone13" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(435, 268)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone14" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(424, 259)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone15" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(424, 268)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone16" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(413, 266)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone17" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(409, 256)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone18" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(409, 243)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone19" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(399, 243)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone20" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(402, 252)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone21" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(399, 264)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone22" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(390, 255)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone23" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(386, 245)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone24" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(384, 267)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone25" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(378, 254)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone26" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(375, 244)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone27" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(367, 266)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone28" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(364, 251)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone29" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(354, 245)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone30" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(357, 255)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone31" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(356, 268)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone32" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(347, 262)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone33" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(344, 252)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone34" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(342, 243)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone35" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(334, 249)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone36" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(324, 244)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone37" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(336, 260)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone38" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(339, 269)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone39" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(326, 267)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone40" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(325, 257)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone41" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(314, 251)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone42" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(304, 245)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone43" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(303, 257)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone44" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(314, 260)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone45" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(315, 270)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone46" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(301, 267)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone47" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(289, 246)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone48" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(286, 270)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone49" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(290, 257)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone50" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(275, 261)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone51" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(263, 246)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone52" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(264, 262)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone53" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(271, 251)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone54" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(253, 246)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone55" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(258, 254.00002)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone56" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(247, 257)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone57" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(244, 244)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone58" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(243, 250)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone59" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(235.00002, 255)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone60" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(233, 246.00002)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone61" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(226, 255.00002)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone62" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(224, 246)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone63" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(217, 253)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone64" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(215, 245)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone65" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(177, 242)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone79" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(169, 241)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone80" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(168, 244)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone81" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(161, 241)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone82" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(147, 241)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone83" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(125, 240)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone84" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(121, 237)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone66" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(174, 249)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone78" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(181, 248)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone67" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(184, 241)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone68" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(187, 246)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone69" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(193, 241)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone70" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(189, 252)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone71" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(195, 247)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone72" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(202, 242)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone73" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(199, 253)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone74" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(204, 246)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone75" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(209, 242)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone76" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(209, 249)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_nnatq")
+
+[node name="CStone77" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(206, 253)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_nnatq")
 
 [node name="Bounds" type="Node2D" parent="Environment"]
 
