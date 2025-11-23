@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dmce0gdlm0kx4" path="res://assets/visuals/elements/rocks2.png" id="13_0dp8p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
-size = Vector2(480, 180)
+size = Vector2(480, 243)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8naf"]
 size = Vector2(10, 270)
@@ -65,6 +65,7 @@ position = Vector2(240, 90)
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Bounds/Top"]
+position = Vector2(2, 32.5)
 shape = SubResource("RectangleShape2D_buro7")
 
 [node name="Left" type="StaticBody2D" parent="Environment/Bounds"]
@@ -93,10 +94,10 @@ y_sort_enabled = true
 
 [node name="PlayerStartPosition" type="Marker2D" parent="Entities"]
 unique_name_in_owner = true
-position = Vector2(461, 242)
+position = Vector2(463, 255)
 
 [node name="LevelTransition" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("4_77ktg")]
-position = Vector2(19, 208)
+position = Vector2(19, 255)
 scale = Vector2(-1, 1)
 texture = ExtResource("6_ktt83")
 area_collider = NodePath("TransitionCollision")
@@ -106,7 +107,7 @@ level_transition = true
 shape = SubResource("CircleShape2D_iun15")
 
 [node name="Villager" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("4_77ktg")]
-position = Vector2(281, 252)
+position = Vector2(274, 264)
 scale = Vector2(3, 3)
 texture = ExtResource("7_qbjt4")
 dialogue = ExtResource("8_oigun")
@@ -124,7 +125,7 @@ shape = SubResource("CircleShape2D_d0h1k")
 debug_color = Color(0.94963473, 4.235506e-06, 0.5749154, 0.41960785)
 
 [node name="Food" parent="Entities" instance=ExtResource("4_77ktg")]
-position = Vector2(298, 254)
+position = Vector2(298, 264)
 scale = Vector2(2, 2)
 texture = ExtResource("9_oigun")
 
@@ -137,7 +138,7 @@ position = Vector2(0.1666565, 1.8333435)
 shape = SubResource("RectangleShape2D_ljsju")
 
 [node name="Festival" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("4_77ktg")]
-position = Vector2(94, 221)
+position = Vector2(92, 255)
 scale = Vector2(2, 2)
 dialogue = ExtResource("10_ljsju")
 area_collider = NodePath("FestivalInteractionCollision")
@@ -147,7 +148,7 @@ shape = SubResource("CircleShape2D_vaamq")
 debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
 
 [node name="Campfire" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("4_77ktg")]
-position = Vector2(218, 205)
+position = Vector2(201, 251)
 scale = Vector2(2, 2)
 dialogue = ExtResource("11_imcx4")
 area_collider = NodePath("CampfireInteractionCollision")
@@ -157,7 +158,7 @@ shape = SubResource("CircleShape2D_vaamq")
 debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
 
 [node name="Rock11" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("4_77ktg")]
-position = Vector2(140, 276)
+position = Vector2(154, 283)
 texture = ExtResource("12_vaamq")
 collider = NodePath("CollisionShape2D")
 
@@ -171,7 +172,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_erfn0")
 
 [node name="Rock21" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("4_77ktg")]
-position = Vector2(16, 283)
+position = Vector2(89, 352)
 scale = Vector2(2, 2)
 texture = ExtResource("13_0dp8p")
 collider = NodePath("CollisionShape2D")
@@ -186,7 +187,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_e6tow")
 
 [node name="Rock22" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("4_77ktg")]
-position = Vector2(395, 265)
+position = Vector2(358, 310)
 texture = ExtResource("13_0dp8p")
 collider = NodePath("CollisionShape2D")
 
@@ -200,7 +201,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_e6tow")
 
 [node name="Rock23" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("4_77ktg")]
-position = Vector2(400, 280)
+position = Vector2(378, 301)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13_0dp8p")
 collider = NodePath("CollisionShape2D")
@@ -215,7 +216,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_e6tow")
 
 [node name="Rock24" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("4_77ktg")]
-position = Vector2(417, 273)
+position = Vector2(395, 294)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13_0dp8p")
 collider = NodePath("CollisionShape2D")
