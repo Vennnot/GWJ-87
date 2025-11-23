@@ -3,8 +3,8 @@ extends Node
 const PLAYER_SCENE : PackedScene = preload("res://scenes/player/player.tscn")
 
 var neutral_color := Color.WHITE
-var mother_color := Color.GREEN
-var osmomancer_color := Color.BLUE
+var mother_color := Color("#92E8C0")
+var osmomancer_color := Color("#9F9CEC")
 
 var favor : int = 100
 
