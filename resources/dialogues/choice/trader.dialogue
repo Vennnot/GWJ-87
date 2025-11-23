@@ -21,5 +21,6 @@ Trader: Would you exchange some goods with me. I will offer you good prices frie
 	Osmomancer: ...
 	Osmomancer: Of course.
 	Trader: Until next time my friend!
+	do Events.decayed.emit()
 	do change_favor(-1)
 => END

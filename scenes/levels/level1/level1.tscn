@@ -124,7 +124,6 @@ sprite_frames = ExtResource("7_65gyt")
 collider = NodePath("FrogCollision")
 dialogue = ExtResource("8_1nwpw")
 area_collider = NodePath("FrogInteractionCollision")
-one_time = true
 
 [node name="Visuals" parent="Entities/Frog" index="0"]
 position = Vector2(0, -4)

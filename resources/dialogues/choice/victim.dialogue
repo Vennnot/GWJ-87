@@ -4,6 +4,7 @@ Osmomancer: He's unconscious. Heavily wounded as well.
 - I won't allow him to suffer any longer...
 	Osmomancer: Return to the soil. From the earth new life will come.
 	do change_favor(-1)
+	do Events.decayed.emit()
 - Life must go on, sadly.
 	Osmomancer: Endure. The cycle will claim you in time.
 	Victim: ...

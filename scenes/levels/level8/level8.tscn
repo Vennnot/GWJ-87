@@ -1,14 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://innn321iugk8"]
+[gd_scene load_steps=19 format=3 uid="uid://innn321iugk8"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_anutj"]
 [ext_resource type="Texture2D" uid="uid://dcmpiua3fct5d" path="res://assets/visuals/backgrounds/full_plaza.png" id="2_kddao"]
 [ext_resource type="Texture2D" uid="uid://dvp3jl8wl075l" path="res://assets/visuals/backgrounds/Floor_plaza.png" id="3_s2i63"]
 [ext_resource type="PackedScene" uid="uid://blnx8e7y58nef" path="res://scenes/entity/entity.tscn" id="4_af80s"]
 [ext_resource type="Texture2D" uid="uid://bk6mb6ilixat0" path="res://assets/visuals/elements/kid2.png" id="5_38wwo"]
+[ext_resource type="Resource" uid="uid://hq3u4bshf0ui" path="res://resources/dialogues/examine/examine_city.dialogue" id="6_7cume"]
 [ext_resource type="Texture2D" uid="uid://b07qmmfhti35o" path="res://assets/visuals/elements/mn_horse.png" id="6_6076s"]
 [ext_resource type="Texture2D" uid="uid://cjg14vavsa3qq" path="res://assets/visuals/elements/fountain.png" id="6_r5mya"]
-[ext_resource type="Resource" uid="uid://uvjqie3v6p26" path="res://resources/dialogues/choice/trader.dialogue" id="7_6076s"]
 [ext_resource type="Resource" uid="uid://coav508f06oyh" path="res://resources/dialogues/story/horse_mommy.dialogue" id="7_kddao"]
+[ext_resource type="Resource" uid="uid://cjhqraarfutmc" path="res://resources/dialogues/choice/fountain.dialogue" id="9_38wwo"]
+[ext_resource type="SpriteFrames" uid="uid://cof0qaclsfqls" path="res://resources/sprite_frames/particles.tres" id="10_38wwo"]
+[ext_resource type="Texture2D" uid="uid://cjyw1sybh35x8" path="res://assets/visuals/decay_palettes/fountain.webp" id="11_mj2e7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -92,6 +95,7 @@ debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
 [node name="City" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("4_af80s")]
 position = Vector2(327, 258)
 scale = Vector2(2, 2)
+dialogue = ExtResource("6_7cume")
 area_collider = NodePath("CityInteractionCollision")
 
 [node name="CityInteractionCollision" type="CollisionShape2D" parent="Entities/City"]
@@ -104,7 +108,6 @@ scale = Vector2(2, 2)
 texture = ExtResource("6_6076s")
 dialogue = ExtResource("7_kddao")
 area_collider = NodePath("HorseInteractionCollision")
-one_time = true
 
 [node name="HorseInteractionCollision" type="CollisionShape2D" parent="Entities/Horse"]
 shape = SubResource("CircleShape2D_kddao")
@@ -114,11 +117,37 @@ debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
 position = Vector2(238, 124.000015)
 scale = Vector2(5, 5)
 texture = ExtResource("6_r5mya")
-dialogue = ExtResource("7_6076s")
+dialogue = ExtResource("9_38wwo")
 area_collider = NodePath("FountainInteractionCollision")
-one_time = true
+decay_palette = ExtResource("11_mj2e7")
 
 [node name="FountainInteractionCollision" type="CollisionShape2D" parent="Entities/Fountain"]
 position = Vector2(-0.39999986, 8.999996)
 shape = SubResource("CircleShape2D_38wwo")
 debug_color = Color(0.94963473, 4.235506e-06, 0.5749154, 0.41960785)
+
+[node name="Particles8" parent="Entities" instance=ExtResource("4_af80s")]
+modulate = Color(0.30980393, 0.6431373, 0.72156864, 1)
+z_index = 20
+position = Vector2(239, 51)
+sprite_frames = ExtResource("10_38wwo")
+
+[node name="Particles11" parent="Entities" instance=ExtResource("4_af80s")]
+modulate = Color(0.30980393, 0.6431373, 0.72156864, 1)
+z_index = 20
+position = Vector2(236, 119)
+sprite_frames = ExtResource("10_38wwo")
+
+[node name="Particles9" parent="Entities" instance=ExtResource("4_af80s")]
+z_index = 20
+position = Vector2(279.00003, 89.00001)
+rotation = 1.0471976
+scale = Vector2(0.8, 0.8)
+sprite_frames = ExtResource("10_38wwo")
+
+[node name="Particles10" parent="Entities" instance=ExtResource("4_af80s")]
+z_index = 20
+position = Vector2(195, 95.99999)
+rotation = -1.0471976
+scale = Vector2(0.8, 0.8)
+sprite_frames = ExtResource("10_38wwo")

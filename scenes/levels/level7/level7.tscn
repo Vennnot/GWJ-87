@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cs30pqbsdw2ka"]
+[gd_scene load_steps=27 format=3 uid="uid://cs30pqbsdw2ka"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_py1vs"]
 [ext_resource type="Resource" uid="uid://drbnnhypk5ier" path="res://resources/level_info/level7.tres" id="2_kqmug"]
@@ -14,8 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://dqbyumyn4jjy6" path="res://assets/visuals/elements/mn_crow.png" id="10_1bbg3"]
 [ext_resource type="Resource" uid="uid://uvjqie3v6p26" path="res://resources/dialogues/choice/trader.dialogue" id="10_3tvwi"]
 [ext_resource type="Resource" uid="uid://bnioh25ohmbde" path="res://resources/dialogues/story/bird_mommy.dialogue" id="11_t3ssf"]
+[ext_resource type="Texture2D" uid="uid://c78sei8ynr4ja" path="res://assets/visuals/decay_palettes/trader.webp" id="15_hr5di"]
 [ext_resource type="Texture2D" uid="uid://cxw8h63rohbge" path="res://assets/visuals/elements/hay.png" id="15_u67ve"]
 [ext_resource type="Texture2D" uid="uid://cel5fcg0i8tcm" path="res://assets/visuals/elements/c_stone.png" id="16_nnatq"]
+[ext_resource type="SpriteFrames" uid="uid://cof0qaclsfqls" path="res://resources/sprite_frames/particles.tres" id="17_d5ddy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nnatq"]
 size = Vector2(480, 205)
@@ -643,7 +645,6 @@ scale = Vector2(2, 2)
 texture = ExtResource("10_1bbg3")
 dialogue = ExtResource("11_t3ssf")
 area_collider = NodePath("BirdInteractionCollision")
-one_time = true
 
 [node name="BirdInteractionCollision" type="CollisionShape2D" parent="Entities/Bird"]
 shape = SubResource("CircleShape2D_3tvwi")
@@ -655,7 +656,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("9_m3nhs")
 dialogue = ExtResource("10_3tvwi")
 area_collider = NodePath("TraderInteractionCollision")
-one_time = true
+decay_palette = ExtResource("15_hr5di")
 
 [node name="TraderInteractionCollision" type="CollisionShape2D" parent="Entities/Trader"]
 position = Vector2(1, -1)
@@ -791,6 +792,45 @@ texture = ExtResource("15_u67ve")
 position = Vector2(0, -7)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_d5ddy")
+
+[node name="Particles6" parent="Entities" instance=ExtResource("5_ir7x8")]
+modulate = Color(0, 0, 0, 1)
+z_index = 20
+position = Vector2(240, 218)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("17_d5ddy")
+
+[node name="Particles8" parent="Entities" instance=ExtResource("5_ir7x8")]
+modulate = Color(0, 0, 0, 1)
+z_index = 20
+position = Vector2(331, 175.00002)
+rotation = 1.5707964
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("17_d5ddy")
+
+[node name="Particles9" parent="Entities" instance=ExtResource("5_ir7x8")]
+modulate = Color(0, 0, 0, 1)
+z_index = 20
+position = Vector2(350, 187)
+rotation = 1.5707964
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("17_d5ddy")
+
+[node name="Particles10" parent="Entities" instance=ExtResource("5_ir7x8")]
+modulate = Color(0, 0, 0, 1)
+z_index = 20
+position = Vector2(420, 173.00002)
+rotation = 1.5707964
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("17_d5ddy")
+
+[node name="Particles7" parent="Entities" instance=ExtResource("5_ir7x8")]
+modulate = Color(0, 0, 0, 1)
+z_index = 20
+position = Vector2(388, 245)
+scale = Vector2(0.525, 0.525)
+sprite_frames = ExtResource("17_d5ddy")
 
 [editable path="Entities/Corpses2"]
 [editable path="Entities/Hay1"]

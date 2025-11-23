@@ -37,14 +37,16 @@ signal interacted
 @export_category("Interaction")
 @export var dialogue : DialogueResource
 @export var area_collider : CollisionShape2D
-@export var one_time := false
 
 @export_category("Level Transition")
 @export var level_transition : bool = false
 @export var initially_disabled : bool = false
 
 @export_category("Decayable")
-@export var decay_palette : Texture2D
+@export var decay_palette : Texture2D :
+	set(value):
+		decay_palette = value
+		print_stack()
 
 
 
@@ -57,6 +59,8 @@ signal interacted
 
 
 func _ready() -> void:
+	Events.decayed.connect(_on_decay)
+	
 	if texture:
 		sprite.texture = texture
 	else:
@@ -89,7 +93,6 @@ func _ready() -> void:
 		hide()
 		interactable_area.monitorable = false
 	
-	Events.decay.connect(_on_decay)
 	Events.enable_level_transition.connect(func():
 		show()
 		interactable_area.monitorable = true)
@@ -117,16 +120,16 @@ func interact():
 
 
 func _on_area_entered(other_area:Area2D)->void:
-	interactable_sprite.show()
+	pass
 
 
 func _on_area_exited(other_area:Area2D)->void:
-	interactable_sprite.hide()
+	pass
 
 
 func _on_decay():
 	if not decay_palette:
 		return
-	sprite.material = sprite.material.duplicate()
+	sprite.material = PaletteMaterial.new()
 	var palette_material :PaletteMaterial= sprite.material
 	palette_material.set_palette(decay_palette) 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://host1ddaioqk"]
+[gd_scene load_steps=27 format=3 uid="uid://host1ddaioqk"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_kid5g"]
 [ext_resource type="Resource" uid="uid://cfl7721aqlj8d" path="res://resources/level_info/level6.tres" id="2_ktt83"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dmce0gdlm0kx4" path="res://assets/visuals/elements/rocks2.png" id="13_0dp8p"]
 [ext_resource type="Texture2D" uid="uid://b1oe4nsi82m50" path="res://assets/visuals/elements/villager1.png" id="16_e6tow"]
 [ext_resource type="Texture2D" uid="uid://bk6mb6ilixat0" path="res://assets/visuals/elements/kid2.png" id="17_sdhcg"]
+[ext_resource type="SpriteFrames" uid="uid://cof0qaclsfqls" path="res://resources/sprite_frames/particles.tres" id="18_2tqob"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 243)
@@ -113,7 +114,6 @@ scale = Vector2(3, 3)
 texture = ExtResource("7_erfn0")
 dialogue = ExtResource("8_oigun")
 area_collider = NodePath("VillagerInteractionCollision")
-one_time = true
 
 [node name="Visuals" parent="Entities/Villager" index="0"]
 position = Vector2(0, -4)
@@ -306,6 +306,29 @@ texture = ExtResource("9_oigun")
 [node name="Person6" type="Sprite2D" parent="Entities"]
 position = Vector2(295, 178)
 texture = ExtResource("7_qbjt4")
+
+[node name="Particles4" parent="Entities" instance=ExtResource("4_77ktg")]
+modulate = Color(0.9372549, 0.5882353, 0.42745098, 0.76862746)
+z_index = 20
+position = Vector2(238, 150)
+rotation = 0.7853982
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("18_2tqob")
+
+[node name="Particles5" parent="Entities" instance=ExtResource("4_77ktg")]
+modulate = Color(0.9372549, 0.5882353, 0.42745098, 0.76862746)
+z_index = 20
+position = Vector2(196.00002, 154.00002)
+rotation = -0.7853982
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("18_2tqob")
+
+[node name="Particles6" parent="Entities" instance=ExtResource("4_77ktg")]
+modulate = Color(0.9372549, 0.5882353, 0.42745098, 0.76862746)
+z_index = 20
+position = Vector2(215, 120)
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("18_2tqob")
 
 [editable path="Entities/Villager"]
 [editable path="Entities/Food"]

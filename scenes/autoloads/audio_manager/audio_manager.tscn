@@ -4,6 +4,7 @@
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_8iqp8")
+metadata/_edit_vertical_guides_ = [-142.0]
 
 [node name="CurrentMusic" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true

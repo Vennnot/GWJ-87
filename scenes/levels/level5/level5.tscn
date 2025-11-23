@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dg3ik4ihg2bp6"]
+[gd_scene load_steps=30 format=3 uid="uid://dg3ik4ihg2bp6"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_yiof3"]
 [ext_resource type="Resource" uid="uid://seqi8dpqdytu" path="res://resources/level_info/level5.tres" id="2_qp3x7"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://prrecvje2ih4" path="res://assets/visuals/elements/arrow.png" id="6_qp3x7"]
 [ext_resource type="Texture2D" uid="uid://558qcq42ayp4" path="res://assets/visuals/elements/injured_guy.png" id="7_ooy8r"]
 [ext_resource type="Resource" uid="uid://55v8fe8xuew0" path="res://resources/dialogues/choice/victim.dialogue" id="8_ooy8r"]
+[ext_resource type="Texture2D" uid="uid://cob2dhcvbqss" path="res://assets/visuals/decay_palettes/victim.webp" id="9_6sp46"]
 [ext_resource type="Texture2D" uid="uid://dmce0gdlm0kx4" path="res://assets/visuals/elements/rocks2.png" id="9_7o5g8"]
 [ext_resource type="Resource" uid="uid://dgfo6aprgwggr" path="res://resources/dialogues/examine/examine_rock.dialogue" id="10_qu0uu"]
 [ext_resource type="Resource" uid="uid://dxjdi53ox7tlv" path="res://resources/dialogues/examine/examine_background.dialogue" id="11_qu0uu"]
@@ -121,7 +122,14 @@ scale = Vector2(4, 4)
 texture = ExtResource("7_ooy8r")
 dialogue = ExtResource("8_ooy8r")
 area_collider = NodePath("VictimInteractionCollision")
-one_time = true
+decay_palette = ExtResource("9_6sp46")
+
+[node name="Visuals" parent="Entities/Victim" index="0"]
+position = Vector2(1.5, -7)
+
+[node name="Sprite" parent="Entities/Victim/Visuals" index="0"]
+position = Vector2(0, 5.5)
+texture = ExtResource("7_ooy8r")
 
 [node name="VictimInteractionCollision" type="CollisionShape2D" parent="Entities/Victim"]
 position = Vector2(1, -1)
@@ -135,7 +143,6 @@ texture = ExtResource("9_7o5g8")
 collider = NodePath("RockCollision")
 dialogue = ExtResource("10_qu0uu")
 area_collider = NodePath("RockInteractionCollision")
-one_time = true
 
 [node name="RockInteractionCollision" type="CollisionShape2D" parent="Entities/Rock"]
 shape = SubResource("CircleShape2D_l7hbl")
@@ -162,7 +169,6 @@ scale = Vector2(2, 2)
 texture = ExtResource("12_n1v7q")
 dialogue = ExtResource("13_vdg2u")
 area_collider = NodePath("BatInteractionCollision")
-one_time = true
 
 [node name="Sprite" parent="Entities/Bat/Visuals" index="0"]
 texture = ExtResource("12_n1v7q")
@@ -276,7 +282,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_6sp46")
 
 [node name="Rock22" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("5_y1jwd")]
-position = Vector2(297, 278)
+position = Vector2(273, 266)
 texture = ExtResource("9_7o5g8")
 collider = NodePath("CollisionShape2D")
 
@@ -330,14 +336,18 @@ position = Vector2(0, -88)
 texture = ExtResource("16_qdufj")
 
 [node name="Campfire" parent="Entities" instance=ExtResource("5_y1jwd")]
-position = Vector2(143, 244)
-scale = Vector2(2, 2)
+position = Vector2(334, 265)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("17_phhxm")
+
+[node name="Visuals" parent="Entities/Campfire" index="0"]
+position = Vector2(-0.6666667, -14)
 
 [node name="Sprite" parent="Entities/Campfire/Visuals" index="0"]
-position = Vector2(0, -10)
+position = Vector2(0, 5.333334)
 texture = ExtResource("17_phhxm")
 
+[editable path="Entities/Victim"]
 [editable path="Entities/Bat"]
 [editable path="Entities/Rock11"]
 [editable path="Entities/Rock12"]

@@ -47,11 +47,13 @@ func _fetch_audio(sound: String, is_music: bool = false) -> AudioStream:
 		return audio.pick_random() if not audio.is_empty() else null
 	return audio
 
+
 func fade_in(duration: float = 0.5):
 	current_music.volume_db = -40
 	current_music.play()
 	var tween = create_tween()
 	tween.tween_property(current_music, "volume_db", 0, duration)
+
 
 func fade_out(duration: float = 3.0):
 	var tween = create_tween()
