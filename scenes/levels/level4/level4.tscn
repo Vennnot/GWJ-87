@@ -107,7 +107,8 @@ level_transition = true
 shape = SubResource("CircleShape2D_27x05")
 
 [node name="Flowers" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_d40we")]
-position = Vector2(205, 201)
+modulate = Color(0.9428228, 0.94282264, 0.94282264, 1)
+position = Vector2(343, 240)
 scale = Vector2(2, 2)
 texture = ExtResource("7_4tddo")
 dialogue = ExtResource("8_4tddo")
@@ -165,7 +166,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_b5byo")
 
 [node name="Rock23" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("5_d40we")]
-position = Vector2(335, 239)
+position = Vector2(362, 279)
 texture = ExtResource("13_doaon")
 collider = NodePath("CollisionShape2D")
 
@@ -194,7 +195,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_b5byo")
 
 [node name="Rock22" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("5_d40we")]
-position = Vector2(118, 226)
+position = Vector2(194, 263)
 texture = ExtResource("13_doaon")
 collider = NodePath("CollisionShape2D")
 
@@ -216,7 +217,7 @@ position = Vector2(0, -16)
 texture = ExtResource("14_cwptf")
 
 [node name="Grass15" parent="Entities" instance=ExtResource("5_d40we")]
-position = Vector2(319, 234)
+position = Vector2(341, 274)
 texture = ExtResource("14_cwptf")
 
 [node name="Sprite" parent="Entities/Grass15/Visuals" index="0"]
@@ -232,7 +233,7 @@ position = Vector2(0, -16)
 texture = ExtResource("14_cwptf")
 
 [node name="Grass13" parent="Entities" instance=ExtResource("5_d40we")]
-position = Vector2(105, 214)
+position = Vector2(176, 267)
 texture = ExtResource("14_cwptf")
 
 [node name="Sprite" parent="Entities/Grass13/Visuals" index="0"]
@@ -256,7 +257,7 @@ position = Vector2(0, -16)
 texture = ExtResource("15_chqwm")
 
 [node name="Grass24" parent="Entities" instance=ExtResource("5_d40we")]
-position = Vector2(459, 195)
+position = Vector2(282, 242)
 texture = ExtResource("15_chqwm")
 
 [node name="Sprite" parent="Entities/Grass24/Visuals" index="0"]
@@ -264,7 +265,7 @@ position = Vector2(0, -16)
 texture = ExtResource("15_chqwm")
 
 [node name="Grass23" parent="Entities" instance=ExtResource("5_d40we")]
-position = Vector2(348, 244)
+position = Vector2(372, 281)
 texture = ExtResource("15_chqwm")
 
 [node name="Sprite" parent="Entities/Grass23/Visuals" index="0"]
