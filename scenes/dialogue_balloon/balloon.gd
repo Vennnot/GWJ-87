@@ -229,7 +229,7 @@ func set_text_color(character:String):
 			color = Global.mother_color
 		"horse?":
 			color = Global.mother_color	
-		"crow?":
+		"bird?":
 			color = Global.mother_color	
 		"bat?":
 			color = Global.mother_color	

@@ -1,17 +1,23 @@
-[gd_scene load_steps=19 format=3 uid="uid://innn321iugk8"]
+[gd_scene load_steps=25 format=3 uid="uid://innn321iugk8"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_anutj"]
 [ext_resource type="Texture2D" uid="uid://dcmpiua3fct5d" path="res://assets/visuals/backgrounds/full_plaza.png" id="2_kddao"]
 [ext_resource type="Texture2D" uid="uid://dvp3jl8wl075l" path="res://assets/visuals/backgrounds/Floor_plaza.png" id="3_s2i63"]
 [ext_resource type="PackedScene" uid="uid://blnx8e7y58nef" path="res://scenes/entity/entity.tscn" id="4_af80s"]
+[ext_resource type="Texture2D" uid="uid://cel5fcg0i8tcm" path="res://assets/visuals/elements/c_stone.png" id="4_fx6xw"]
 [ext_resource type="Texture2D" uid="uid://bk6mb6ilixat0" path="res://assets/visuals/elements/kid2.png" id="5_38wwo"]
 [ext_resource type="Resource" uid="uid://hq3u4bshf0ui" path="res://resources/dialogues/examine/examine_city.dialogue" id="6_7cume"]
 [ext_resource type="Texture2D" uid="uid://b07qmmfhti35o" path="res://assets/visuals/elements/mn_horse.png" id="6_6076s"]
+[ext_resource type="Resource" uid="uid://dnhdukmf638dk" path="res://resources/dialogues/examine/examine_kids.dialogue" id="6_o83n5"]
 [ext_resource type="Texture2D" uid="uid://cjg14vavsa3qq" path="res://assets/visuals/elements/fountain.png" id="6_r5mya"]
 [ext_resource type="Resource" uid="uid://coav508f06oyh" path="res://resources/dialogues/story/horse_mommy.dialogue" id="7_kddao"]
 [ext_resource type="Resource" uid="uid://cjhqraarfutmc" path="res://resources/dialogues/choice/fountain.dialogue" id="9_38wwo"]
 [ext_resource type="SpriteFrames" uid="uid://cof0qaclsfqls" path="res://resources/sprite_frames/particles.tres" id="10_38wwo"]
 [ext_resource type="Texture2D" uid="uid://cjyw1sybh35x8" path="res://assets/visuals/decay_palettes/fountain.webp" id="11_mj2e7"]
+[ext_resource type="Texture2D" uid="uid://dfr8mud55t6nr" path="res://assets/visuals/elements/kid_1.png" id="14_fx6xw"]
+[ext_resource type="Texture2D" uid="uid://b1oe4nsi82m50" path="res://assets/visuals/elements/villager1.png" id="15_dqvf4"]
+[ext_resource type="Texture2D" uid="uid://bm65kckpbu1ea" path="res://assets/visuals/elements/villager2.png" id="16_q0bra"]
+[ext_resource type="Texture2D" uid="uid://d2hcwhyf4w5s1" path="res://assets/visuals/elements/person3.png" id="17_pmx5d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -75,17 +81,334 @@ collision_layer = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Bounds/Bottom"]
 shape = SubResource("RectangleShape2D_utwm8")
 
+[node name="CStone2" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(428, 272)
+scale = Vector2(2, 2)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone3" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(388, 252)
+scale = Vector2(2, 2)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone4" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(325, 264)
+scale = Vector2(2, 2)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone5" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(277, 246)
+scale = Vector2(2, 2)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone6" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(223, 268)
+scale = Vector2(2, 2)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone7" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(176, 245)
+scale = Vector2(2, 2)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone8" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(119, 262)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone9" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(397, 213)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone10" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(354.00003, 224)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone11" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(315.00003, 217.00002)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone12" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(236.00003, 228.00002)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone13" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(141, 225.00002)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone14" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(112, 237)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone15" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(112, 210)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone16" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(174, 210)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone17" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(207, 220)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone18" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(272, 215)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone19" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(376, 194)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone20" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(345, 192)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone21" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(315, 186)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone22" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(289, 175)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone23" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(257, 199)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone24" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(227, 199)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone25" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(196, 191)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone26" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(169, 188)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone27" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(137, 196)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone28" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(150, 175)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone29" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(136, 169)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone30" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(176, 166)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone31" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(194, 176)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone32" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(315, 165)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone33" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(337, 166)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone34" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(362, 170)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone35" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(386, 154)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone36" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(333, 139)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone37" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(320, 124)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone38" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(315, 137)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone39" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(287, 129)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone40" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(160, 157)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone41" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(142, 155)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone42" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(125, 148)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone43" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(110, 144)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone44" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(90, 138)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone45" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(123, 128.00002)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone46" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(140, 138)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone47" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(130, 134.00002)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone48" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(132.00002, 119.000015)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone49" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(149, 119)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone50" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(156, 126.99999)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone51" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(159, 139.99998)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone52" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(181, 118)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone53" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(196, 107.99999)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone54" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(279.99997, 113)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone55" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(293, 117)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("4_fx6xw")
+
+[node name="CStone56" type="Sprite2D" parent="Environment"]
+modulate = Color(0.6745098, 0.6745098, 0.6745098, 0.43137255)
+position = Vector2(293, 117)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("4_fx6xw")
+
 [node name="Entities" type="Node2D" parent="."]
 y_sort_enabled = true
 
 [node name="PlayerStartPosition" type="Marker2D" parent="Entities"]
 unique_name_in_owner = true
-position = Vector2(132, 249)
+position = Vector2(243, 260)
 
 [node name="Kids" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("4_af80s")]
 position = Vector2(144, 244)
 scale = Vector2(3, 3)
 texture = ExtResource("5_38wwo")
+dialogue = ExtResource("6_o83n5")
 area_collider = NodePath("KidsInteractionCollision")
 
 [node name="KidsInteractionCollision" type="CollisionShape2D" parent="Entities/Kids"]
@@ -93,7 +416,7 @@ shape = SubResource("CircleShape2D_7cume")
 debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
 
 [node name="City" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("4_af80s")]
-position = Vector2(327, 258)
+position = Vector2(438, 233)
 scale = Vector2(2, 2)
 dialogue = ExtResource("6_7cume")
 area_collider = NodePath("CityInteractionCollision")
@@ -103,7 +426,7 @@ shape = SubResource("CircleShape2D_kddao")
 debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
 
 [node name="Horse" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("4_af80s")]
-position = Vector2(395, 223)
+position = Vector2(353, 150)
 scale = Vector2(2, 2)
 texture = ExtResource("6_6076s")
 dialogue = ExtResource("7_kddao")
@@ -151,3 +474,105 @@ position = Vector2(195, 95.99999)
 rotation = -1.0471976
 scale = Vector2(0.8, 0.8)
 sprite_frames = ExtResource("10_38wwo")
+
+[node name="Kid2" type="Sprite2D" parent="Entities"]
+position = Vector2(169, 257)
+scale = Vector2(3, 3)
+texture = ExtResource("5_38wwo")
+
+[node name="Kid6" type="Sprite2D" parent="Entities"]
+position = Vector2(151, 218)
+scale = Vector2(3, 3)
+texture = ExtResource("5_38wwo")
+
+[node name="Kid3" type="Sprite2D" parent="Entities"]
+position = Vector2(125, 258)
+scale = Vector2(3, 3)
+texture = ExtResource("14_fx6xw")
+
+[node name="Kid4" type="Sprite2D" parent="Entities"]
+position = Vector2(168, 235)
+scale = Vector2(3, 3)
+texture = ExtResource("14_fx6xw")
+
+[node name="Kid5" type="Sprite2D" parent="Entities"]
+position = Vector2(127, 227)
+scale = Vector2(3, 3)
+texture = ExtResource("14_fx6xw")
+
+[node name="Villager1" type="Sprite2D" parent="Entities"]
+position = Vector2(363, 161)
+scale = Vector2(2, 2)
+texture = ExtResource("15_dqvf4")
+
+[node name="Villager2" type="Sprite2D" parent="Entities"]
+position = Vector2(330, 154)
+scale = Vector2(2, 2)
+texture = ExtResource("16_q0bra")
+
+[node name="Villager4" type="Sprite2D" parent="Entities"]
+position = Vector2(321, 264)
+scale = Vector2(3, 3)
+texture = ExtResource("16_q0bra")
+
+[node name="Villager5" type="Sprite2D" parent="Entities"]
+position = Vector2(350, 272)
+scale = Vector2(3, 3)
+texture = ExtResource("15_dqvf4")
+
+[node name="Villager6" type="Sprite2D" parent="Entities"]
+position = Vector2(374, 228)
+scale = Vector2(3, 3)
+texture = ExtResource("17_pmx5d")
+
+[node name="Villager7" type="Sprite2D" parent="Entities"]
+position = Vector2(355, 199)
+scale = Vector2(3, 3)
+texture = ExtResource("16_q0bra")
+
+[node name="Villager8" type="Sprite2D" parent="Entities"]
+position = Vector2(335, 230)
+scale = Vector2(3, 3)
+texture = ExtResource("15_dqvf4")
+
+[node name="Villager9" type="Sprite2D" parent="Entities"]
+position = Vector2(330, 182)
+scale = Vector2(3, 3)
+texture = ExtResource("17_pmx5d")
+
+[node name="Villager10" type="Sprite2D" parent="Entities"]
+position = Vector2(157, 172)
+scale = Vector2(2, 2)
+texture = ExtResource("17_pmx5d")
+
+[node name="Villager11" type="Sprite2D" parent="Entities"]
+position = Vector2(138, 143)
+scale = Vector2(2, 2)
+texture = ExtResource("16_q0bra")
+
+[node name="Villager12" type="Sprite2D" parent="Entities"]
+position = Vector2(85, 136)
+scale = Vector2(2, 2)
+texture = ExtResource("15_dqvf4")
+
+[node name="Villager13" type="Sprite2D" parent="Entities"]
+position = Vector2(113, 126)
+scale = Vector2(2, 2)
+texture = ExtResource("17_pmx5d")
+
+[node name="Villager14" type="Sprite2D" parent="Entities"]
+position = Vector2(172, 124)
+texture = ExtResource("16_q0bra")
+
+[node name="Villager15" type="Sprite2D" parent="Entities"]
+position = Vector2(119, 117)
+texture = ExtResource("15_dqvf4")
+
+[node name="Villager16" type="Sprite2D" parent="Entities"]
+position = Vector2(147, 107)
+texture = ExtResource("17_pmx5d")
+
+[node name="Villager3" type="Sprite2D" parent="Entities"]
+position = Vector2(423.00003, 234.00002)
+scale = Vector2(3, 3)
+texture = ExtResource("17_pmx5d")

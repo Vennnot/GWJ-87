@@ -280,7 +280,7 @@ shape = SubResource("CircleShape2D_q4udx")
 debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
 
 [node name="Trader" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_d40we")]
-position = Vector2(336, 224)
+position = Vector2(332, 215)
 scale = Vector2(2, 2)
 texture = ExtResource("7_4tddo")
 dialogue = ExtResource("8_4tddo")
