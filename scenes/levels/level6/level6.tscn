@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://host1ddaioqk"]
+[gd_scene load_steps=23 format=3 uid="uid://host1ddaioqk"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_kid5g"]
 [ext_resource type="Resource" uid="uid://cfl7721aqlj8d" path="res://resources/level_info/level6.tres" id="2_ktt83"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://ney6qmqsmd6b" path="res://assets/visuals/elements/table.png" id="9_oigun"]
 [ext_resource type="Resource" uid="uid://cgg34yp7bbdtk" path="res://resources/dialogues/examine/examine_festival.dialogue" id="10_ljsju"]
 [ext_resource type="Resource" uid="uid://b7mqcqsrmsy4t" path="res://resources/dialogues/examine/examine_campfire.dialogue" id="11_imcx4"]
+[ext_resource type="Texture2D" uid="uid://cffo6v2lgb3qq" path="res://assets/visuals/elements/rocks1.png" id="12_vaamq"]
+[ext_resource type="Texture2D" uid="uid://dmce0gdlm0kx4" path="res://assets/visuals/elements/rocks2.png" id="13_0dp8p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -32,6 +34,14 @@ size = Vector2(28.333328, 11.333328)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vaamq"]
 radius = 18.027756
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_erfn0"]
+radius = 6.0
+height = 26.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e6tow"]
+radius = 7.0
+height = 26.0
 
 [node name="Level6" type="Node2D" node_paths=PackedStringArray("level_transition_interactable")]
 script = ExtResource("1_kid5g")
@@ -83,10 +93,11 @@ y_sort_enabled = true
 
 [node name="PlayerStartPosition" type="Marker2D" parent="Entities"]
 unique_name_in_owner = true
-position = Vector2(14, 228)
+position = Vector2(461, 242)
 
 [node name="LevelTransition" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("4_77ktg")]
-position = Vector2(447, 209)
+position = Vector2(19, 208)
+scale = Vector2(-1, 1)
 texture = ExtResource("6_ktt83")
 area_collider = NodePath("TransitionCollision")
 level_transition = true
@@ -118,7 +129,6 @@ shape = SubResource("RectangleShape2D_ljsju")
 [node name="Festival" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("4_77ktg")]
 position = Vector2(94, 221)
 scale = Vector2(2, 2)
-texture = ExtResource("6_ktt83")
 dialogue = ExtResource("10_ljsju")
 area_collider = NodePath("FestivalInteractionCollision")
 
@@ -129,10 +139,88 @@ debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
 [node name="Campfire" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("4_77ktg")]
 position = Vector2(218, 205)
 scale = Vector2(2, 2)
-texture = ExtResource("6_ktt83")
 dialogue = ExtResource("11_imcx4")
 area_collider = NodePath("CampfireInteractionCollision")
 
 [node name="CampfireInteractionCollision" type="CollisionShape2D" parent="Entities/Campfire"]
 shape = SubResource("CircleShape2D_vaamq")
 debug_color = Color(0.9490196, 0, 0.5764706, 0.41960785)
+
+[node name="Rock11" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("4_77ktg")]
+position = Vector2(140, 276)
+texture = ExtResource("12_vaamq")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/Rock11/Visuals" index="0"]
+position = Vector2(0, -11)
+texture = ExtResource("12_vaamq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Rock11"]
+position = Vector2(0, -6)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_erfn0")
+
+[node name="Rock21" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("4_77ktg")]
+position = Vector2(5, 298)
+scale = Vector2(2, 2)
+texture = ExtResource("13_0dp8p")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/Rock21/Visuals" index="0"]
+position = Vector2(0, -13)
+texture = ExtResource("13_0dp8p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Rock21"]
+position = Vector2(0, -7)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_e6tow")
+
+[node name="Rock22" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("4_77ktg")]
+position = Vector2(395, 265)
+texture = ExtResource("13_0dp8p")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/Rock22/Visuals" index="0"]
+position = Vector2(0, -13)
+texture = ExtResource("13_0dp8p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Rock22"]
+position = Vector2(0, -7)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_e6tow")
+
+[node name="Rock23" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("4_77ktg")]
+position = Vector2(400, 280)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("13_0dp8p")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/Rock23/Visuals" index="0"]
+position = Vector2(0, -13)
+texture = ExtResource("13_0dp8p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Rock23"]
+position = Vector2(0, -7)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_e6tow")
+
+[node name="Rock24" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("4_77ktg")]
+position = Vector2(417, 273)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("13_0dp8p")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/Rock24/Visuals" index="0"]
+position = Vector2(0, -13)
+texture = ExtResource("13_0dp8p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Rock24"]
+position = Vector2(0, -7)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_e6tow")
+
+[editable path="Entities/Rock11"]
+[editable path="Entities/Rock21"]
+[editable path="Entities/Rock22"]
+[editable path="Entities/Rock23"]
+[editable path="Entities/Rock24"]

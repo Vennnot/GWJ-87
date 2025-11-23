@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dg3ik4ihg2bp6"]
+[gd_scene load_steps=28 format=3 uid="uid://dg3ik4ihg2bp6"]
 
 [ext_resource type="Script" uid="uid://cmdfrib08eji5" path="res://scenes/levels/level_template.gd" id="1_yiof3"]
 [ext_resource type="Resource" uid="uid://seqi8dpqdytu" path="res://resources/level_info/level5.tres" id="2_qp3x7"]
@@ -15,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://d7meoepka8m1" path="res://resources/dialogues/story/bat_mommy.dialogue" id="13_vdg2u"]
 [ext_resource type="Texture2D" uid="uid://cffo6v2lgb3qq" path="res://assets/visuals/elements/rocks1.png" id="14_8060c"]
 [ext_resource type="Texture2D" uid="uid://c02b82jb6bd46" path="res://assets/visuals/elements/grass2.png" id="15_qdufj"]
+[ext_resource type="Texture2D" uid="uid://cwqvjjamoqued" path="res://assets/visuals/elements/mountains_tree.png" id="16_qdufj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buro7"]
 size = Vector2(480, 180)
@@ -101,7 +102,7 @@ y_sort_enabled = true
 
 [node name="PlayerStartPosition" type="Marker2D" parent="Entities"]
 unique_name_in_owner = true
-position = Vector2(20, 249)
+position = Vector2(12, 235)
 
 [node name="LevelTransition" parent="Entities" node_paths=PackedStringArray("area_collider") instance=ExtResource("5_y1jwd")]
 position = Vector2(298, 187)
@@ -216,7 +217,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_6sp46")
 
 [node name="Rock24" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("5_y1jwd")]
-position = Vector2(138, 188)
+position = Vector2(137, 197)
 texture = ExtResource("9_7o5g8")
 collider = NodePath("CollisionShape2D")
 
@@ -230,7 +231,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_6sp46")
 
 [node name="Rock25" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("5_y1jwd")]
-position = Vector2(237, 188)
+position = Vector2(232, 195)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("9_7o5g8")
 collider = NodePath("CollisionShape2D")
@@ -240,6 +241,21 @@ position = Vector2(0, -13)
 texture = ExtResource("9_7o5g8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Rock25"]
+position = Vector2(0, -7)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_6sp46")
+
+[node name="Rock26" parent="Entities" node_paths=PackedStringArray("collider") instance=ExtResource("5_y1jwd")]
+position = Vector2(223, 198.00002)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_7o5g8")
+collider = NodePath("CollisionShape2D")
+
+[node name="Sprite" parent="Entities/Rock26/Visuals" index="0"]
+position = Vector2(0, -13)
+texture = ExtResource("9_7o5g8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Rock26"]
 position = Vector2(0, -7)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_6sp46")
@@ -289,12 +305,28 @@ position = Vector2(0, -16)
 texture = ExtResource("15_qdufj")
 
 [node name="Grass23" parent="Entities" instance=ExtResource("5_y1jwd")]
-position = Vector2(137, 226)
+position = Vector2(146, 197)
 texture = ExtResource("15_qdufj")
 
 [node name="Sprite" parent="Entities/Grass23/Visuals" index="0"]
 position = Vector2(0, -16)
 texture = ExtResource("15_qdufj")
+
+[node name="Tree1" parent="Entities" instance=ExtResource("5_y1jwd")]
+position = Vector2(-6, 182)
+texture = ExtResource("16_qdufj")
+
+[node name="Sprite" parent="Entities/Tree1/Visuals" index="0"]
+position = Vector2(0, -88)
+texture = ExtResource("16_qdufj")
+
+[node name="Tree2" parent="Entities" instance=ExtResource("5_y1jwd")]
+position = Vector2(-28, 294)
+texture = ExtResource("16_qdufj")
+
+[node name="Sprite" parent="Entities/Tree2/Visuals" index="0"]
+position = Vector2(0, -88)
+texture = ExtResource("16_qdufj")
 
 [editable path="Entities/Bat"]
 [editable path="Entities/Rock11"]
@@ -302,8 +334,11 @@ texture = ExtResource("15_qdufj")
 [editable path="Entities/Rock21"]
 [editable path="Entities/Rock24"]
 [editable path="Entities/Rock25"]
+[editable path="Entities/Rock26"]
 [editable path="Entities/Rock23"]
 [editable path="Entities/Rock22"]
 [editable path="Entities/Grass21"]
 [editable path="Entities/Grass22"]
 [editable path="Entities/Grass23"]
+[editable path="Entities/Tree1"]
+[editable path="Entities/Tree2"]
